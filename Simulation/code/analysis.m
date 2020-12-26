@@ -3,13 +3,13 @@ clear;
 close all;
 echo off;
 
-diary ./analysis.log
+diary ../output/analysis.log
 diary on;
 rng(1);
 
 %%% I. Globals %%%
 
-global E mu sigma M alpha beta mu_eps beta_eps mean_eps Q gamma eta Nq_max;
+global E mu sigma M alpha beta mu_eps beta_eps mean_eps Q gamma eta Nq_max S;
 
 E = 50;
 mu = 1;
@@ -163,7 +163,52 @@ for m = 1:M
     mean(S_neg)
 end
 
+Prob = ones(M, Q)/(M*Q); 
+EPi = exp_profit(Prob, States, A_hist, PiV);
+cp = choice_prob(EPi);
+
 %%% V. Construct Firm Beliefs %%%
+
+function cp = choice_prob(EPi)
+    global Q M;
+    cp = zeros(M, Q);
+    exp_EPi = exp(EPi);
+    for q = 1:Q
+        denom = sum(exp_EPi(:, q));
+        cp(:, q) = exp_EPi(:, q)/denom;
+    end
+end
+
+function EPi = exp_profit(p, States, A_hist, PiV) 
+    global M Q S;
+    EPi = zeros(M, Q);
+    for q = 1:Q
+        for m = 1:M
+            p_s = zeros(S, 1);
+            for s = 1:S
+                p_s(s) = pr_state(p(m, :), s, States, A_hist);
+            end
+            EPi(m, q) = PiV(m, :, q)*p_s;
+        end
+    end
+end
+
+function p_s = pr_state(pr, s, States, A_hist) 
+    global Q;
+    p_s = 1;
+    impossible = 0;
+    for q = 1:Q
+        n = A_hist(q);
+        k = States(s, q);
+        if (n < k) | impossible
+            p_s = 0;
+            impossible = 1;
+        else 
+            pr_q = pr(q);
+            p_s = p_s*nchoosek(n, k)*pr_q^k*(1-pr_q)^(n-k); 
+        end
+    end
+end
 
 function mc = marginal_cost(a, w, r, alpha)
      mc = [w*(alpha*r/((1-alpha)*w))^(1-alpha) + ...

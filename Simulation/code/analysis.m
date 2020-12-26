@@ -9,7 +9,7 @@ rng(1);
 
 %%% I. Globals %%%
 
-global E mu sigma M alpha beta mu_eps beta_eps mean_eps Q gamma eta Nq_max S;
+global E mu sigma M alpha beta mu_eps beta_eps mean_eps Q gamma eta Nq_max;
 
 E = 50;
 mu = 1;
@@ -72,6 +72,8 @@ R = random('Lognormal', mu, sigma, M, 1);
 X = random('Lognormal', mu, sigma, M, 1);
 
 %%% III. Construct State Space %%%
+
+global S States A_hist PiV;
 
 S = (Nq_max)^Q;
 States = zeros(S, Q);
@@ -163,11 +165,38 @@ for m = 1:M
     mean(S_neg)
 end
 
-Prob = ones(M, Q)/(M*Q); 
-EPi = exp_profit(Prob, States, A_hist, PiV);
-cp = choice_prob(EPi);
+cp_mat = ones(M, Q)/(M*Q); 
+cp = cp_mat(:);
+lb = zeros(M, Q);
+ub = ones(M, Q);
+sparse = zeros(M*Q, M*Q);
+k = 1;
+for q = 1:Q
+    for m = 1:M
+        for t = 1:Q
+            for l = 1:M
+                if (m == l) | (q == t)
+                    sparse(k) = 1;
+                end
+                k = k + 1;
+            end
+        end
+    end
+end
+options = optimoptions(@lsqnonlin,'Algorithm','trust-region-reflective', ...
+    'JacobPattern', sparse);
+[cp, resnorm, residual, exitflag, output] = lsqnonlin(@fpe, cp, ...
+    lb, ub, options);
+
 
 %%% V. Construct Firm Beliefs %%%
+
+function z = fpe(cp)
+    global M Q States A_hist PiV;
+    cp_mat = reshape(cp, [M, Q]);
+    z = choice_prob(exp_profit(cp_mat, States, A_hist, PiV)) - cp_mat;
+    disp(z);
+end
 
 function cp = choice_prob(EPi)
     global Q M;

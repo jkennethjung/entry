@@ -9,7 +9,7 @@ rng(1);
 
 %%% I. Globals %%%
 
-global E mu sigma M alpha beta mu_eps beta_eps mean_eps Q gamma eta Nq_max;
+%global E mu sigma alpha beta mu_eps beta_eps mean_eps gamma eta Nq_max;
 
 E = 50;
 mu = 1;
@@ -72,8 +72,6 @@ R = random('Lognormal', mu, sigma, M, 1);
 X = random('Lognormal', mu, sigma, M, 1);
 
 %%% III. Construct State Space %%%
-
-global S States A_hist PiV;
 
 S = (Nq_max)^Q;
 States = zeros(S, Q);
@@ -184,22 +182,22 @@ for q = 1:Q
     end
 end
 options = optimoptions(@lsqnonlin,'Algorithm','trust-region-reflective', ...
-    'JacobPattern', sparse);
-[cp, resnorm, residual, exitflag, output] = lsqnonlin(@fpe, cp, ...
+    'JacobPattern', sparse, 'UseParallel', true);
+f = @(z) fpe(z, M, Q, States, A_hist, PiV, S);
+[cp, resnorm, residual, exitflag, output] = lsqnonlin(f, cp, ...
     lb, ub, options);
 
 
 %%% V. Construct Firm Beliefs %%%
 
-function z = fpe(cp)
-    global M Q States A_hist PiV;
+function z = fpe(cp, M, Q, States, A_hist, PiV, S)
     cp_mat = reshape(cp, [M, Q]);
-    z = choice_prob(exp_profit(cp_mat, States, A_hist, PiV)) - cp_mat;
+    z = choice_prob(exp_profit(cp_mat, States, A_hist, PiV, M, Q, S), ...
+        M, Q) - cp_mat;
     disp(z);
 end
 
-function cp = choice_prob(EPi)
-    global Q M;
+function cp = choice_prob(EPi, M, Q)
     cp = zeros(M, Q);
     exp_EPi = exp(EPi);
     for q = 1:Q
@@ -208,22 +206,20 @@ function cp = choice_prob(EPi)
     end
 end
 
-function EPi = exp_profit(p, States, A_hist, PiV) 
-    global M Q S;
+function EPi = exp_profit(p, States, A_hist, PiV, M, Q, S) 
     EPi = zeros(M, Q);
     for q = 1:Q
         for m = 1:M
             p_s = zeros(S, 1);
             for s = 1:S
-                p_s(s) = pr_state(p(m, :), s, States, A_hist);
+                p_s(s) = pr_state(p(m, :), s, States, A_hist, Q);
             end
             EPi(m, q) = PiV(m, :, q)*p_s;
         end
     end
 end
 
-function p_s = pr_state(pr, s, States, A_hist) 
-    global Q;
+function p_s = pr_state(pr, s, States, A_hist, Q) 
     p_s = 1;
     impossible = 0;
     for q = 1:Q

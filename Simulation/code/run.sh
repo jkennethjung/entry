@@ -1,4 +1,7 @@
-#!/usr/bin/sh
+#!/bin/sh
+#SBATCH -t 24:00:00
+#SBATCH -c 8 
+module load MATLAB/2019a
 rm -rf ../output/
 mkdir ../output/
 

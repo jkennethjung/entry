@@ -11,6 +11,7 @@ rng(1);
 
 %global E mu sigma alpha beta mu_eps beta_eps mean_eps gamma eta Nq_max;
 
+save_as = '../output/data.csv';
 E = 50;
 mu = 1;
 sigma = 1;
@@ -102,6 +103,8 @@ end
 
 P = zeros(M, S);
 Y = zeros(M, S, Q);
+L = zeros(M, S, Q);
+K = zeros(M, S, Q);
 PiV = zeros(M, S, Q);
 
 for m = 1:M
@@ -163,6 +166,13 @@ for m = 1:M
     mean(S_neg)
 end
 
+for m = 1:M
+    L(m, :, :) = (1-alpha)*Y(m, :, :)/W(m);
+    K(m, :, :) = (alpha)*Y(m, :, :)/R(m);
+end
+
+%%% V. Fixed Point to Solve for Firm Beliefs%%%
+
 cp_mat = ones(M, Q)/(M*Q); 
 cp = cp_mat(:);
 lb = zeros(M, Q);
@@ -187,8 +197,37 @@ f = @(z) fpe(z, M, Q, States, A_hist, PiV, S);
 [cp, resnorm, residual, exitflag, output] = lsqnonlin(f, cp, ...
     lb, ub, options);
 
+%%% VI. Entry and Ex-Post Outcomes  %%%
+cp_mat = reshape(cp, [M, Q]);
+EPi = exp_profit(cp_mat, States, A_hist, PiV, M, Q, S);
+M_J = zeros(E, 1);
+S_M = zeros(M, Q);
+for j = 1:E
+    q = Aq_idx(j);
+    Pi_j = EPi(:, q) + epsilon(:, j);
+    [Pi_mj, m_j] = max(Pi_j);
+    M_J(j) = m_j;
+    S_M(m_j, q) = S_M(m_j, q) + 1;
+end
 
-%%% V. Construct Firm Beliefs %%%
+State_M = zeros(M, 1);
+data = zeros(1,6);
+for m = 1:M
+    s_m = S_M(m, :);
+    [~, s] = ismember(s_m, States, 'rows');
+    State_M(m) = s;
+    for q = 1:Q
+        if s_m(q) > 0
+            for n = 1:s_m(q)
+                l = L(m, s, q);
+                k = K(m, s, q);
+                data = [data; m W(m) R(m) l k PiV(m, s, q) + W(m)*l + R(m)*k];
+            end
+        end
+    end
+end
+data(1, :) = [];
+writematrix(data, save_as);
 
 function z = fpe(cp, M, Q, States, A_hist, PiV, S)
     cp_mat = reshape(cp, [M, Q]);
@@ -228,7 +267,7 @@ function p_s = pr_state(pr, s, States, A_hist, Q)
         if (n < k) | impossible
             p_s = 0;
             impossible = 1;
-        else 
+        else
             pr_q = pr(q);
             p_s = p_s*nchoosek(n, k)*pr_q^k*(1-pr_q)^(n-k); 
         end

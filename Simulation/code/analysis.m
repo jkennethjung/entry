@@ -7,19 +7,16 @@ diary ../output/analysis.log
 diary on;
 rng(1);
 
-%%% I. Globals %%%
-
-%global E mu sigma alpha beta mu_eps beta_eps mean_eps gamma eta Nq_max;
+%%% I. Initialize  %%%
 
 %parpool(feature(20));
 save_as = '../output/data.csv';
-C = 5;
+T = 5;
 E = 30;
 mu = 1;
 sigma = 1;
 M = 6;
-alpha = 1;
-beta = 1;
+alpha = 0.6;
 gamma = 1;
 eta = 1;
 Nq_max = 4;
@@ -32,9 +29,9 @@ Qv = zeros(Q, 1);
 for q = 1:Q
     Qv(q + 1) = 1.5*q;
 end
-data = zeros(1,7);
+data = zeros(1,8);
 
-for cl = 1:C
+for cl = 1:T
     
     %%% II. Draw Characteristics %%%
     A = random('Lognormal', mu, sigma, E, 1);
@@ -213,7 +210,7 @@ for cl = 1:C
     end
     
     State_M = zeros(M, 1);
-    data_c = zeros(1,7);
+    data_c = zeros(1,8);
     for m = 1:M
         s_m = S_M(m, :);
         [~, s] = ismember(s_m, States, 'rows');
@@ -227,7 +224,7 @@ for cl = 1:C
                     for n = 1:s_m(q)
                         l = L(m, s, q);
                         k = K(m, s, q);
-                        data_c = [data_c; cl m W(m) R(m) l k PiV(m, s, q) + W(m)*l + R(m)*k];
+                        data_c = [data_c; cl m W(m) R(m) X(m) l k PiV(m, s, q) + W(m)*l + R(m)*k];
                     end
                 end
             end

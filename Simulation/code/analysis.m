@@ -19,7 +19,7 @@ M = 6;
 alpha = 0.6;
 gamma = 1;
 eta = 1;
-Nq_max = 4;
+Nq_max = 6;
 
 mu_eps = 0;
 beta_eps = 1;
@@ -29,7 +29,8 @@ Qv = zeros(Q, 1);
 for q = 1:Q
     Qv(q + 1) = 1.5*q;
 end
-data = zeros(1,8);
+ncol = 9;
+data = zeros(1, ncol);
 
 for cl = 1:T
     
@@ -210,9 +211,10 @@ for cl = 1:T
     end
     
     State_M = zeros(M, 1);
-    data_c = zeros(1,8);
+    data_c = zeros(1, ncol);
     for m = 1:M
         s_m = S_M(m, :);
+        n_m = sum(s_m);
         [~, s] = ismember(s_m, States, 'rows');
         if s == 0
             disp('Eqm state is outside state space');
@@ -224,7 +226,7 @@ for cl = 1:T
                     for n = 1:s_m(q)
                         l = L(m, s, q);
                         k = K(m, s, q);
-                        data_c = [data_c; cl m W(m) R(m) X(m) l k PiV(m, s, q) + W(m)*l + R(m)*k];
+                        data_c = [data_c; cl m n_m W(m) R(m) X(m) l k PiV(m, s, q) + W(m)*l + R(m)*k];
                     end
                 end
             end

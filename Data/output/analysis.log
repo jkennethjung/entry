@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/code/../output/analysis.l
 > og
   log type:  text
- opened on:   1 Jan 2021, 15:06:40
+ opened on:   1 Jan 2021, 20:15:02
 
 . 
 . import delimited using ../temp/data.csv, clear
@@ -96,6 +96,8 @@ file ../temp/mt.dta saved
 
 . order t n_rank n w r x l k pq
 
+. sort t n_rank
+
 . export delimited using ../output/data.csv, replace novar delim(",")
 (note: file ../output/data.csv not found)
 file ../output/data.csv saved
@@ -106,5 +108,5 @@ file ../output/data.csv saved
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/code/../output/analysis.l
 > og
   log type:  text
- closed on:   1 Jan 2021, 15:06:40
+ closed on:   1 Jan 2021, 20:15:03
 -------------------------------------------------------------------------------

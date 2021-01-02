@@ -24,6 +24,7 @@ use ../temp/raw.dta, clear
 merge m:1 m t using ../temp/mt.dta, assert(3) nogen
 drop m 
 order t n_rank n w r x l k pq
+sort t n_rank
 export delimited using ../output/data.csv, replace novar delim(",")
 
 log close

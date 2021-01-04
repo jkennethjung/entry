@@ -1,0 +1,168 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Main/code/../output/analy
+> sis.log
+  log type:  text
+ opened on:   4 Jan 2021, 12:09:35
+
+. 
+. use ../temp/infogroup.dta, clear
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+archive_ve~r |     42,784    2017.992    .8162892       2017       2019
+         abi |          0
+      ticker |          0
+parent_num~r |          0
+     company |          0
+-------------+---------------------------------------------------------
+address_li~1 |          0
+        city |          0
+       state |          0
+     zipcode |          0
+        zip4 |          0
+-------------+---------------------------------------------------------
+ county_code |          0
+   area_code |          0
+      idcode |          0
+location_e~e |          0
+location_s~e |          0
+-------------+---------------------------------------------------------
+primary_si~e |          0
+sic6_descr~s |          0
+primary_na~e |          0
+naics8_des~s |          0
+    sic_code |          0
+-------------+---------------------------------------------------------
+sic6_descr~c |          0
+  sic_code_1 |          0
+sic6_descr~1 |          0
+  sic_code_2 |          0
+sic6_descr~2 |          0
+-------------+---------------------------------------------------------
+  sic_code_3 |          0
+sic6_descr~3 |          0
+  sic_code_4 |          0
+sic6_descr~4 |          0
+yellow_pag~e |          0
+-------------+---------------------------------------------------------
+business_s~e |          0
+industry_s~e |          0
+office_siz~e |          0
+company_ho~s |          0
+subsidiary~r |          0
+-------------+---------------------------------------------------------
+parent_emp~e |          0
+parent_sal~e |          0
+ site_number |          0
+address_ty~r |          0
+population~e |          0
+-------------+---------------------------------------------------------
+census_tract |          0
+census_block |          0
+  match_code |          0
+   cbsa_code |          0
+  cbsa_level |          0
+-------------+---------------------------------------------------------
+    csa_code |          0
+   fips_code |          0
+year_estab~d |     17,447    1967.808     27.8522       1776       2019
+employee_s~n |     42,746    16.62855    54.51435          1       4000
+sales_volu~n |     42,635    5116.353    18819.41          0    1129188
+-------------+---------------------------------------------------------
+parent_ac~ze |      7,431     162.675    444.0932          1      13000
+parent_ac~me |      7,921     2406674     5175585          0   1.00e+08
+    latitude |     42,783    37.96666     5.47475     6.8761   64.85444
+   longitude |     42,783   -93.00008    15.45463  -159.5848  -44.75273
+
+. desc
+
+Contains data from ../temp/infogroup.dta
+  obs:        42,784                          
+ vars:            54                          
+ size:    46,206,720                          
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+archive_versi~r double  %12.0g                
+abi             str12   %12s                  ABI Number
+ticker          str6    %6s                   Ticker
+parent_number   str12   %12s                  Parent Number
+company         str32   %32s                  Name Of Business
+address_line_1  str32   %32s                  Address
+city            str18   %18s                  City
+state           str4    %4s                   State
+zipcode         str8    %8s                   Zip Code (5 Digit)
+zip4            str6    %6s                   Zip Code Extension (4 Digit)
+county_code     str6    %6s                   County Code
+area_code       str6    %6s                   Area Code
+idcode          str4    %4s                   Business/Individual Indicator
+location_empl~e str4    %4s                   Location Employee Size Code
+location_sale~e str4    %4s                   Location Sales Volume Code
+primary_sic_c~e str8    %8s                   Primary SIC Code
+sic6_descript~s str100  %100s                 SIC Code Description
+primary_naics~e str10   %10s                  Primary NAICS Code
+naics8_descri~s str100  %100s                 NAICS Description
+sic_code        str8    %8s                   SIC Code
+sic6_descript~c str100  %100s                 SIC Code Description
+sic_code_1      str8    %8s                   SIC Code 1
+sic6_descript~1 str100  %100s                 SIC Code 1 Description
+sic_code_2      str8    %8s                   SIC Code 2
+sic6_descript~2 str100  %100s                 SIC Code 2 Description
+sic_code_3      str8    %8s                   SIC Code 3
+sic6_descript~3 str100  %100s                 SIC Code 3 Description
+sic_code_4      str8    %8s                   SIC Code 4
+sic6_descript~4 str100  %100s                 SIC Code 4 Description
+yellow_page_c~e str8    %8s                   Yellow Page Code
+business_stat~e str4    %4s                   Business Status Code
+industry_spec~e str4    %4s                   Industry Specific First Byte
+office_size_c~e str2    %2s                   Office Size Code
+company_holdi~s str4    %4s                   Company Holding Status
+subsidiary_nu~r str12   %12s                  Subsidiary Number
+parent_employ~e str4    %4s                   Parent Employee Size Code
+parent_sales_~e str4    %4s                   Parent Sales Volume Code
+site_number     str12   %12s                  Site Number
+address_type_~r str4    %4s                   Address Type Indicator
+population_code str4    %4s                   Population Code
+census_tract    str8    %8s                   Census Tract
+census_block    str4    %4s                   Census Block
+match_code      str4    %4s                   Match Code
+cbsa_code       str8    %8s                   CBSA Code
+cbsa_level      str4    %4s                   CBSA Level
+csa_code        str6    %6s                   CSA Code
+fips_code       str8    %8s                   FIPS Code
+year_establis~d double  %12.0g                
+employee_size~n double  %12.0g                
+sales_volume_~n double  %12.0g                
+parent_actua~ze double  %12.0g                
+parent_actua~me double  %12.0g                
+latitude        double  %12.0g                Latitude
+longitude       double  %12.0g                Longitude
+-------------------------------------------------------------------------------
+Sorted by: 
+
+. 
+. gen rmc = regexm(primary_naics_code, "^3273")
+
+. replace rmc = regexm(sic_code, "^3273") if rmc == 0
+(2,412 real changes made)
+
+. forv i = 1/4 {
+  2.     replace rmc = regexm(sic_code_`i', "^3273") if rmc == 0
+  3. }
+(711 real changes made)
+(179 real changes made)
+(85 real changes made)
+(40 real changes made)
+
+. 
+. count if rmc
+  10,107
+
+. 
+end of do-file
+
+

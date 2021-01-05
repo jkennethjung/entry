@@ -3,7 +3,41 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Main/code/../output/analy
 > sis.log
   log type:  text
- opened on:   4 Jan 2021, 12:09:35
+ opened on:   5 Jan 2021, 13:38:55
+
+. 
+. import delimited using ../temp/efsy_cbp_2016.csv, clear varnames(1)
+(4 vars, 1,854,430 obs)
+
+. desc
+
+Contains data
+  obs:     1,854,430                          
+ vars:             4                          
+ size:    24,107,590                          
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+fipstate        byte    %8.0g                 
+fipscty         int     %8.0g                 
+naics           str6    %9s                   
+emp             long    %12.0g                
+-------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+. keep if regexm(naics, "^23")
+(1,727,513 observations deleted)
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    fipstate |    126,917    30.36973     15.1944          1         56
+     fipscty |    126,917    98.85467    106.8014          1        840
+       naics |          0
+         emp |    126,917    246.4378    1529.883          1     160568
 
 . 
 . use ../temp/infogroup.dta, clear

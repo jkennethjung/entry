@@ -2,6 +2,11 @@ clear
 set more off
 log using ../output/analysis.log, replace
 
+import delimited using ../temp/efsy_cbp_2016.csv, clear varnames(1)
+desc
+keep if regexm(naics, "^23")
+sum
+
 use ../temp/infogroup.dta, clear
 sum
 desc

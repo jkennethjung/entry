@@ -9,7 +9,7 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(feature('20'));
+%parpool(feature('20'));
 load_as = '../temp/data.csv';
 data = readmatrix(load_as);
 T = 5;
@@ -27,9 +27,10 @@ gamma = 1;
 eta = 1;
 
 Q = 6;
+Q_band = 2;
 Qv = zeros(Q, 1);
 for q = 1:Q
-    Qv(q + 1) = 1.5*q;
+    Qv(q + 1) = Q_band*q;
 end
 
 theta = [mu; sigma; gamma; eta];
@@ -44,19 +45,47 @@ function llh = loglikelihood(theta, data, T, E, M, Q, Qv, Nq_max, alpha, mu_eps,
 
     llh = 0;
     for cl = 1:T
-        
+        trows = (data(:, 1) == cl);
+        data_t = data(trows, :);
+        N_t = sum(trows);
+        [~, idx] = unique(data_t(:, 2));
+        data_mt = data_t(idx, :);
+        W = data_t(:, 4);
+        R = data_t(:, 5);
+        X = data_t(:, 6);
+        N_m = data_t(:, 3);
+        N_mt = zeros(M, 1);
+        for m = 1:M
+            m_idx = (data_t(:,2) == m);
+            N_mt(m) = sum(m_idx);
+        end 
+        disp('Checks');
+        assert(sum(N_mt) == N_t);
+        N_m(idx)
+        N_mt
+        assert(sum(N_m(idx) ~= N_mt) == 0);
+
         %%% II. Draw Characteristics %%%
-        A = zeros(E, 1);
-        A_hist = round(E*cdf('Lognormal', Qv, mu, sigma)); 
-        d = sum(A_hist) - E;
+        A = zeros(N_t, 1);
+        A_cdf = round(N_t*cdf('Lognormal', Qv, mu, sigma)); 
+        A_hist = zeros(Q, 1);
+        A_hist(1) = A_cdf(1);
+        for q = 2:Q
+            A_hist(q) = A_cdf(q) - A_cdf(q-1);
+        end
+        disp(A_hist)
+        d = sum(A_hist) - N_t; % review later--eventually want E entrants
+        disp(d)
+        disp(E)
         if d > 0
             [~, idx] = max(A_hist, [], 'linear');
             A_hist(idx) = A_hist(idx) - d;
         elseif d < 0
             [~, idx] = min(A_hist, [], 'linear');
-            A_hist(idx) = A_hist(idx) + d;
+            A_hist(idx) = A_hist(idx) - d;
         end 
-
+        disp('A_hist')
+        disp(A_hist)
         Aq = zeros(E, 1);
         Aq_idx = zeros(E, 1);
         
@@ -87,21 +116,6 @@ function llh = loglikelihood(theta, data, T, E, M, Q, Qv, Nq_max, alpha, mu_eps,
             States(s, :) = State;
         end
 
-        trows = (data(:, 1) == cl);
-        data_t = data(trows, :);
-        N_t = sum(trows);
-        [~, idx] = unique(data_t(:, 2));
-        data_mt = data_t(idx, :);
-        W = data_t(:, 3);
-        R = data_t(:, 4);
-        X = data_t(:, 5);
-        N_mt = zeros(M, 1);
-        for m = 1:M
-            m_idx = (data_t(:,2) == m);
-            N_mt(m) = sum(m_idx);
-        end 
-        disp('Checks');
-        assert(sum(N_mt) == N_t);
                
         %%% IV. Calculate Cournot Payoffs in Each State %%%
         
@@ -180,37 +194,96 @@ function llh = loglikelihood(theta, data, T, E, M, Q, Qv, Nq_max, alpha, mu_eps,
         for m = 1:M
             k = 1;
             for s = 1:S
-                if N_mt(m) == sum(States(s, :))
+                if (N_mt(m) == sum(States(s, :))) & ...
+                  (sum(States(s,:) <= A_hist') == Q)
                     VStates{m}(k) = s;
                     k = k + 1;
                 end
             end
             VS_sz(m) = k - 1;
         end
+        disp(N_mt(m));
+        disp('Size of state space');
+        disp(VS_sz);
+        disp('Number of firms');
+        disp(N_mt);
+        disp('A_hist')
+        disp(A_hist)
 
+        disp('Begin diagnostics');
         tstate = ones(1, M);
-        tstate(M) = 0;
+        tstate(M) = 0; % do we need this?
         TStates = [];
         NTStates = [];
         maxed = zeros(1, M);
         St = 1;
+        disp('Loop started');
+        count = 0;
+        big = [0 0];
         while sum(maxed) < M
             maxed = (tstate == VS_sz);
-            if maxed(M) == 0
-                tstate(M) = tstate(M) + 1;
-            else
-                l = M;
-                l0 = 0;
-                while l0 == 0 & l > 0
-                    if maxed(l) == 1
-                        l = l - 1;
+            % More aggressive skipping strategy
+            if M > 4
+                pairs = nchoosek(1:(M-3), 2);
+                npairs = size(pairs, 1);
+                row = 1;
+                while (row <= npairs) & sum(big) == 0
+                    pair = pairs(row, :);
+                    s1 = VStates{pair(1)}(tstate(pair(1)));
+                    n1 = States(s1, :);
+                    s2 = VStates{pair(2)}(tstate(pair(2)));
+                    n2 = States(s2, :);
+                    if sum(n1 + n2 > A_hist') > 0
+                        big = pairs(row, :);
+                    end
+                    row = row + 1;
+                end
+            end
+            if sum(big) > 0
+                disp('Bypassing extraneous cluster states ');
+                disp(tstate);
+                if maxed(big(2)) == 0
+                    tstate(big(2)) = tstate(big(2)) + 1;
+                else
+                    l = big(2);
+                    l0 = 0;
+                    while l0 == 0 & l > 0
+                        if maxed(l) == 1
+                            l = l - 1;
+                        else
+                            l0 = l;
+                        end
+                    end
+                    if l0 == 0 
+                        tstate = VS_sz;
                     else
-                        l0 = l;
+                        tstate(l0) = tstate(l0) + 1;
+                        for l = (l0 + 1):M
+                            tstate(l) = 1;
+                        end
                     end
                 end
-                tstate(l0) = tstate(l0) + 1;
-                for l = (l0 + 1):M
-                    tstate(l) = 1;
+                if tstate(M) == 0 
+                    tstate(M) = 1;
+                end
+                disp(tstate);
+            else
+                if maxed(M) == 0
+                    tstate(M) = tstate(M) + 1;
+                else
+                    l = M;
+                    l0 = 0;
+                    while l0 == 0 & l > 0
+                        if maxed(l) == 1
+                            l = l - 1;
+                        else
+                            l0 = l;
+                        end
+                    end
+                    tstate(l0) = tstate(l0) + 1;
+                    for l = (l0 + 1):M
+                        tstate(l) = 1;
+                    end
                 end
             end
             ts = zeros(M, 1);
@@ -221,8 +294,18 @@ function llh = loglikelihood(theta, data, T, E, M, Q, Qv, Nq_max, alpha, mu_eps,
                 nf(m, :) = States(s, :);
             end
             N_st = sum(nf, 1);
-            match_N = (N_st == A_hist);
+            match_N = (N_st == A_hist');
+            count = count + 1;
+            if mod(count, 100) == 0 
+                disp('State example') 
+                disp(nf) 
+                disp(N_st) 
+                disp(A_hist') 
+                disp(match_N) 
+            end
             if sum(match_N) == Q
+                disp('Viable cluster state found');
+                disp(nf);
                 TStates(St, :) = ts';
                 NTStates(St, :, :) = nf;
                 St = St + 1;
@@ -230,7 +313,6 @@ function llh = loglikelihood(theta, data, T, E, M, Q, Qv, Nq_max, alpha, mu_eps,
         end
         disp('Cluster state space successfully computed');
         disp(NTStates(1, :, :));
-        asldkfjsdaklfj
 
         %%% V. Fixed Point to Solve for Firm Beliefs%%%
         

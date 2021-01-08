@@ -9,10 +9,12 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-%parpool(feature(20));
+tic
+parpool(36);
 save_as = '../output/data.csv';
 T = 5;
 NS = 10;
+NBS = 20;
 E = 30;
 mu = 1;
 sigma = 1;
@@ -40,19 +42,19 @@ X = random('Lognormal', mu, sigma, M, 1);
 
 %%% II. Draw Characteristics %%%
 epsilon = -evrnd(mu_eps, beta_eps, [T, NS, M, E]);
-A = random('Lognormal', mu, sigma, [T, NS, E]);
-A_hist = zeros(T, NS, Q);
-Aq_idx = zeros(T, NS, E);
+A = random('Lognormal', mu, sigma, [T, NBS, E]);
+A_hist = zeros(T, NBS, Q);
+Aq_idx = zeros(T, NBS, E);
 
 for t = 1:T
-    for ns = 1:NS
+    for nbs = 1:NBS
         Aq = zeros(E, 1);
         for j = 1:E
             q = 1;
             qj = 0;
             while qj == 0
                 if q < Q
-                    A_j = A(t, ns, j);
+                    A_j = A(t, nbs, j);
                     if (A_j - Qv(q) > 0) & (A_j - Qv(q + 1) <= 0)
                         d1 = A_j - Qv(q);
                         d2 = Qv(q) - A_j;
@@ -67,12 +69,12 @@ for t = 1:T
                 end
                 q = q + 1;
             end 
-            Aq_idx(t, ns, j) = qj;
+            Aq_idx(t, nbs, j) = qj;
             Aq(j) = Qv(qj);
         end
         for q = 1:Q
-            flags = (Aq_idx(t, ns, :) == q);
-            A_hist(t, ns, q) = sum(flags);
+            flags = (Aq_idx(t, nbs, :) == q);
+            A_hist(t, nbs, q) = sum(flags);
         end
     end
 end
@@ -176,52 +178,52 @@ for m = 1:M
     K(m, :, :) = (alpha)*Y(m, :, :)/R(m);
 end
 
+% here we implement a set of estimates for bootstrap sample #1
+% this should be placed in a function that takes nbs as an arg
+
+nbs = 1;
+
 for t = 1:T
-    for ns = 1:NS
-        %%% V. Fixed Point to Solve for Firm Beliefs%%%
-        
-        cp_mat = ones(M, Q)/(M*Q); 
-        cp = cp_mat(:);
-        lb = zeros(M, Q);
-        ub = ones(M, Q);
-        sparse = zeros(M*Q, M*Q);
-        k = 1;
-        for q = 1:Q
-            for m = 1:M
-                for i = 1:Q
-                    for l = 1:M
-                        if (m == l) | (q == i)
-                            sparse(k) = 1;
-                        end
-                        k = k + 1;
+    cp_mat = ones(M, Q)/(M*Q); 
+    cp = cp_mat(:);
+    lb = zeros(M, Q);
+    ub = ones(M, Q);
+    sparse = zeros(M*Q, M*Q);
+    k = 1;
+    for q = 1:Q
+        for m = 1:M
+            for i = 1:Q
+                for l = 1:M
+                    if (m == l) | (q == i)
+                        sparse(k) = 1;
                     end
+                    k = k + 1;
                 end
             end
         end
-        options = optimoptions(@lsqnonlin,'Algorithm','trust-region-reflective', ...
+    end
+    options = optimoptions(@lsqnonlin,'Algorithm','trust-region-reflective', ...
             'JacobPattern', sparse, 'UseParallel', true);
-        At_hist = A_hist(t, ns, :);
-        f = @(z) fpe(z, M, Q, States, At_hist, PiV, S);
-        [cp, resnorm, residual, exitflag, output] = lsqnonlin(f, cp, ...
-            lb, ub, options);
+    At_hist = A_hist(t, nbs, :);
+    f = @(z) fpe(z, M, Q, States, At_hist, PiV, S);
+    [cp, resnorm, residual, exitflag, output] = lsqnonlin(f, cp, ...
+        lb, ub, options);
+
+    for ns = 1:NS
+        %%% V. Fixed Point to Solve for Firm Beliefs%%%
         
         %%% VI. Entry and Ex-Post Outcomes  %%%
         cp_mat = reshape(cp, [M, Q]);
         EPi = exp_profit(cp_mat, States, At_hist, PiV, M, Q, S);
         M_J = zeros(E, 1);
         S_M = zeros(M, Q);
-        disp('Calculating post-entry outcomes')
+        formatSpec = "Calculating the second stage in group t = %d and ns = %d";
+        str = sprintf(formatSpec,t, ns)
         for j = 1:E
             q = Aq_idx(t, ns, j);
             shocks = reshape(epsilon(t, ns, :, j), [M, 1]);
             Pi_j = EPi(:, q) + shocks ;
-            disp(size(EPi));
-            disp(size(Pi_j));
-            disp(size(epsilon(t, ns, :, j)));
-            disp(epsilon(t, ns, :, j));
             [Pi_mj, m_j] = max(Pi_j);
-            disp(Pi_mj);
-            disp(m_j);
             M_J(j) = m_j;
             S_M(m_j, q) = S_M(m_j, q) + 1;
         end
@@ -255,6 +257,8 @@ for t = 1:T
     disp('Average labor');
     disp(mean(data(:, 7)));
 end
+
+toc
 
 function z = fpe(cp, M, Q, States, At_hist, PiV, S)
     cp_mat = reshape(cp, [M, Q]);

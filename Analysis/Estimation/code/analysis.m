@@ -9,7 +9,6 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-tic
 parpool(12);
 load_as = '../temp/data.csv';
 NS = 10;
@@ -132,144 +131,159 @@ for s = 2:S
     States(s, :) = State;
 end
 
-% here we implement a set of estimates for bootstrap sample #1
-% this should be placed in a function that takes nbs as an arg
-
+tic;
 nbs = 1;
-for t = 1:T
-    %%% IV. Calculate Cournot Payoffs in Each State %%%
-    % This may require a large amount of memory, so placing in inner loop of t
-    % rather than over all t beforehand
-    
-    M_t = M(t);
-    E_t = E(t);
-    P = zeros(M_t, S);
-    Y = zeros(M_t, S, Q);
-    L = zeros(M_t, S, Q);
-    K = zeros(M_t, S, Q);
-    PiV = zeros(M_t, S, Q);
-    W_t = W{t};
-    R_t = R{t};
-    X_t = X{t};
-    
-    for m = 1:M_t
-        w = W_t(m);
-        r = R_t(m);        
-        x = X_t(m);
-        S_neg = zeros(S, 1);
-        MC = zeros(Q, 1);
-        for q = 1:Q
-            a = Qv(q);
-            MC(q) = marginal_cost(a, w, r, alpha);
-        end
-        for s = 2:S
-            State = States(s, :);
-            C = zeros(Q, 1);
-            Qs = [0];    % Number of firms by quantile (excludes zeros)
-            Cs = [0];    % Constant by quantile (excludes zeros)
+theta = [gamma; eta; mu; sigma];
+Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, States, ...
+        A_hist, Aq_idx, epsilon, ncol);
+disp(Beta);
+toc;
+
+% adjust above code so that simulate() takes parameters mu, sigma as an arg
+
+function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+        States, A_hist, Aq_idx, epsilon, ncol)
+    gamma = theta(1);
+    eta = theta(2);
+    mu = theta(3);
+    sigma = theta(4);
+    data_sim = zeros(1, ncol);
+    for t = 1:T
+        %%% IV. Calculate Cournot Payoffs in Each State %%%
+        % This may require large amount of memory, so placing in inner loop of t
+        % rather than over all t beforehand
+        
+        M_t = M(t);
+        E_t = E(t);
+        P = zeros(M_t, S);
+        Y = zeros(M_t, S, Q);
+        L = zeros(M_t, S, Q);
+        K = zeros(M_t, S, Q);
+        PiV = zeros(M_t, S, Q);
+        W_t = W{t};
+        R_t = R{t};
+        X_t = X{t};
+        
+        for m = 1:M_t
+            w = W_t(m);
+            r = R_t(m);        
+            x = X_t(m);
+            S_neg = zeros(S, 1);
+            MC = zeros(Q, 1);
             for q = 1:Q
-                Qn = State(q);
-                if Qn > 0
-                    a = Qv(q);
-                    c = (x*gamma - MC(q))/eta;
-                    if c > 0
-                        C(q) = c;
-                        Qs = [Qs; Qn];
-                        Cs = [Cs; c];
-                    end
-                end
+                a = Qv(q);
+                MC(q) = marginal_cost(a, w, r, alpha);
             end
-    
-            Iq = (C > 0); % Dummies for quantile inclusion
-            Nq = sum(Iq); % Number of quantiles represented in eqm
-            if Nq > 0
-                Qs = Qs(2:(Nq+1)); 
-                Cs = Cs(2:(Nq+1)); 
-                B = zeros(Nq);
-                for r = 1:Nq
-                    row = Qs;
-                    row(r) = row(r) + 1;
-                    B(r, :) = row;
-                end
-                y = inv(B)*Cs;
-                if sum(y < 0) == 0
-                    S_neg(s) = 1;
-                    p = x*gamma - y' * Qs;
-                    P(m, s) = p;
-                    j = 1;
-                    for q = 1:Q
-                        if Iq(q) == 1
-                            Y(m, s, q) = y(j);
-                            PiV(m, s, q) = (p - MC(q)) * y(j);
-                            j = j + 1;
+            for s = 2:S
+                State = States(s, :);
+                C = zeros(Q, 1);
+                Qs = [0];    % Number of firms by quantile (excludes zeros)
+                Cs = [0];    % Constant by quantile (excludes zeros)
+                for q = 1:Q
+                    Qn = State(q);
+                    if Qn > 0
+                        a = Qv(q);
+                        c = (x*gamma - MC(q))/eta;
+                        if c > 0
+                            C(q) = c;
+                            Qs = [Qs; Qn];
+                            Cs = [Cs; c];
                         end
                     end
                 end
-            end 
-        end
-        disp('% of states with negative output');
-        mean(S_neg)
-    end
-    
-    for m = 1:M_t
-        L(m, :, :) = (1-alpha)*Y(m, :, :)/W_t(m);
-        K(m, :, :) = (alpha)*Y(m, :, :)/R_t(m);
-    end
-
-    %%% V. Fixed Point to Solve for Firm Beliefs%%%
-
-    [cp, resnorm, residual, exitflag, output] = nfp(t, M_t, Q, States, ...
-        A_hist, PiV, S, nbs);
-    cp_mat = reshape(cp, [M_t, Q]);
-    At_hist = A_hist{t, nbs}(:);
-    EPi = exp_profit(cp_mat, States, At_hist, PiV, M_t, Q, S);
-    M_J = zeros(E_t, 1);
-    S_M = zeros(M_t, Q);
-    disp(cp_mat);
-    for ns = 1:NS
-        %%% VI. Entry and Ex-Post Outcomes  %%%
-        formatSpec = "Calculating the second stage in group t = %d and ns = %d";
-        str = sprintf(formatSpec, t, ns)
-        for j = 1:E_t
-            q = Aq_idx{t, nbs}(j);
-            shocks = reshape(epsilon{t, ns}(:, j), [M_t, 1]);
-            Pi_j = EPi(:, q) + shocks ;
-            [Pi_mj, m_j] = max(Pi_j);
-            M_J(j) = m_j;
-            S_M(m_j, q) = S_M(m_j, q) + 1;
+        
+                Iq = (C > 0); % Dummies for quantile inclusion
+                Nq = sum(Iq); % Number of quantiles represented in eqm
+                if Nq > 0
+                    Qs = Qs(2:(Nq+1)); 
+                    Cs = Cs(2:(Nq+1)); 
+                    B = zeros(Nq);
+                    for r = 1:Nq
+                        row = Qs;
+                        row(r) = row(r) + 1;
+                        B(r, :) = row;
+                    end
+                    y = inv(B)*Cs;
+                    if sum(y < 0) == 0
+                        S_neg(s) = 1;
+                        p = x*gamma - y' * Qs;
+                        P(m, s) = p;
+                        j = 1;
+                        for q = 1:Q
+                            if Iq(q) == 1
+                                Y(m, s, q) = y(j);
+                                PiV(m, s, q) = (p - MC(q)) * y(j);
+                                j = j + 1;
+                            end
+                        end
+                    end
+                end 
+            end
+            disp('% of states with negative output');
+            mean(S_neg)
         end
         
-        State_M = zeros(M_t, 1);
-        data_c = zeros(1, ncol);
         for m = 1:M_t
-            s_m = S_M(m, :);
-            n_m = sum(s_m);
-            [~, s] = ismember(s_m, States, 'rows');
-            if s == 0
-                disp('Eqm state is outside state space');
-                disp(s_m);
-            else
-                State_M(m) = s;
-                for q = 1:Q
-                    if s_m(q) > 0
-                        for n = 1:s_m(q)
-                            l = L(m, s, q);
-                            k = K(m, s, q);
-                            data_c = [data_c; t m n_m W_t(m) R_t(m) X_t(m) l k PiV(m, s, q) + W_t(m)*l + R_t(m)*k];
+            L(m, :, :) = (1-alpha)*Y(m, :, :)/W_t(m);
+            K(m, :, :) = (alpha)*Y(m, :, :)/R_t(m);
+        end
+    
+        %%% V. Fixed Point to Solve for Firm Beliefs%%%
+    
+        [cp, resnorm, residual, exitflag, output] = nfp(t, M_t, Q, States, ...
+            A_hist, PiV, S, nbs);
+        cp_mat = reshape(cp, [M_t, Q]);
+        At_hist = A_hist{t, nbs}(:);
+        EPi = exp_profit(cp_mat, States, At_hist, PiV, M_t, Q, S);
+        M_J = zeros(E_t, 1);
+        S_M = zeros(M_t, Q);
+        disp(cp_mat);
+        Beta = zeros(4, NS);
+        for ns = 1:NS
+            %%% VI. Entry and Ex-Post Outcomes  %%%
+            formatSpec = "Calculating the second stage in group t = %d and ns = %d";
+            str = sprintf(formatSpec, t, ns)
+            for j = 1:E_t
+                q = Aq_idx{t, nbs}(j);
+                shocks = reshape(epsilon{t, ns}(:, j), [M_t, 1]);
+                Pi_j = EPi(:, q) + shocks ;
+                [Pi_mj, m_j] = max(Pi_j);
+                M_J(j) = m_j;
+                S_M(m_j, q) = S_M(m_j, q) + 1;
+            end
+            
+            State_M = zeros(M_t, 1);
+            data_c = zeros(1, ncol);
+            for m = 1:M_t
+                s_m = S_M(m, :);
+                n_m = sum(s_m);
+                [~, s] = ismember(s_m, States, 'rows');
+                if s == 0
+                    disp('Eqm state is outside state space');
+                    disp(s_m);
+                else
+                    State_M(m) = s;
+                    for q = 1:Q
+                        if s_m(q) > 0
+                            for n = 1:s_m(q)
+                                l = L(m, s, q);
+                                k = K(m, s, q);
+                                data_c = [data_c; t m n_m W_t(m) R_t(m) X_t(m) l k PiV(m, s, q) + W_t(m)*l + R_t(m)*k];
+                            end
                         end
                     end
                 end
             end
+            data_c(1, :) = [];
+            data_sim = [data_sim; data_c];
         end
-        data_c(1, :) = [];
-        data = [data; data_c];
     end
-    data(1, :) = [];
-    disp('Average labor');
-    disp(mean(data(:, 7)));
+    data_sim(1, :) = [];
+    Z = data_sim(:, 3:6);
+    y = data_sim(:, 7);
+    Beta = (Z.'*Z)^(-1)*(Z.'*y);
 end
 
-toc
 
 function [cp, resnorm, residual, exitflag, output] = nfp(t, M, Q, States, ...
         A_hist, PiV, S, nbs)

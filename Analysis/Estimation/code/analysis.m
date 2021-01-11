@@ -23,7 +23,7 @@ Nq_max = 6;
 mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
-Q = 6;
+Q = 4;
 Qv = zeros(Q, 1);
 for q = 1:Q
     Qv(q + 1) = 1.5*q;
@@ -157,7 +157,11 @@ function dBeta = auxiliary(theta, Beta_0, nbs, NS, alpha, M, E, W, R, X, Q, ...
         States, A_hist, Aq_idx, epsilon, ncol);
     toc
     dBeta = (Beta_0 - Beta).'*(Beta_0 - Beta);
+    disp('Auxiliary model summary:');
+    disp(theta);
+    disp('->');
     disp(Beta);
+    disp('Objective function');
     disp(dBeta);
 end
 
@@ -239,8 +243,8 @@ function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
                     end
                 end 
             end
-            disp('% of states with negative output');
-            mean(S_neg)
+            %disp('% of states with negative output');
+            %mean(S_neg)
         end
         
         for m = 1:M_t
@@ -255,12 +259,12 @@ function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         cp_mat = reshape(cp, [M_t, Q]);
         At_hist = A_hist{t, nbs}(:);
         EPi = exp_profit(cp_mat, States, At_hist, PiV, M_t, Q, S);
+        formatSpec = "NFP solution for market t = %d";
+        str = sprintf(formatSpec, t)
         disp(cp_mat);
         Beta = zeros(4, NS);
         for ns = 1:NS
             %%% VI. Entry and Ex-Post Outcomes  %%%
-            formatSpec = "Calculating the second stage in group t = %d and ns = %d";
-            str = sprintf(formatSpec, t, ns)
             M_J = zeros(E_t, 1);
             S_M = zeros(M_t, Q);
             for j = 1:E_t
@@ -279,7 +283,7 @@ function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
                 n_m = sum(s_m);
                 [~, s] = ismember(s_m, States, 'rows');
                 if s == 0
-                    disp('Eqm state is outside state space');
+                    disp('Warning: eqm state is outside state space');
                     disp(s_m);
                 else
                     State_M(m) = s;

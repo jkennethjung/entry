@@ -4,6 +4,6 @@ rm -rf ../temp/
 
 mkdir ../output/
 mkdir ../temp/
-ln -s ../../Raw/Simulation/output/* ../temp/
+ln -s ../../../Raw/Simulation/output/* ../temp/
 
 stata analysis.do 

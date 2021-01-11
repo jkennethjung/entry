@@ -22,7 +22,12 @@ save ../temp/xw.dta, replace
 import delimited using ../temp/efsy_cbp_2016.csv, clear varnames(1)
 desc
 keep if regexm(naics, "^23")
+keep if naics == "236220"
+gen fips = fipstate*1000 + fipscty
+drop fipstate fipscty
+unique fips
 sum
+save ../temp/demand.dta, replace
 
 use ../temp/infogroup.dta, clear
 desc
@@ -44,12 +49,11 @@ forv i = 1/4 {
 count if rmc
 keep if rmc
 
-drop if fips == 2230 | fips == 2275 | fips == 8014
 merge m:1 fips using ../temp/xw.dta, assert(2 3) keep(3) nogen
+merge m:1 fips using ../temp/demand.dta, keep(1 3)
+drop if _merge == 1
+drop _merge
+save ../output/data.dta, replace
 sum 
 desc
-list if _n < 20
-save ../output/data.dta, replace
-
-tab labor
 

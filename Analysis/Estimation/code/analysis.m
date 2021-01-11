@@ -9,7 +9,7 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(12);
+parpool(36);
 load_as = '../temp/data.csv';
 NS = 10;
 NBS = 20;
@@ -42,6 +42,8 @@ for t = 1:T
     data_t = data(t_rows, :);
     M(t) = max(data_t(:, 2));
     E(t) = sum(t_rows);
+    disp('Number of entrants')
+    disp(E(t))
     W{t} = zeros(M(t), 1);
     R{t} = zeros(M(t), 1);
     X{t} = zeros(M(t), 1);
@@ -131,15 +133,33 @@ for s = 2:S
     States(s, :) = State;
 end
 
+disp('True auxiliary model parameters');
+Z = data(:, 3:6);
+y = data(:, 7);
+Beta_0 = (Z.'*Z)^(-1)*(Z.'*y);
+disp(Beta_0);
+
 tic;
 nbs = 1;
 theta = [gamma; eta; mu; sigma];
-Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, States, ...
-        A_hist, Aq_idx, epsilon, ncol);
-disp(Beta);
+aux = @(theta) auxiliary(theta, Beta_0, nbs, NS, alpha, M, E, W, R, X, Q, ...
+        Qv, T, S, States, A_hist, Aq_idx, epsilon, ncol);
+[theta, dBeta, exitflag, output] = fmincon(aux, theta, [], [], [], [], ...
+    theta*1e-2, theta*1e2);
+disp('Outer loop optimization finished');
+disp(theta);
 toc;
 
-% adjust above code so that simulate() takes parameters mu, sigma as an arg
+function dBeta = auxiliary(theta, Beta_0, nbs, NS, alpha, M, E, W, R, X, Q, ...
+        Qv, T, S, States, A_hist, Aq_idx, epsilon, ncol)
+    tic
+    Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+        States, A_hist, Aq_idx, epsilon, ncol);
+    toc
+    dBeta = (Beta_0 - Beta).'*(Beta_0 - Beta);
+    disp(Beta);
+    disp(dBeta);
+end
 
 function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, A_hist, Aq_idx, epsilon, ncol)
@@ -235,14 +255,14 @@ function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         cp_mat = reshape(cp, [M_t, Q]);
         At_hist = A_hist{t, nbs}(:);
         EPi = exp_profit(cp_mat, States, At_hist, PiV, M_t, Q, S);
-        M_J = zeros(E_t, 1);
-        S_M = zeros(M_t, Q);
         disp(cp_mat);
         Beta = zeros(4, NS);
         for ns = 1:NS
             %%% VI. Entry and Ex-Post Outcomes  %%%
             formatSpec = "Calculating the second stage in group t = %d and ns = %d";
             str = sprintf(formatSpec, t, ns)
+            M_J = zeros(E_t, 1);
+            S_M = zeros(M_t, Q);
             for j = 1:E_t
                 q = Aq_idx{t, nbs}(j);
                 shocks = reshape(epsilon{t, ns}(:, j), [M_t, 1]);

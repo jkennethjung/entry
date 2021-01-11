@@ -32,7 +32,7 @@ rename employ labor
 rename archive year
 sum
 desc
-keep if year == 2017
+keep if year == 2016
 drop year
 destring fips, replace
 

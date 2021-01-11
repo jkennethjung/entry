@@ -18,7 +18,7 @@ sigma = 1;
 alpha = 0.6;
 gamma = 1;
 eta = 1;
-Nq_max = 6;
+Nq_max = 9;
 
 mu_eps = 0;
 beta_eps = 1;

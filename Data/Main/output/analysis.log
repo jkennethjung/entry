@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Main/code/../output/analy
 > sis.log
   log type:  text
- opened on:  11 Jan 2021, 21:33:47
+ opened on:  12 Jan 2021, 10:12:41
 
 . 
 . import delimited using ../temp/cea_fips_xw.csv, clear varnames(1)
@@ -288,9 +288,43 @@ fips: all characters numeric; replaced as long
                48                        x                           20513
 
 
-. save ../output/data.dta, replace
-(note: file ../output/data.dta not found)
-file ../output/data.dta saved
+. save ../output/data_firms.dta, replace
+(note: file ../output/data_firms.dta not found)
+file ../output/data_firms.dta saved
+
+. 
+. collapse (mean) N_m (sum) labor, by(cea t_state)
+
+. save ../output/data_cea.dta, replace
+(note: file ../output/data_cea.dta not found)
+file ../output/data_cea.dta saved
+
+. 
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         cea |        302    174.1854    99.05335          1        348
+     t_state |        302    29.64901    16.02477          1         56
+         N_m |        302    5.013245    5.537533          1         45
+       labor |        302    127.5728    168.8305          2       1207
+
+. gen M_t = 1 
+
+. collapse (sum) N_t = N_m M_t, by(t_state)
+
+. save ../output/data_state.dta, replace
+(note: file ../output/data_state.dta not found)
+file ../output/data_state.dta saved
+
+. 
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     t_state |         50       29.32    15.78224          1         56
+         N_t |         50       30.28    28.31171          1        132
+         M_t |         50        6.04    4.956793          1         24
 
 . 
 . 

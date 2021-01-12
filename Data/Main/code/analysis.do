@@ -66,5 +66,15 @@ drop j
 sum N_m
 tab N_m
 plot N_m x 
-save ../output/data.dta, replace
+save ../output/data_firms.dta, replace
+
+collapse (mean) N_m (sum) labor, by(cea t_state)
+save ../output/data_cea.dta, replace
+
+sum
+gen M_t = 1 
+collapse (sum) N_t = N_m M_t, by(t_state)
+save ../output/data_state.dta, replace
+
+sum
 

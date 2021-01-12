@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Main/code/../output/analy
 > sis.log
   log type:  text
- opened on:  12 Jan 2021, 10:12:41
+ opened on:  12 Jan 2021, 11:18:55
 
 . 
 . import delimited using ../temp/cea_fips_xw.csv, clear varnames(1)
@@ -88,6 +88,8 @@ Number of records is  2410
 . rename emp x_cty
 
 . 
+. // Market Cluster Definition: Assign each CEA to state with greatest demand
+. 
 . merge 1:1 fips using ../temp/xw.dta, keep(3) nogen
 (note: variable fips was float, now double to accommodate using data's
        values)
@@ -162,7 +164,8 @@ file ../temp/demand.dta saved
 . 
 . use ../temp/infogroup.dta, clear
 
-. keep primary_naics_code sic_code* fips_code employee_size_location archive 
+. keep abi parent_number primary_naics_code sic_code* fips_code ///
+>     employee_size_location archive 
 
 . rename fips_code fips
 
@@ -217,75 +220,92 @@ fips: all characters numeric; replaced as long
 . drop _merge
 
 . 
-. gen j = 1
+. // Firm Definition: Two firms with same parent company in a CEA are the same
+. // Note that j is a unique firm ID within a CEA but not necessary across CEAs
+. gen j = parent_number
+(912 missing values generated)
 
-. bysort cea: egen N_m = sum(j)
+. replace j = abi if missing(j) 
+(912 real changes made)
 
-. drop j
+. count
+  1,514
+
+. collapse (sum) labor (mean) x t_state, by(j cea)
+
+. count
+  1,204
+
+. unique j 
+Number of unique values of j is  988
+Number of records is  1204
+
+. gen k = 1
+
+. bysort cea: egen N_m = sum(k)
+
+. drop k
 
 . sum N_m
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-         N_m |      1,514    11.10964    9.743837          1         45
+         N_m |      1,204    8.533223    8.028299          1         35
 
 . tab N_m
 
         N_m |      Freq.     Percent        Cum.
 ------------+-----------------------------------
-          1 |         69        4.56        4.56
-          2 |         90        5.94       10.50
-          3 |        165       10.90       21.40
-          4 |        132        8.72       30.12
-          5 |         70        4.62       34.74
-          6 |        114        7.53       42.27
-          7 |         56        3.70       45.97
-          8 |         96        6.34       52.31
-          9 |         18        1.19       53.50
-         10 |         70        4.62       58.12
-         11 |         66        4.36       62.48
-         12 |         84        5.55       68.03
-         13 |         52        3.43       71.47
-         14 |         14        0.92       72.39
-         15 |         45        2.97       75.36
-         16 |         32        2.11       77.48
-         17 |         51        3.37       80.85
-         18 |         72        4.76       85.60
-         19 |         38        2.51       88.11
-         20 |         20        1.32       89.43
-         24 |         24        1.59       91.02
-         26 |         26        1.72       92.73
-         29 |         29        1.92       94.65
-         36 |         36        2.38       97.03
-         45 |         45        2.97      100.00
+          1 |         81        6.73        6.73
+          2 |        112        9.30       16.03
+          3 |        156       12.96       28.99
+          4 |        136       11.30       40.28
+          5 |         85        7.06       47.34
+          6 |         78        6.48       53.82
+          7 |         70        5.81       59.63
+          8 |         88        7.31       66.94
+          9 |         63        5.23       72.18
+         10 |         30        2.49       74.67
+         11 |         44        3.65       78.32
+         12 |         24        1.99       80.32
+         13 |         13        1.08       81.40
+         14 |         14        1.16       82.56
+         15 |         15        1.25       83.80
+         16 |         16        1.33       85.13
+         17 |         34        2.82       87.96
+         18 |         36        2.99       90.95
+         19 |         19        1.58       92.52
+         22 |         22        1.83       94.35
+         33 |         33        2.74       97.09
+         35 |         35        2.91      100.00
 ------------+-----------------------------------
-      Total |      1,514      100.00
+      Total |      1,204      100.00
 
 . plot N_m x 
 
-      45 +  
+      35 +  
          |                       *
-         |  
-         |  
          |  
          |             *
          |  
          |  
-         |                                         *
-    N    |  
-    _    |                                    *
-    m    |                *
-         |          *
-         |         * *  **    *                     *
-         |  ***   **   * *      *
-         |     *  **  *                                *
-         |  * ** ***   * * *
-         | ***  ** *  ***          *   *            *         *
-         | ******* **  *   *  *
-         | *********     ** *         *          *   *                     *
-       1 + ************  **       **    *
+         |  
+         |  
+         |  
+    N    |                                         *
+    _    |                                          *
+    m    |           *        *
+         |              **                    *
+         |         *            *
+         |    *    *  *
+         |  *     **   * * *           *
+         |       ***   * *         *                   *
+         | *********       *       *                *         *
+         | *****   ** *** **  *       *
+         | **********    ** *           *        *   *                     *
+       1 + ********  **   *       **
           +----------------------------------------------------------------+
-               48                        x                           20513
+               48                    (mean) x                       20513
 
 
 . save ../output/data_firms.dta, replace
@@ -306,7 +326,7 @@ file ../output/data_cea.dta saved
 -------------+---------------------------------------------------------
          cea |        302    174.1854    99.05335          1        348
      t_state |        302    29.64901    16.02477          1         56
-         N_m |        302    5.013245    5.537533          1         45
+         N_m |        302    3.986755    4.264489          1         35
        labor |        302    127.5728    168.8305          2       1207
 
 . gen M_t = 1 
@@ -323,7 +343,7 @@ file ../output/data_state.dta saved
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
      t_state |         50       29.32    15.78224          1         56
-         N_t |         50       30.28    28.31171          1        132
+         N_t |         50       24.08    20.73727          1         85
          M_t |         50        6.04    4.956793          1         24
 
 . 

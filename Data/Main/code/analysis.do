@@ -26,6 +26,8 @@ drop fipscty
 unique fips
 rename emp x_cty
 
+// Market Cluster Definition: Assign each CEA to state with greatest demand
+
 merge 1:1 fips using ../temp/xw.dta, keep(3) nogen
 bysort cea fipstate: egen x_state_cea = sum(x_cty)
 bysort cea: egen x_max_state = max(x_state_cea)
@@ -40,7 +42,8 @@ desc
 save ../temp/demand.dta, replace
 
 use ../temp/infogroup.dta, clear
-keep primary_naics_code sic_code* fips_code employee_size_location archive 
+keep abi parent_number primary_naics_code sic_code* fips_code ///
+    employee_size_location archive 
 rename fips_code fips
 rename employ labor 
 rename archive year
@@ -60,9 +63,17 @@ merge m:1 fips using ../temp/demand.dta, keep(1 3)
 drop if _merge == 1
 drop _merge
 
-gen j = 1
-bysort cea: egen N_m = sum(j)
-drop j
+// Firm Definition: Two firms with same parent company in a CEA are the same
+// Note that j is a unique firm ID within a CEA but not necessary across CEAs
+gen j = parent_number
+replace j = abi if missing(j) 
+count
+collapse (sum) labor (mean) x t_state, by(j cea)
+count
+unique j 
+gen k = 1
+bysort cea: egen N_m = sum(k)
+drop k
 sum N_m
 tab N_m
 plot N_m x 

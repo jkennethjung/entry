@@ -9,9 +9,9 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-%parpool(feature(20));
+parpool(36);
 save_as = '../output/data.csv';
-T = 5;
+T = 30;
 E = 30;
 mu = 1;
 sigma = 1;
@@ -194,8 +194,10 @@ for cl = 1:T
     options = optimoptions(@lsqnonlin,'Algorithm','trust-region-reflective', ...
         'JacobPattern', sparse, 'UseParallel', true);
     f = @(z) fpe(z, M, Q, States, A_hist, PiV, S);
+    tic
     [cp, resnorm, residual, exitflag, output] = lsqnonlin(f, cp, ...
         lb, ub, options);
+    toc
     
     %%% VI. Entry and Ex-Post Outcomes  %%%
     cp_mat = reshape(cp, [M, Q]);

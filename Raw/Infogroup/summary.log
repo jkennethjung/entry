@@ -1,0 +1,178 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /gpfs/loomis/home.grace/jkj32/entry/Raw/Infogroup/summary.log
+  log type:  text
+ opened on:  12 Jan 2021, 10:29:41
+
+. 
+. use infogroup.dta, clear
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+archive_ve~r |     30,737        2016           0       2016       2016
+         abi |          0
+      ticker |          0
+parent_num~r |          0
+     company |          0
+-------------+---------------------------------------------------------
+address_li~1 |          0
+        city |          0
+       state |          0
+     zipcode |          0
+        zip4 |          0
+-------------+---------------------------------------------------------
+ county_code |          0
+   area_code |          0
+      idcode |          0
+location_e~e |          0
+location_s~e |          0
+-------------+---------------------------------------------------------
+primary_si~e |          0
+sic6_descr~s |          0
+primary_na~e |          0
+naics8_des~s |          0
+    sic_code |          0
+-------------+---------------------------------------------------------
+sic6_descr~c |          0
+  sic_code_1 |          0
+sic6_descr~1 |          0
+  sic_code_2 |          0
+sic6_descr~2 |          0
+-------------+---------------------------------------------------------
+  sic_code_3 |          0
+sic6_descr~3 |          0
+  sic_code_4 |          0
+sic6_descr~4 |          0
+yellow_pag~e |          0
+-------------+---------------------------------------------------------
+business_s~e |          0
+industry_s~e |          0
+office_siz~e |          0
+company_ho~s |          0
+subsidiary~r |          0
+-------------+---------------------------------------------------------
+parent_emp~e |          0
+parent_sal~e |          0
+ site_number |          0
+address_ty~r |          0
+population~e |          0
+-------------+---------------------------------------------------------
+census_tract |          0
+census_block |          0
+  match_code |          0
+   cbsa_code |          0
+  cbsa_level |          0
+-------------+---------------------------------------------------------
+    csa_code |          0
+   fips_code |          0
+year_estab~d |      6,254    1975.232     26.2343       1802       2016
+employee_s~n |     30,729    11.26451    29.78996          1       2000
+sales_volu~n |     30,537    2188.901    6129.674        111     388460
+-------------+---------------------------------------------------------
+parent_ac~ze |      1,853    167.9056    191.7676          2       2700
+parent_ac~me |          0
+    latitude |     30,737    38.17814    5.283924     17.747   64.91622
+   longitude |     30,737    -93.0525    15.60858   -159.713   -64.7041
+
+. desc, fullnames
+
+Contains data from infogroup.dta
+  obs:        30,737                          
+ vars:            54                          
+ size:    33,195,960                          
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+archive_version_year
+                double  %12.0g                
+abi             str12   %12s                  ABI Number
+ticker          str6    %6s                   Ticker
+parent_number   str12   %12s                  Parent Number
+company         str32   %32s                  Name Of Business
+address_line_1  str32   %32s                  Address
+city            str18   %18s                  City
+state           str4    %4s                   State
+zipcode         str8    %8s                   Zip Code (5 Digit)
+zip4            str6    %6s                   Zip Code Extension (4 Digit)
+county_code     str6    %6s                   County Code
+area_code       str6    %6s                   Area Code
+idcode          str4    %4s                   Business/Individual Indicator
+location_employee_size_code
+                str4    %4s                   Location Employee Size Code
+location_sales_volume_code
+                str4    %4s                   Location Sales Volume Code
+primary_sic_code
+                str8    %8s                   Primary SIC Code
+sic6_descriptions
+                str100  %100s                 SIC Code Description
+primary_naics_code
+                str10   %10s                  Primary NAICS Code
+naics8_descriptions
+                str100  %100s                 NAICS Description
+sic_code        str8    %8s                   SIC Code
+sic6_descriptions_sic
+                str100  %100s                 SIC Code Description
+sic_code_1      str8    %8s                   SIC Code 1
+sic6_descriptions_sic1
+                str100  %100s                 SIC Code 1 Description
+sic_code_2      str8    %8s                   SIC Code 2
+sic6_descriptions_sic2
+                str100  %100s                 SIC Code 2 Description
+sic_code_3      str8    %8s                   SIC Code 3
+sic6_descriptions_sic3
+                str100  %100s                 SIC Code 3 Description
+sic_code_4      str8    %8s                   SIC Code 4
+sic6_descriptions_sic4
+                str100  %100s                 SIC Code 4 Description
+yellow_page_code
+                str8    %8s                   Yellow Page Code
+business_status_code
+                str4    %4s                   Business Status Code
+industry_specific_first_byte
+                str4    %4s                   Industry Specific First Byte
+office_size_code
+                str2    %2s                   Office Size Code
+company_holding_status
+                str4    %4s                   Company Holding Status
+subsidiary_number
+                str12   %12s                  Subsidiary Number
+parent_employee_size_code
+                str4    %4s                   Parent Employee Size Code
+parent_sales_volume_code
+                str4    %4s                   Parent Sales Volume Code
+site_number     str12   %12s                  Site Number
+address_type_indicator
+                str4    %4s                   Address Type Indicator
+population_code str4    %4s                   Population Code
+census_tract    str8    %8s                   Census Tract
+census_block    str4    %4s                   Census Block
+match_code      str4    %4s                   Match Code
+cbsa_code       str8    %8s                   CBSA Code
+cbsa_level      str4    %4s                   CBSA Level
+csa_code        str6    %6s                   CSA Code
+fips_code       str8    %8s                   FIPS Code
+year_established
+                double  %12.0g                
+employee_size_location
+                double  %12.0g                
+sales_volume_location
+                double  %12.0g                
+parent_actual_employee_size
+                double  %12.0g                
+parent_actual_sales_volume
+                double  %12.0g                
+latitude        double  %12.0g                Latitude
+longitude       double  %12.0g                Longitude
+-------------------------------------------------------------------------------
+Sorted by: 
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /gpfs/loomis/home.grace/jkj32/entry/Raw/Infogroup/summary.log
+  log type:  text
+ closed on:  12 Jan 2021, 10:29:41
+-------------------------------------------------------------------------------

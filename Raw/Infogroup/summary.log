@@ -2,7 +2,7 @@
       name:  <unnamed>
        log:  /gpfs/loomis/home.grace/jkj32/entry/Raw/Infogroup/summary.log
   log type:  text
- opened on:  12 Jan 2021, 10:29:41
+ opened on:  12 Jan 2021, 10:43:33
 
 . 
 . use infogroup.dta, clear
@@ -170,9 +170,75 @@ longitude       double  %12.0g                Longitude
 Sorted by: 
 
 . 
+. tab company_holding_status
+
+    Company |
+    Holding |
+     Status |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          3      100.00      100.00
+------------+-----------------------------------
+      Total |          3      100.00
+
+. local vars parent_number company_holding_status subsidiary_number abi site_nu
+> mber
+
+. foreach v in `vars' {
+  2.     destring `v', replace 
+  3.     count if missing(`v')
+  4. }
+parent_number: all characters numeric; replaced as long
+(28878 missing values generated)
+  28,878
+company_holding_status: all characters numeric; replaced as byte
+(30734 missing values generated)
+  30,734
+subsidiary_number: all characters numeric; replaced as long
+(29884 missing values generated)
+  29,884
+abi: all characters numeric; replaced as long
+  0
+site_number: all characters numeric; replaced as long
+(28066 missing values generated)
+  28,066
+
+. list `vars' if _n < 20
+
+       +------------------------------------------------------+
+       | parent_~r   compan~s   subsidi~r      abi   site_n~r |
+       |------------------------------------------------------|
+    1. |         .          .           .    66860          . |
+    2. |     89151          .           .    89151          . |
+    3. |         .          .           .    89987          . |
+    4. |         .          .           .    90191          . |
+    5. |         .          .           .    91785      91785 |
+       |------------------------------------------------------|
+    6. |         .          .           .    93112          . |
+    7. |         .          .           .    94326          . |
+    8. |         .          .           .    94508          . |
+    9. |         .          .           .    95612          . |
+   10. | 3.860e+08          .   1.545e+08   128041          . |
+       |------------------------------------------------------|
+   11. |         .          .           .   165324          . |
+   12. |         .          .           .   170928          . |
+   13. |         .          .           .   222315          . |
+   14. | 4.086e+08          .   4.781e+08   279778          . |
+   15. |         .          .           .   284521          . |
+       |------------------------------------------------------|
+   16. | 9.700e+08          .           .   307421          . |
+   17. |         .          .           .   312876          . |
+   18. |         .          .           .   314559          . |
+   19. |         .          .           .   315002          . |
+       +------------------------------------------------------+
+
+. unique abi
+Number of unique values of abi is  30737
+Number of records is  30737
+
+. 
 . log close
       name:  <unnamed>
        log:  /gpfs/loomis/home.grace/jkj32/entry/Raw/Infogroup/summary.log
   log type:  text
- closed on:  12 Jan 2021, 10:29:41
+ closed on:  12 Jan 2021, 10:43:34
 -------------------------------------------------------------------------------

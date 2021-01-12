@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Main/code/../output/analy
 > sis.log
   log type:  text
- opened on:  11 Jan 2021, 16:00:38
+ opened on:  11 Jan 2021, 21:33:47
 
 . 
 . import delimited using ../temp/cea_fips_xw.csv, clear varnames(1)
@@ -63,25 +63,6 @@ Duplicates in terms of fips
 . drop if dup_fips > 0
 (2 observations deleted)
 
-. desc
-
-Contains data
-  obs:         3,237                          
- vars:             5                          
- size:       129,480                          
--------------------------------------------------------------------------------
-              storage   display    value
-variable name   type    format     label      variable label
--------------------------------------------------------------------------------
-fips            long    %10.0g                FIPS
-name            str31   %31s                  Name
-state           str2    %9s                   STATE
-cea             int     %8.0g                 
-dup_fips        byte    %12.0g                
--------------------------------------------------------------------------------
-Sorted by: 
-     Note: Dataset has changed since last saved.
-
 . save ../temp/xw.dta, replace
 (note: file ../temp/xw.dta not found)
 file ../temp/xw.dta saved
@@ -89,24 +70,6 @@ file ../temp/xw.dta saved
 . 
 . import delimited using ../temp/efsy_cbp_2016.csv, clear varnames(1)
 (4 vars, 1,854,430 obs)
-
-. desc
-
-Contains data
-  obs:     1,854,430                          
- vars:             4                          
- size:    24,107,590                          
--------------------------------------------------------------------------------
-              storage   display    value
-variable name   type    format     label      variable label
--------------------------------------------------------------------------------
-fipstate        byte    %8.0g                 
-fipscty         int     %8.0g                 
-naics           str6    %9s                   
-emp             long    %12.0g                
--------------------------------------------------------------------------------
-Sorted by: 
-     Note: Dataset has changed since last saved.
 
 . keep if regexm(naics, "^23")
 (1,727,513 observations deleted)
@@ -116,19 +79,81 @@ Sorted by:
 
 . gen fips = fipstate*1000 + fipscty
 
-. drop fipstate fipscty
+. drop fipscty
 
 . unique fips
 Number of unique values of fips is  2410
 Number of records is  2410
 
-. sum
+. rename emp x_cty
+
+. 
+. merge 1:1 fips using ../temp/xw.dta, keep(3) nogen
+(note: variable fips was float, now double to accommodate using data's
+       values)
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                             2,407  
+    -----------------------------------------
+
+. bysort cea fipstate: egen x_state_cea = sum(x_cty)
+
+. bysort cea: egen x_max_state = max(x_state_cea)
+
+. gen is_max_state = x_state_cea == x_max_state
+
+. gen cea_state = fipstate if is_max_state
+(340 missing values generated)
+
+. bysort cea: egen t_state = mean(cea_state) 
+
+. assert t_state == cea_state if is_max_state
+
+. bysort cea: egen x = sum(x_cty)
+
+. drop cea_state x_max_state x_state_cea is_max_state
+
+. sum 
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
+    fipstate |      2,407    30.02327    15.02053          1         56
        naics |          0
-         emp |      2,410    232.1552    779.9981          1      12277
-        fips |      2,410    30090.91    15056.12       1001      56043
+       x_cty |      2,407    232.4242    780.4467          1      12277
+        fips |      2,407    30123.21    15037.34       1001      56043
+        name |          0
+-------------+---------------------------------------------------------
+       state |          0
+         cea |      2,407    169.0042    99.22879          1        348
+    dup_fips |      2,407           0           0          0          0
+     t_state |      2,407    29.79186    14.71792          1         56
+           x |      2,407    3043.118    3966.238         48      20513
+
+. desc
+
+Contains data
+  obs:         2,407                          
+ vars:            10                          
+ size:       151,641                          
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+fipstate        byte    %8.0g                 
+naics           str6    %9s                   
+x_cty           long    %12.0g                
+fips            double  %9.0g                 
+name            str31   %31s                  Name
+state           str2    %9s                   STATE
+cea             int     %8.0g                 
+dup_fips        byte    %12.0g                
+t_state         float   %9.0g                 
+x               float   %9.0g                 
+-------------------------------------------------------------------------------
+Sorted by: cea  fipstate
+     Note: Dataset has changed since last saved.
 
 . save ../temp/demand.dta, replace
 (note: file ../temp/demand.dta not found)
@@ -137,73 +162,6 @@ file ../temp/demand.dta saved
 . 
 . use ../temp/infogroup.dta, clear
 
-. desc
-
-Contains data from ../temp/infogroup.dta
-  obs:        30,737                          
- vars:            54                          
- size:    33,195,960                          
--------------------------------------------------------------------------------
-              storage   display    value
-variable name   type    format     label      variable label
--------------------------------------------------------------------------------
-archive_versi~r double  %12.0g                
-abi             str12   %12s                  ABI Number
-ticker          str6    %6s                   Ticker
-parent_number   str12   %12s                  Parent Number
-company         str32   %32s                  Name Of Business
-address_line_1  str32   %32s                  Address
-city            str18   %18s                  City
-state           str4    %4s                   State
-zipcode         str8    %8s                   Zip Code (5 Digit)
-zip4            str6    %6s                   Zip Code Extension (4 Digit)
-county_code     str6    %6s                   County Code
-area_code       str6    %6s                   Area Code
-idcode          str4    %4s                   Business/Individual Indicator
-location_empl~e str4    %4s                   Location Employee Size Code
-location_sale~e str4    %4s                   Location Sales Volume Code
-primary_sic_c~e str8    %8s                   Primary SIC Code
-sic6_descript~s str100  %100s                 SIC Code Description
-primary_naics~e str10   %10s                  Primary NAICS Code
-naics8_descri~s str100  %100s                 NAICS Description
-sic_code        str8    %8s                   SIC Code
-sic6_descript~c str100  %100s                 SIC Code Description
-sic_code_1      str8    %8s                   SIC Code 1
-sic6_descript~1 str100  %100s                 SIC Code 1 Description
-sic_code_2      str8    %8s                   SIC Code 2
-sic6_descript~2 str100  %100s                 SIC Code 2 Description
-sic_code_3      str8    %8s                   SIC Code 3
-sic6_descript~3 str100  %100s                 SIC Code 3 Description
-sic_code_4      str8    %8s                   SIC Code 4
-sic6_descript~4 str100  %100s                 SIC Code 4 Description
-yellow_page_c~e str8    %8s                   Yellow Page Code
-business_stat~e str4    %4s                   Business Status Code
-industry_spec~e str4    %4s                   Industry Specific First Byte
-office_size_c~e str2    %2s                   Office Size Code
-company_holdi~s str4    %4s                   Company Holding Status
-subsidiary_nu~r str12   %12s                  Subsidiary Number
-parent_employ~e str4    %4s                   Parent Employee Size Code
-parent_sales_~e str4    %4s                   Parent Sales Volume Code
-site_number     str12   %12s                  Site Number
-address_type_~r str4    %4s                   Address Type Indicator
-population_code str4    %4s                   Population Code
-census_tract    str8    %8s                   Census Tract
-census_block    str4    %4s                   Census Block
-match_code      str4    %4s                   Match Code
-cbsa_code       str8    %8s                   CBSA Code
-cbsa_level      str4    %4s                   CBSA Level
-csa_code        str6    %6s                   CSA Code
-fips_code       str8    %8s                   FIPS Code
-year_establis~d double  %12.0g                
-employee_size~n double  %12.0g                
-sales_volume_~n double  %12.0g                
-parent_actua~ze double  %12.0g                
-parent_actua~me double  %12.0g                
-latitude        double  %12.0g                Latitude
-longitude       double  %12.0g                Longitude
--------------------------------------------------------------------------------
-Sorted by: 
-
 . keep primary_naics_code sic_code* fips_code employee_size_location archive 
 
 . rename fips_code fips
@@ -211,44 +169,6 @@ Sorted by:
 . rename employ labor 
 
 . rename archive year
-
-. sum
-
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-        year |     30,737        2016           0       2016       2016
-primary_na~e |          0
-    sic_code |          0
-  sic_code_1 |          0
-  sic_code_2 |          0
--------------+---------------------------------------------------------
-  sic_code_3 |          0
-  sic_code_4 |          0
-        fips |          0
-       labor |     30,729    11.26451    29.78996          1       2000
-
-. desc
-
-Contains data from ../temp/infogroup.dta
-  obs:        30,737                          
- vars:             9                          
- size:     2,274,538                          
--------------------------------------------------------------------------------
-              storage   display    value
-variable name   type    format     label      variable label
--------------------------------------------------------------------------------
-year            double  %12.0g                
-primary_naics~e str10   %10s                  Primary NAICS Code
-sic_code        str8    %8s                   SIC Code
-sic_code_1      str8    %8s                   SIC Code 1
-sic_code_2      str8    %8s                   SIC Code 2
-sic_code_3      str8    %8s                   SIC Code 3
-sic_code_4      str8    %8s                   SIC Code 4
-fips            str8    %8s                   FIPS Code
-labor           double  %12.0g                
--------------------------------------------------------------------------------
-Sorted by: 
-     Note: Dataset has changed since last saved.
 
 . keep if year == 2016
 (0 observations deleted)
@@ -259,104 +179,118 @@ Sorted by:
 fips: all characters numeric; replaced as long
 
 . 
-. gen rmc = regexm(primary_naics_code, "^3273")
+. gen rmc = regexm(primary_naics_code, "^32732")
 
 . replace rmc = regexm(sic_code, "^3273") if rmc == 0
-(53 real changes made)
+(78 real changes made)
 
 . forv i = 1/4 {
   2.     replace rmc = regexm(sic_code_`i', "^3273") if rmc == 0
   3. }
-(39 real changes made)
-(14 real changes made)
-(2 real changes made)
+(73 real changes made)
+(26 real changes made)
+(5 real changes made)
 (6 real changes made)
 
 . count if rmc
-  4,475
+  1,638
 
 . keep if rmc
-(26,262 observations deleted)
+(29,099 observations deleted)
 
 . 
-. merge m:1 fips using ../temp/xw.dta, assert(2 3) keep(3) nogen
-
-    Result                           # of obs.
-    -----------------------------------------
-    not matched                             0
-    matched                             4,475  
-    -----------------------------------------
-
 . merge m:1 fips using ../temp/demand.dta, keep(1 3)
 (note: variable fips was long, now double to accommodate using data's values)
 
     Result                           # of obs.
     -----------------------------------------
-    not matched                           195
-        from master                       195  (_merge==1)
+    not matched                           124
+        from master                       124  (_merge==1)
         from using                          0  (_merge==2)
 
-    matched                             4,280  (_merge==3)
+    matched                             1,514  (_merge==3)
     -----------------------------------------
 
 . drop if _merge == 1
-(195 observations deleted)
+(124 observations deleted)
 
 . drop _merge
+
+. 
+. gen j = 1
+
+. bysort cea: egen N_m = sum(j)
+
+. drop j
+
+. sum N_m
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         N_m |      1,514    11.10964    9.743837          1         45
+
+. tab N_m
+
+        N_m |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |         69        4.56        4.56
+          2 |         90        5.94       10.50
+          3 |        165       10.90       21.40
+          4 |        132        8.72       30.12
+          5 |         70        4.62       34.74
+          6 |        114        7.53       42.27
+          7 |         56        3.70       45.97
+          8 |         96        6.34       52.31
+          9 |         18        1.19       53.50
+         10 |         70        4.62       58.12
+         11 |         66        4.36       62.48
+         12 |         84        5.55       68.03
+         13 |         52        3.43       71.47
+         14 |         14        0.92       72.39
+         15 |         45        2.97       75.36
+         16 |         32        2.11       77.48
+         17 |         51        3.37       80.85
+         18 |         72        4.76       85.60
+         19 |         38        2.51       88.11
+         20 |         20        1.32       89.43
+         24 |         24        1.59       91.02
+         26 |         26        1.72       92.73
+         29 |         29        1.92       94.65
+         36 |         36        2.38       97.03
+         45 |         45        2.97      100.00
+------------+-----------------------------------
+      Total |      1,514      100.00
+
+. plot N_m x 
+
+      45 +  
+         |                       *
+         |  
+         |  
+         |  
+         |             *
+         |  
+         |  
+         |                                         *
+    N    |  
+    _    |                                    *
+    m    |                *
+         |          *
+         |         * *  **    *                     *
+         |  ***   **   * *      *
+         |     *  **  *                                *
+         |  * ** ***   * * *
+         | ***  ** *  ***          *   *            *         *
+         | ******* **  *   *  *
+         | *********     ** *         *          *   *                     *
+       1 + ************  **       **    *
+          +----------------------------------------------------------------+
+               48                        x                           20513
+
 
 . save ../output/data.dta, replace
 (note: file ../output/data.dta not found)
 file ../output/data.dta saved
-
-. sum 
-
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-primary_na~e |          0
-    sic_code |          0
-  sic_code_1 |          0
-  sic_code_2 |          0
-  sic_code_3 |          0
--------------+---------------------------------------------------------
-  sic_code_4 |          0
-        fips |      4,280    29746.63    15833.51       1001      56041
-       labor |      4,276    22.34916    42.63522          1       1000
-         rmc |      4,280           1           0          1          1
-        name |          0
--------------+---------------------------------------------------------
-       state |          0
-         cea |      4,280    163.6255    92.48183          1        348
-    dup_fips |      4,280           0           0          0          0
-       naics |          0
-         emp |      4,280    1108.819    2045.038          1      12277
-
-. desc
-
-Contains data from ../output/data.dta
-  obs:         4,280                          
- vars:            15                          11 Jan 2021 16:00
- size:       496,480                          
--------------------------------------------------------------------------------
-              storage   display    value
-variable name   type    format     label      variable label
--------------------------------------------------------------------------------
-primary_naics~e str10   %10s                  Primary NAICS Code
-sic_code        str8    %8s                   SIC Code
-sic_code_1      str8    %8s                   SIC Code 1
-sic_code_2      str8    %8s                   SIC Code 2
-sic_code_3      str8    %8s                   SIC Code 3
-sic_code_4      str8    %8s                   SIC Code 4
-fips            double  %10.0g                FIPS Code
-labor           double  %12.0g                
-rmc             float   %9.0g                 
-name            str31   %31s                  Name
-state           str2    %9s                   STATE
-cea             int     %8.0g                 
-dup_fips        byte    %12.0g                
-naics           str6    %9s                   
-emp             long    %12.0g                
--------------------------------------------------------------------------------
-Sorted by: 
 
 . 
 . 

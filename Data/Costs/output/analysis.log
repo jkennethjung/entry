@@ -1,0 +1,168 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Costs/code/../output/anal
+> ysis.log
+  log type:  text
+ opened on:  12 Jan 2021, 16:16:43
+
+. 
+. import delimited using ../temp/allhlcn16.csv, clear varnames(1)
+(20 vars, 62,888 obs)
+
+. desc, fullnames
+
+Contains data
+  obs:        62,888                          
+ vars:            20                          
+ size:    12,829,152                          
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+areacode        str5    %9s                   Area Code
+st              str2    %9s                   St
+cnty            int     %8.0g                 Cnty
+own             byte    %8.0g                 Own
+naics           int     %8.0g                 NAICS
+year            int     %8.0g                 Year
+qtr             str1    %9s                   Qtr
+areatype        str6    %9s                   Area Type
+stname          str20   %20s                  St Name
+area            str50   %50s                  Area
+ownership       str18   %18s                  Ownership
+industry        str36   %36s                  Industry
+annualaveragestatuscode
+                str1    %9s                   Annual Average Status Code
+annualaverageestablishmentcount
+                str9    %9s                   Annual Average Establishment
+                                                Count
+annualaverageemployment
+                str11   %11s                  Annual Average Employment
+annualtotalwages
+                str17   %17s                  Annual Total Wages
+annualaverageweeklywage
+                str6    %9s                   Annual Average Weekly Wage
+annualaveragepay
+                str7    %9s                   Annual Average Pay
+employmentlocationquotientrelati
+                float   %9.0g                 Employment Location Quotient
+                                                Relative to U.S.
+totalwagelocationquotientrelativ
+                float   %9.0g                 Total Wage Location Quotient
+                                                Relative to U.S.
+-------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+. keep if areatype == "County" 
+(7,640 observations deleted)
+
+. keep if naics == 1013
+(52,119 observations deleted)
+
+. destring areacode, replace
+areacode: all characters numeric; replaced as long
+
+. rename areacode fips
+
+. rename annualaverageweeklywage wage
+
+. keep fips wage 
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+        fips |      3,129    30351.38    15182.69       1001      56999
+        wage |          0
+
+. save ../temp/wages.dta, replace
+(note: file ../temp/wages.dta not found)
+file ../temp/wages.dta saved
+
+. 
+. import delimited using ../temp/FY2016F_50_RevFinal.csv, clear varnames(1)
+(17 vars, 4,770 obs)
+
+. desc, fullnames
+
+Contains data
+  obs:         4,770                          
+ vars:            17                          
+ size:       944,460                          
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+fips2000        double  %10.0g                
+fips2010        double  %10.0g                
+rent50_2        int     %8.0g                 Rent50_2
+rent50_0        int     %8.0g                 Rent50_0
+rent50_1        int     %8.0g                 Rent50_1
+rent50_3        int     %8.0g                 Rent50_3
+rent50_4        int     %8.0g                 Rent50_4
+state           byte    %8.0g                 State
+cbsasub         str16   %16s                  
+areaname        str65   %65s                  
+county          int     %8.0g                 
+cousub          long    %12.0g                CouSub
+countyname      str33   %33s                  
+county_town_name
+                str41   %41s                  
+pop2010         long    %12.0g                
+hu2010          long    %12.0g                
+state_alpha     str2    %9s                   
+-------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+. gen fips = state*1000 + county
+(1 missing value generated)
+
+. rename rent50_0 rent 
+
+. rename pop2010 pop
+
+. keep fips rent pop
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+        rent |      4,770    613.1836    181.0813        311       1559
+         pop |      4,768    65615.36      255009          0    9818605
+        fips |      4,769    30451.35    15060.48       1001      78030
+
+. collapse (mean) rent, by(fips)
+
+. 
+. merge 1:1 fips using ../temp/wages.dta
+(note: variable fips was float, now double to accommodate using data's
+       values)
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                           201
+        from master                       151  (_merge==1)
+        from using                         50  (_merge==2)
+
+    matched                             3,079  (_merge==3)
+    -----------------------------------------
+
+. keep if _merge == 3
+(201 observations deleted)
+
+. drop _merge
+
+. save ../output/costs.dta, replace
+(note: file ../output/costs.dta not found)
+file ../output/costs.dta saved
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Costs/code/../output/anal
+> ysis.log
+  log type:  text
+ closed on:  12 Jan 2021, 16:16:47
+-------------------------------------------------------------------------------

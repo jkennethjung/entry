@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Costs/code/../output/anal
 > ysis.log
   log type:  text
- opened on:  12 Jan 2021, 18:38:44
+ opened on:  12 Jan 2021, 20:54:57
 
 . 
 . import delimited using ../temp/allhlcn16.csv, clear varnames(1)
@@ -57,8 +57,8 @@ Sorted by:
 . keep if areatype == "County" 
 (7,640 observations deleted)
 
-. keep if naics == 1013 | naics == 1012 
-(48,939 observations deleted)
+. keep if naics == 1013 | naics == 1012 | naics == 1021
+(45,751 observations deleted)
 
 . destring areacode, replace
 areacode: all characters numeric; replaced as long
@@ -78,11 +78,11 @@ wage: character , removed; replaced as int
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-        fips |      3,184    30367.95    15172.18       1001      56999
-        wage |      3,184    817.9121    338.4041          0       2581
+        fips |      3,189    30384.56    15169.44       1001      56999
+        wage |      3,189    772.6077     255.333          0   2168.333
 
 . count if wage == 0
-  228
+  7
 
 . save ../temp/wages.dta, replace
 (note: file ../temp/wages.dta not found)
@@ -150,15 +150,15 @@ Sorted by:
 
     Result                           # of obs.
     -----------------------------------------
-    not matched                           146
-        from master                        96  (_merge==1)
+    not matched                           141
+        from master                        91  (_merge==1)
         from using                         50  (_merge==2)
 
-    matched                             3,134  (_merge==3)
+    matched                             3,139  (_merge==3)
     -----------------------------------------
 
 . keep if _merge == 3
-(146 observations deleted)
+(141 observations deleted)
 
 . drop _merge
 
@@ -172,5 +172,5 @@ file ../output/costs.dta saved
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Costs/code/../output/anal
 > ysis.log
   log type:  text
- closed on:  12 Jan 2021, 18:38:47
+ closed on:  12 Jan 2021, 20:55:00
 -------------------------------------------------------------------------------

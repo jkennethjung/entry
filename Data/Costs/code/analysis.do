@@ -5,7 +5,7 @@ log using ../output/analysis.log, replace
 import delimited using ../temp/allhlcn16.csv, clear varnames(1)
 desc, fullnames
 keep if areatype == "County" 
-keep if naics == 1013 | naics == 1012 
+keep if naics == 1013 | naics == 1012 | naics == 1021
 destring areacode, replace
 rename areacode fips
 rename annualaverageweeklywage wage

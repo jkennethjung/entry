@@ -9,9 +9,9 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(36);
+parpool(12);
 save_as = '../output/data.csv';
-T = 30;
+T = 10;
 E = 30;
 mu = 1;
 sigma = 1;

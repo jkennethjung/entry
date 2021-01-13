@@ -1,0 +1,66 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Sample/code/../output/ana
+> lysis.log
+  log type:  text
+ opened on:  13 Jan 2021, 18:23:28
+
+. 
+. use ../temp/data_firms.dta, clear
+
+. merge m:1 t_state using ../temp/data_state.dta, assert(3) keep(3) ///
+>     keepusing(N_t M_t) nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                             1,204  
+    -----------------------------------------
+
+. keep if N_t <= 20 & M_t <= 10
+(877 observations deleted)
+
+. unique t_state
+Number of unique values of t_state is  30
+Number of records is  327
+
+. save ../output/data_N20M10.dta, replace
+(note: file ../output/data_N20M10.dta not found)
+file ../output/data_N20M10.dta saved
+
+. 
+. keep if N_t <= 10
+(258 observations deleted)
+
+. unique t_state
+Number of unique values of t_state is  13
+Number of records is  69
+
+. save ../output/data_N10M10.dta, replace
+(note: file ../output/data_N10M10.dta not found)
+file ../output/data_N10M10.dta saved
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         cea |         69    144.5362    115.6503          5        346
+           j |          0
+       labor |         69    41.82609    60.47629          3        400
+           x |         69    2619.232    3829.481        112      13178
+     t_state |         69    28.78261    11.70328          2         50
+-------------+---------------------------------------------------------
+        wage |         69     883.321    154.1796        580   1203.071
+        rent |         69    673.7238    185.3444        459       1187
+         N_m |         69    3.115942    1.803071          1          7
+         N_t |         69    6.884058    2.615206          1         10
+         M_t |         69    2.855072    1.574385          1          6
+
+. 
+. log close
+      name:  <unnamed>
+       log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Sample/code/../output/ana
+> lysis.log
+  log type:  text
+ closed on:  13 Jan 2021, 18:23:28
+-------------------------------------------------------------------------------

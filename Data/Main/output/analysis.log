@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Main/code/../output/analy
 > sis.log
   log type:  text
- opened on:  12 Jan 2021, 11:18:55
+ opened on:  12 Jan 2021, 21:02:58
 
 . 
 . import delimited using ../temp/cea_fips_xw.csv, clear varnames(1)
@@ -220,6 +220,23 @@ fips: all characters numeric; replaced as long
 . drop _merge
 
 . 
+. merge m:1 fips using ../temp/costs.dta
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                         2,168
+        from master                         0  (_merge==1)
+        from using                      2,168  (_merge==2)
+
+    matched                             1,514  (_merge==3)
+    -----------------------------------------
+
+. keep if _merge == 3
+(2,168 observations deleted)
+
+. drop _merge
+
+. 
 . // Firm Definition: Two firms with same parent company in a CEA are the same
 . // Note that j is a unique firm ID within a CEA but not necessary across CEAs
 . gen j = parent_number
@@ -231,7 +248,14 @@ fips: all characters numeric; replaced as long
 . count
   1,514
 
-. collapse (sum) labor (mean) x t_state, by(j cea)
+. collapse (sum) labor (mean) wage_jt = wage rent_jt = rent x t_state, by(j cea
+> )
+
+. bysort cea: egen wage = mean(wage_jt)
+
+. bysort cea: egen rent = mean(rent_jt)
+
+. drop wage_jt rent_jt
 
 . count
   1,204
@@ -245,12 +269,6 @@ Number of records is  1204
 . bysort cea: egen N_m = sum(k)
 
 . drop k
-
-. sum N_m
-
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-         N_m |      1,204    8.533223    8.028299          1         35
 
 . tab N_m
 
@@ -307,6 +325,20 @@ Number of records is  1204
           +----------------------------------------------------------------+
                48                    (mean) x                       20513
 
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         cea |      1,204    161.4444    92.58265          1        348
+           j |          0
+       labor |      1,204    31.99917    62.70185          0       1000
+           x |      1,204    3225.413    3726.876         48      20513
+     t_state |      1,204    30.96678    14.94747          1         56
+-------------+---------------------------------------------------------
+        wage |      1,204    906.5178    160.2319   536.3333   2168.333
+        rent |      1,204    605.0363    164.8303        418       1559
+         N_m |      1,204    8.533223    8.028299          1         35
 
 . save ../output/data_firms.dta, replace
 (note: file ../output/data_firms.dta not found)

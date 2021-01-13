@@ -63,20 +63,27 @@ merge m:1 fips using ../temp/demand.dta, keep(1 3)
 drop if _merge == 1
 drop _merge
 
+merge m:1 fips using ../temp/costs.dta
+keep if _merge == 3
+drop _merge
+
 // Firm Definition: Two firms with same parent company in a CEA are the same
 // Note that j is a unique firm ID within a CEA but not necessary across CEAs
 gen j = parent_number
 replace j = abi if missing(j) 
 count
-collapse (sum) labor (mean) x t_state, by(j cea)
+collapse (sum) labor (mean) wage_jt = wage rent_jt = rent x t_state, by(j cea)
+bysort cea: egen wage = mean(wage_jt)
+bysort cea: egen rent = mean(rent_jt)
+drop wage_jt rent_jt
 count
 unique j 
 gen k = 1
 bysort cea: egen N_m = sum(k)
 drop k
-sum N_m
 tab N_m
 plot N_m x 
+sum
 save ../output/data_firms.dta, replace
 
 collapse (mean) N_m (sum) labor, by(cea t_state)

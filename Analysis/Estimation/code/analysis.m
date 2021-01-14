@@ -9,8 +9,9 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(36);
+parpool(12);
 load_as = '../temp/data.csv';
+save_as = '../output/estimates.csv';
 NS = 10;
 NBS = 20;
 mu = 1;
@@ -139,28 +140,31 @@ y = data(:, 7);
 Beta_0 = (Z.'*Z)^(-1)*(Z.'*y);
 disp(Beta_0);
 
-tic;
+Theta = zeros(4, NBS);
 nbs = 1;
-theta = [gamma; eta; mu; sigma];
-aux = @(theta) auxiliary(theta, Beta_0, nbs, NS, alpha, M, E, W, R, X, Q, ...
-        Qv, T, S, States, A_hist, Aq_idx, epsilon, ncol);
-[theta, dBeta, exitflag, output] = fmincon(aux, theta, [], [], [], [], ...
-    theta*1e-2, theta*1e2);
-disp('Outer loop optimization finished');
-disp(theta);
-toc;
+for nbs = 1:NBS
+    msg = "Initiating estimation for bootstrap = %d";
+    str = sprintf(msg, nbs)
+    theta = [gamma; eta; mu; sigma];
+    c = clock;
+    fix(c)
+    aux = @(theta) auxiliary(theta, Beta_0, nbs, NS, alpha, M, E, W, R, ...
+            X, Q, Qv, T, S, States, A_hist, Aq_idx, epsilon, ncol);
+    [theta, dBeta, exitflag, output] = fmincon(aux, theta, [], [], [], [], ...
+        theta*1e-2, theta*1e2);
+    disp('Outer loop optimization finished');
+    disp(theta);
+    c = clock;
+    fix(c)
+    Theta(:, nbs) = theta;
+end
+writematrix(Theta, save_as);
 
 function dBeta = auxiliary(theta, Beta_0, nbs, NS, alpha, M, E, W, R, X, Q, ...
         Qv, T, S, States, A_hist, Aq_idx, epsilon, ncol)
-    tic
     Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, A_hist, Aq_idx, epsilon, ncol);
-    toc
     dBeta = (Beta_0 - Beta).'*(Beta_0 - Beta);
-    disp('Auxiliary model summary:');
-    disp(theta);
-    disp('->');
-    disp(Beta);
     disp('Objective function');
     disp(dBeta);
 end
@@ -261,7 +265,6 @@ function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         EPi = exp_profit(cp_mat, States, At_hist, PiV, M_t, Q, S);
         formatSpec = "NFP solution for market t = %d";
         str = sprintf(formatSpec, t)
-        disp(cp_mat);
         Beta = zeros(4, NS);
         for ns = 1:NS
             %%% VI. Entry and Ex-Post Outcomes  %%%

@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Sample/code/../output/ana
 > lysis.log
   log type:  text
- opened on:  13 Jan 2021, 18:23:28
+ opened on:  14 Jan 2021, 15:21:50
 
 . 
 . use ../temp/data_firms.dta, clear
@@ -24,37 +24,221 @@
 Number of unique values of t_state is  30
 Number of records is  327
 
-. save ../output/data_N20M10.dta, replace
-(note: file ../output/data_N20M10.dta not found)
-file ../output/data_N20M10.dta saved
+. rename N_m n
+
+. rename wage w
+
+. rename rent r
+
+. rename labor l 
+
+. keep t_state cea n w r x l N_t M_t
+
+. save ../temp/raw.dta, replace
+(note: file ../temp/raw.dta not found)
+file ../temp/raw.dta saved
 
 . 
-. keep if N_t <= 10
-(258 observations deleted)
+. collapse (first) n, by(t_state)
 
-. unique t_state
-Number of unique values of t_state is  13
-Number of records is  69
+. gen t = _n
 
-. save ../output/data_N10M10.dta, replace
-(note: file ../output/data_N10M10.dta not found)
-file ../output/data_N10M10.dta saved
+. keep t t_state
+
+. save ../temp/raw_xw.dta, replace 
+(note: file ../temp/raw_xw.dta not found)
+file ../temp/raw_xw.dta saved
+
+. 
+. use ../temp/raw.dta, clear
+
+. merge m:1 t_state using ../temp/raw_xw.dta, assert(3) keep(3) nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                               327  
+    -----------------------------------------
+
+. collapse (first) n t_state, by(t cea)
+
+. bysort t: egen n_rank = rank(-n), unique
+
+. sort t n_rank
+
+. rename n_rank m
+
+. list if _n < 20
+
+     +---------------------------+
+     | cea   t   n   t_state   m |
+     |---------------------------|
+  1. | 183   1   3         1   1 |
+  2. |  12   1   3         1   2 |
+  3. |  77   1   3         1   3 |
+  4. | 187   1   3         1   4 |
+  5. |  32   1   2         1   5 |
+     |---------------------------|
+  6. | 128   1   2         1   6 |
+  7. |  63   1   2         1   7 |
+  8. |  94   1   1         1   8 |
+  9. |  10   2   2         2   1 |
+ 10. | 346   2   1         2   2 |
+     |---------------------------|
+ 11. | 214   3   8         4   1 |
+ 12. | 284   3   3         4   2 |
+ 13. | 311   3   1         4   3 |
+ 14. |  74   4   9         8   1 |
+ 15. | 222   4   3         8   2 |
+     |---------------------------|
+ 16. | 114   4   2         8   3 |
+ 17. | 336   4   1         8   4 |
+ 18. | 122   5   8         9   1 |
+ 19. | 193   5   7         9   2 |
+     +---------------------------+
+
+. save ../temp/mt.dta, replace
+(note: file ../temp/mt.dta not found)
+file ../temp/mt.dta saved
+
+. 
+. use ../temp/raw.dta, clear
+
+. merge m:1 cea t using ../temp/mt.dta, assert(3) nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                               327  
+    -----------------------------------------
+
+. ds
+cea      x        w        n        M_t      m
+l        t_state  r        N_t      t
+
+. order t t_state cea m n w r x l
+
+. sort t m
 
 . sum
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-         cea |         69    144.5362    115.6503          5        346
-           j |          0
-       labor |         69    41.82609    60.47629          3        400
-           x |         69    2619.232    3829.481        112      13178
-     t_state |         69    28.78261    11.70328          2         50
+           t |        327    15.61774    9.015872          1         30
+     t_state |        327    28.95107    16.89549          1         56
+         cea |        327     156.893    100.6438          3        346
+           m |        327     2.04893    1.391492          1          8
+           n |        327     4.87156    2.826586          1         11
 -------------+---------------------------------------------------------
-        wage |         69     883.321    154.1796        580   1203.071
-        rent |         69    673.7238    185.3444        459       1187
-         N_m |         69    3.115942    1.803071          1          7
+           w |        327    902.1544    164.0728        580   1475.667
+           r |        327    646.8551    185.4248        432       1187
+           x |        327    2769.722    3641.329         98      16659
+           l |        327    40.24771    90.36774          1       1000
+         N_t |        327    13.91743    4.676259          1         20
+-------------+---------------------------------------------------------
+         M_t |        327    4.189602    1.880025          1          8
+
+. save ../output/data.dta, replace
+(note: file ../output/data.dta not found)
+file ../output/data.dta saved
+
+. keep t m n w r x l
+
+. export delimited using ../output/data.csv, replace novar delim(",")
+(note: file ../output/data.csv not found)
+file ../output/data.csv saved
+
+. 
+. * Small sample
+. use ../temp/raw.dta, clear
+
+. keep if N_t <= 10
+(258 observations deleted)
+
+. save ../temp/small.dta, replace
+(note: file ../temp/small.dta not found)
+file ../temp/small.dta saved
+
+. 
+. collapse (first) n, by(t_state)
+
+. gen t = _n
+
+. keep t t_state
+
+. save ../temp/small_xw.dta, replace 
+(note: file ../temp/small_xw.dta not found)
+file ../temp/small_xw.dta saved
+
+. 
+. use ../temp/small.dta, clear
+
+. merge m:1 t_state using ../temp/small_xw.dta, assert(3) keep(3) nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                                69  
+    -----------------------------------------
+
+. collapse (first) n t_state, by(t cea)
+
+. bysort t: egen n_rank = rank(-n), unique
+
+. sort t n_rank
+
+. rename n_rank m
+
+. save ../temp/small_mt.dta, replace
+(note: file ../temp/small_mt.dta not found)
+file ../temp/small_mt.dta saved
+
+. 
+. use ../temp/small.dta, clear
+
+. merge m:1 cea t using ../temp/small_mt.dta, assert(3) nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                                69  
+    -----------------------------------------
+
+. ds
+cea      x        w        n        M_t      m
+l        t_state  r        N_t      t
+
+. order t t_state cea m n w r x l
+
+. sort t m
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+           t |         69    7.521739    3.385126          1         13
+     t_state |         69    28.78261    11.70328          2         50
+         cea |         69    144.5362    115.6503          5        346
+           m |         69    1.724638    1.069415          1          6
+           n |         69    3.115942    1.803071          1          7
+-------------+---------------------------------------------------------
+           w |         69     883.321    154.1796        580   1203.071
+           r |         69    673.7238    185.3444        459       1187
+           x |         69    2619.232    3829.481        112      13178
+           l |         69    41.82609    60.47629          3        400
          N_t |         69    6.884058    2.615206          1         10
+-------------+---------------------------------------------------------
          M_t |         69    2.855072    1.574385          1          6
+
+. save ../output/small.dta, replace
+(note: file ../output/small.dta not found)
+file ../output/small.dta saved
+
+. keep t m n w r x l
+
+. export delimited using ../output/small.csv, replace novar delim(",")
+(note: file ../output/small.csv not found)
+file ../output/small.csv saved
 
 . 
 . log close
@@ -62,5 +246,5 @@ file ../output/data_N10M10.dta saved
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Sample/code/../output/ana
 > lysis.log
   log type:  text
- closed on:  13 Jan 2021, 18:23:28
+ closed on:  14 Jan 2021, 15:21:50
 -------------------------------------------------------------------------------

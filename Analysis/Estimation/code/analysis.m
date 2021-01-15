@@ -9,7 +9,7 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(36);
+parpool(12);
 load_as = '../temp/data.csv';
 save_as = '../output/estimates.csv';
 NS = 10;
@@ -394,6 +394,8 @@ function EPi = exp_profit(p, States, At_hist, PiV, M, Q, S)
         for m = 1:M
             p_s = zeros(S, 1);
             for s = 1:S
+            %%%   THIS NEEDS CHANGING TO CALL OVER ALL POSSIBLE AT_HISTS() THAT ARE POSSIBLE
+            %%%   AS DEFINED BY PERMUTATIONS
                 p_s(s) = pr_state(p(m, :), s, States, At_hist, Q);
             end
             EPi(m, q) = PiV(m, :, q)*p_s;
@@ -403,14 +405,14 @@ end
 
 function p_s = pr_state(pr, s, States, At_hist, Q) 
     p_s = 1;
-    impossible = 0;
-    for q = 1:Q
-        n = At_hist(q);
-        k = States(s, q);
-        if (n < k) | impossible
-            p_s = 0;
-            impossible = 1;
-        else
+    state = States(s, :);
+    impossible = (state > At_hist');
+    if sum(impossible) > 0
+        p_s = 0;
+    else
+        for q = 1:Q
+            n = At_hist(q);
+            k = States(s, q);
             pr_q = pr(q);
             p_s = p_s*nchoosek(n, k)*pr_q^k*(1-pr_q)^(n-k); 
         end

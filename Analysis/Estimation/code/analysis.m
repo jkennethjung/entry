@@ -59,51 +59,9 @@ end
 
 %%% II. Draw Characteristics %%%
 epsilon = cell(T, NS);
-A = cell(T, NBS);
-A_hist = cell(T, NBS);
-Aq_idx = cell(T, NBS);
-
 for t = 1:T
     for ns = 1:NS
         epsilon{t, ns} = -evrnd(mu_eps, beta_eps, [M(t), E(t)]);
-    end
-    for bs = 1:NBS
-        A{t, bs} = random('Lognormal', mu, sigma, [E(t), 1]);
-        A_hist{t, bs} = zeros(Q, 1);
-        Aq_idx{t, bs} = zeros(E(t), 1);
-    end
-end
-
-for t = 1:T
-    for nbs = 1:NBS
-        Aq = zeros(E(t), 1);
-        for j = 1:E(t)
-            q = 1;
-            qj = 0;
-            while qj == 0
-                if q < Q
-                    A_j = A{t, nbs}(j);
-                    if (A_j - Qv(q) > 0) & (A_j - Qv(q + 1) <= 0)
-                        d1 = A_j - Qv(q);
-                        d2 = Qv(q) - A_j;
-                        if d1 == min(d1, d2)
-                            qj = q;   
-                        else
-                            qj = q + 1;
-                        end
-                    end
-                else
-                    qj = q;
-                end
-                q = q + 1;
-            end 
-            Aq_idx{t, nbs}(j) = qj;
-            Aq(j) = Qv(qj);
-        end
-        for q = 1:Q
-            flags = (Aq_idx{t, nbs} == q);
-            A_hist{t, nbs}(q) = sum(flags);
-        end
     end
 end
 
@@ -137,44 +95,71 @@ end
 disp('True auxiliary model parameters');
 Z = data(:, 3:6);
 y = data(:, 7);
-Beta_0 = (Z.'*Z)^(-1)*(Z.'*y);
+Beta_1 = [mean(y); var(y)];
+Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
+Beta_0 = [Beta_1; Beta_2];
 disp(Beta_0);
 
 Theta = zeros(4, NBS);
-nbs = 1;
-for nbs = 1:NBS
-    msg = "Initiating estimation for bootstrap = %d";
-    str = sprintf(msg, nbs)
+%nbs = 1;
+%for nbs = 1:NBS
+%    msg = 'Initiating estimation for bootstrap = %d';
+%    str = sprintf(msg, nbs)
     theta = [gamma; eta; mu; sigma];
     c = clock;
     fix(c)
-    aux = @(theta) auxiliary(theta, Beta_0, nbs, NS, alpha, M, E, W, R, ...
-            X, Q, Qv, T, S, States, A_hist, Aq_idx, epsilon, ncol);
+    aux = @(theta) auxiliary(theta, Beta_0, NBS, NS, alpha, M, E, W, R, ...
+            X, Q, Qv, T, S, States, epsilon, ncol);
     [theta, dBeta, exitflag, output] = fmincon(aux, theta, [], [], [], [], ...
         theta*1e-2, theta*1e2);
     disp('Outer loop optimization finished');
     disp(theta);
     c = clock;
     fix(c)
-    Theta(:, nbs) = theta;
-end
+%    Theta(:, nbs) = theta;
+%end
 writematrix(Theta, save_as);
 
-function dBeta = auxiliary(theta, Beta_0, nbs, NS, alpha, M, E, W, R, X, Q, ...
-        Qv, T, S, States, A_hist, Aq_idx, epsilon, ncol)
-    Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
-        States, A_hist, Aq_idx, epsilon, ncol);
+%%% SIMULATE() MUST RETURN A DATASET INSTEAD OF A BETA
+%%% THIS DATASET MUST BE ASSEMBLED OVER ALL BOOTSTRAPS
+%%% AND THEN AUXILIARY() CAN RETURN BETA
+
+%%% NOTE THAT NBS INSTEAD OF nbs IS NOW THE ARGUMENT OF AUXILIARY()
+
+function dBeta = auxiliary(theta, Beta_0, NBS, NS, alpha, M, E, W, R, X, Q, ...
+        Qv, T, S, States, epsilon, ncol)
+    gamma = theta(1);
+    eta = theta(2);
+    mu = theta(3);
+    sigma = theta(4);
+    A_draw = draw_firms(mu, sigma, NBS, E, Q, Qv, T);
+    A_hist = A_draw{1};
+    Aq_idx = A_draw{2};
+    data_sim = zeros(1, ncol);
+    for nbs = 1:NBS
+        data_nbs = simulate(theta, nbs, A_hist, Aq_idx, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+            States, epsilon, ncol);
+        data_sim = [data_sim; data_nbs];
+    end
+    data_sim(1, :) = [];
+    Z = data_sim(:, 3:6);
+    y = data_sim(:, 7);
+
+    Beta_1 = [mean(y); var(y)];
+    Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
+    Beta = [Beta_1; Beta_2];
     dBeta = (Beta_0 - Beta).'*(Beta_0 - Beta);
     disp('Objective function');
     disp(dBeta);
 end
 
-function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
-        States, A_hist, Aq_idx, epsilon, ncol)
+function data_sim = simulate(theta, nbs, A_hist, Aq_idx, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+        States, epsilon, ncol)
     gamma = theta(1);
     eta = theta(2);
     mu = theta(3);
     sigma = theta(4);
+
     data_sim = zeros(1, ncol);
     for t = 1:T
         %%% IV. Calculate Cournot Payoffs in Each State %%%
@@ -263,8 +248,6 @@ function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         cp_mat = reshape(cp, [M_t, Q]);
         At_hist = A_hist{t, nbs}(:);
         EPi = exp_profit(cp_mat, States, At_hist, PiV, M_t, Q, S);
-        formatSpec = "NFP solution for market t = %d";
-        str = sprintf(formatSpec, t)
         Beta = zeros(4, NS);
         for ns = 1:NS
             %%% VI. Entry and Ex-Post Outcomes  %%%
@@ -306,11 +289,59 @@ function Beta = simulate(theta, nbs, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         end
     end
     data_sim(1, :) = [];
-    Z = data_sim(:, 3:6);
-    y = data_sim(:, 7);
-    Beta = (Z.'*Z)^(-1)*(Z.'*y);
 end
 
+function A_draw = draw_firms(mu, sigma, NBS, E, Q, Qv, T)
+    
+    A_draw = cell(2, 1);
+    A = cell(T, NBS);
+    A_hist = cell(T, NBS);
+    Aq_idx = cell(T, NBS);
+    
+    for t = 1:T
+        for bs = 1:NBS
+            A{t, bs} = random('Lognormal', mu, sigma, [E(t), 1]);
+            A_hist{t, bs} = zeros(Q, 1);
+            Aq_idx{t, bs} = zeros(E(t), 1);
+        end
+    end
+    
+    for t = 1:T
+        for nbs = 1:NBS
+            Aq = zeros(E(t), 1);
+            for j = 1:E(t)
+                q = 1;
+                qj = 0;
+                while qj == 0
+                    if q < Q
+                        A_j = A{t, nbs}(j);
+                        if (A_j - Qv(q) > 0) & (A_j - Qv(q + 1) <= 0)
+                            d1 = A_j - Qv(q);
+                            d2 = Qv(q) - A_j;
+                            if d1 == min(d1, d2)
+                                qj = q;   
+                            else
+                                qj = q + 1;
+                            end
+                        end
+                    else
+                        qj = q;
+                    end
+                    q = q + 1;
+                end 
+                Aq_idx{t, nbs}(j) = qj;
+                Aq(j) = Qv(qj);
+            end
+            for q = 1:Q
+                flags = (Aq_idx{t, nbs} == q);
+                A_hist{t, nbs}(q) = sum(flags);
+            end
+        end
+    end
+
+    A_draw{1} = A_hist;
+    A_draw{2} = Aq_idx;
+end
 
 function [cp, resnorm, residual, exitflag, output] = nfp(t, M, Q, States, ...
         A_hist, PiV, S, nbs)

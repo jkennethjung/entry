@@ -9,7 +9,7 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(12);
+parpool(36);
 load_as = '../temp/data.csv';
 save_as = '../output/estimates.csv';
 NS = 10;
@@ -128,6 +128,8 @@ writematrix(Theta, save_as);
 
 function dBeta = auxiliary(theta, Beta_0, NBS, NS, alpha, M, E, W, R, X, Q, ...
         Qv, T, S, States, epsilon, ncol)
+    disp('theta:')
+    disp(theta)
     gamma = theta(1);
     eta = theta(2);
     mu = theta(3);

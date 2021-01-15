@@ -12,6 +12,7 @@ rename wage w
 rename rent r
 rename labor l 
 keep t_state cea n w r x l N_t M_t
+replace x = log(x)
 sum x
 replace x = x / r(mean)
 sum w

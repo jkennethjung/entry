@@ -9,11 +9,10 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(12);
+parpool(36);
 load_as = '../temp/data.csv';
 save_as = '../output/estimates.csv';
-NS = 10;
-NBS = 20;
+NS = 100;
 mu = 1;
 sigma = 1;
 alpha = 0.6;
@@ -67,6 +66,11 @@ end
 
 %%% III. Construct State Space %%%
 
+A_hists = {};
+for t = 1:T
+    A_hists{end+1} = nsumk(Q, E(t));
+end
+
 S = (Nq_max)^Q;
 States = zeros(S, Q);
 State = zeros(1, Q);
@@ -100,33 +104,20 @@ Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
 Beta_0 = [Beta_1; Beta_2];
 disp(Beta_0);
 
-Theta = zeros(4, NBS);
-%nbs = 1;
-%for nbs = 1:NBS
-%    msg = 'Initiating estimation for bootstrap = %d';
-%    str = sprintf(msg, nbs)
-    theta = [gamma; eta; mu; sigma];
-    c = clock;
-    fix(c)
-    aux = @(theta) auxiliary(theta, Beta_0, NBS, NS, alpha, M, E, W, R, ...
-            X, Q, Qv, T, S, States, epsilon, ncol);
-    [theta, dBeta, exitflag, output] = fmincon(aux, theta, [], [], [], [], ...
-        theta*1e-2, theta*1e2);
-    disp('Outer loop optimization finished');
-    disp(theta);
-    c = clock;
-    fix(c)
-%    Theta(:, nbs) = theta;
-%end
+theta = [gamma; eta; mu; sigma];
+c = clock;
+fix(c)
+aux = @(theta) auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, ...
+        X, Q, Qv, T, S, States, epsilon, ncol);
+[theta, dBeta, exitflag, output] = fmincon(aux, theta, [], [], [], [], ...
+    theta*1e-2, theta*1e2);
+disp('Outer loop optimization finished');
+disp(theta);
+c = clock;
+fix(c)
 writematrix(Theta, save_as);
 
-%%% SIMULATE() MUST RETURN A DATASET INSTEAD OF A BETA
-%%% THIS DATASET MUST BE ASSEMBLED OVER ALL BOOTSTRAPS
-%%% AND THEN AUXILIARY() CAN RETURN BETA
-
-%%% NOTE THAT NBS INSTEAD OF nbs IS NOW THE ARGUMENT OF AUXILIARY()
-
-function dBeta = auxiliary(theta, Beta_0, NBS, NS, alpha, M, E, W, R, X, Q, ...
+function dBeta = auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, X, Q, ...
         Qv, T, S, States, epsilon, ncol)
     disp('theta:')
     disp(theta)
@@ -134,16 +125,15 @@ function dBeta = auxiliary(theta, Beta_0, NBS, NS, alpha, M, E, W, R, X, Q, ...
     eta = theta(2);
     mu = theta(3);
     sigma = theta(4);
-    A_draw = draw_firms(mu, sigma, NBS, E, Q, Qv, T);
-    A_hist = A_draw{1};
-    Aq_idx = A_draw{2};
-    data_sim = zeros(1, ncol);
-    for nbs = 1:NBS
-        data_nbs = simulate(theta, nbs, A_hist, Aq_idx, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
-            States, epsilon, ncol);
-        data_sim = [data_sim; data_nbs];
+    pr_hist = {};
+    for t = 1:T
+        pr_hist{end+1} = pr_firms(A_hists{t}, E(t), mu, sigma, Qv, Q);
     end
-    data_sim(1, :) = [];
+    data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+        States, epsilon, ncol);
+    disp('data_sim generated')
+    disp(size(data_sim))
+    disp(data_sim(1:20, :))
     Z = data_sim(:, 3:6);
     y = data_sim(:, 7);
 
@@ -155,13 +145,15 @@ function dBeta = auxiliary(theta, Beta_0, NBS, NS, alpha, M, E, W, R, X, Q, ...
     disp(dBeta);
 end
 
-function data_sim = simulate(theta, nbs, A_hist, Aq_idx, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, epsilon, ncol)
     gamma = theta(1);
     eta = theta(2);
     mu = theta(3);
     sigma = theta(4);
 
+    A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T);
+    Aq_idx = A_draw{2};
     data_sim = zeros(1, ncol);
     for t = 1:T
         %%% IV. Calculate Cournot Payoffs in Each State %%%
@@ -245,18 +237,18 @@ function data_sim = simulate(theta, nbs, A_hist, Aq_idx, NS, alpha, M, E, W, R, 
     
         %%% V. Fixed Point to Solve for Firm Beliefs%%%
     
+        At_hist = A_hists{t}; 
+        prt_hist = pr_hist{t};
         [cp, resnorm, residual, exitflag, output] = nfp(t, M_t, Q, States, ...
-            A_hist, PiV, S, nbs);
+            At_hist, prt_hist, PiV, S);
         cp_mat = reshape(cp, [M_t, Q]);
-        At_hist = A_hist{t, nbs}(:);
-        EPi = exp_profit(cp_mat, States, At_hist, PiV, M_t, Q, S);
-        Beta = zeros(4, NS);
+        EPi = exp_profit(cp_mat, States, At_hist, prt_hist, PiV, M_t, Q, S);
         for ns = 1:NS
             %%% VI. Entry and Ex-Post Outcomes  %%%
             M_J = zeros(E_t, 1);
             S_M = zeros(M_t, Q);
             for j = 1:E_t
-                q = Aq_idx{t, nbs}(j);
+                q = Aq_idx{t, ns}(j);
                 shocks = reshape(epsilon{t, ns}(:, j), [M_t, 1]);
                 Pi_j = EPi(:, q) + shocks ;
                 [Pi_mj, m_j] = max(Pi_j);
@@ -293,15 +285,15 @@ function data_sim = simulate(theta, nbs, A_hist, Aq_idx, NS, alpha, M, E, W, R, 
     data_sim(1, :) = [];
 end
 
-function A_draw = draw_firms(mu, sigma, NBS, E, Q, Qv, T)
+function A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T)
     
     A_draw = cell(2, 1);
-    A = cell(T, NBS);
-    A_hist = cell(T, NBS);
-    Aq_idx = cell(T, NBS);
+    A = cell(T, NS);
+    A_hist = cell(T, NS);
+    Aq_idx = cell(T, NS);
     
     for t = 1:T
-        for bs = 1:NBS
+        for bs = 1:NS
             A{t, bs} = random('Lognormal', mu, sigma, [E(t), 1]);
             A_hist{t, bs} = zeros(Q, 1);
             Aq_idx{t, bs} = zeros(E(t), 1);
@@ -309,14 +301,14 @@ function A_draw = draw_firms(mu, sigma, NBS, E, Q, Qv, T)
     end
     
     for t = 1:T
-        for nbs = 1:NBS
+        for ns = 1:NS
             Aq = zeros(E(t), 1);
             for j = 1:E(t)
                 q = 1;
                 qj = 0;
                 while qj == 0
                     if q < Q
-                        A_j = A{t, nbs}(j);
+                        A_j = A{t, ns}(j);
                         if (A_j - Qv(q) > 0) & (A_j - Qv(q + 1) <= 0)
                             d1 = A_j - Qv(q);
                             d2 = Qv(q) - A_j;
@@ -331,12 +323,12 @@ function A_draw = draw_firms(mu, sigma, NBS, E, Q, Qv, T)
                     end
                     q = q + 1;
                 end 
-                Aq_idx{t, nbs}(j) = qj;
+                Aq_idx{t, ns}(j) = qj;
                 Aq(j) = Qv(qj);
             end
             for q = 1:Q
-                flags = (Aq_idx{t, nbs} == q);
-                A_hist{t, nbs}(q) = sum(flags);
+                flags = (Aq_idx{t, ns} == q);
+                A_hist{t, ns}(q) = sum(flags);
             end
         end
     end
@@ -346,7 +338,7 @@ function A_draw = draw_firms(mu, sigma, NBS, E, Q, Qv, T)
 end
 
 function [cp, resnorm, residual, exitflag, output] = nfp(t, M, Q, States, ...
-        A_hist, PiV, S, nbs)
+        At_hist, prt_hist, PiV, S)
     cp_mat = ones(M, Q)/(M*Q);
     cp = cp_mat(:);
     lb = zeros(M, Q);
@@ -367,15 +359,14 @@ function [cp, resnorm, residual, exitflag, output] = nfp(t, M, Q, States, ...
     end
     options = optimoptions(@lsqnonlin,'Algorithm','trust-region-reflective', ...
             'JacobPattern', sparse, 'UseParallel', true);
-    At_hist = A_hist{t, nbs}(:);
-    f = @(z) fpe(z, M, Q, States, At_hist, PiV, S);
+    f = @(z) fpe(z, M, Q, States, At_hist, prt_hist, PiV, S);
     [cp, resnorm, residual, exitflag, output] = lsqnonlin(f, cp, ...
         lb, ub, options);
 end
 
-function z = fpe(cp, M, Q, States, At_hist, PiV, S)
+function z = fpe(cp, M, Q, States, At_hist, prt_hist, PiV, S)
     cp_mat = reshape(cp, [M, Q]);
-    z = choice_prob(exp_profit(cp_mat, States, At_hist, PiV, M, Q, S), ...
+    z = choice_prob(exp_profit(cp_mat, States, At_hist, prt_hist, PiV, M, Q, S), ...
         M, Q) - cp_mat;
 end
 
@@ -388,15 +379,19 @@ function cp = choice_prob(EPi, M, Q)
     end
 end
 
-function EPi = exp_profit(p, States, At_hist, PiV, M, Q, S) 
+function EPi = exp_profit(p, States, At_hist, prt_hist, PiV, M, Q, S) 
     EPi = zeros(M, Q);
     for q = 1:Q
         for m = 1:M
             p_s = zeros(S, 1);
             for s = 1:S
-            %%%   THIS NEEDS CHANGING TO CALL OVER ALL POSSIBLE AT_HISTS() THAT ARE POSSIBLE
-            %%%   AS DEFINED BY PERMUTATIONS
-                p_s(s) = pr_state(p(m, :), s, States, At_hist, Q);
+                len = size(At_hist, 1);
+                pr_states = zeros(len, 1);
+                for i = 1:len 
+                    hist = At_hist(i, :);
+                    pr_states(i) = pr_state(p(m, :), s, States, hist, Q);
+                end
+                p_s(s) = prt_hist.' * pr_states;
             end
             EPi(m, q) = PiV(m, :, q)*p_s;
         end
@@ -406,7 +401,7 @@ end
 function p_s = pr_state(pr, s, States, At_hist, Q) 
     p_s = 1;
     state = States(s, :);
-    impossible = (state > At_hist');
+    impossible = (state > At_hist);
     if sum(impossible) > 0
         p_s = 0;
     else
@@ -423,3 +418,26 @@ function mc = marginal_cost(a, w, r, alpha)
      mc = [w*(alpha*r/((1-alpha)*w))^(1-alpha) + ...
            r*((1-alpha)*w/(alpha*r))^alpha]/a;
 end 
+
+function pr_part = pr_firms(At_hists, e, mu, sigma, Qv, Q)
+    probs = discrete_probs(mu, sigma, Qv, Q);
+    len = size(At_hists, 1);
+    pr_part = [];
+    for j = 1:len
+        pr_part = [pr_part; prod(probs.^At_hists(j, :))];
+    end
+end
+
+function probs = discrete_probs(mu, sigma, Qv, Q)
+    probs = [cdf('Lognormal', Qv(1), mu, sigma)];
+    for q = 2:(Q-1)
+        probs = [probs, cdf('Lognormal', Qv(q), mu, sigma) - cdf('Lognormal', Qv(q-1), mu, sigma)];
+    end
+    probs = [probs, 1 - cdf('Lognormal', Qv(Q-1), mu, sigma)];
+end
+
+function x = nsumk(n, k)
+    m = nchoosek(k+n-1,n-1);
+    dividers = [zeros(m,1),nchoosek((1:(k+n-1))',n-1),ones(m,1)*(k+n)];
+    x = diff(dividers,1,2)-1;
+end

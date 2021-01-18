@@ -99,9 +99,12 @@ end
 disp('True auxiliary model parameters');
 Z = data(:, 3:6);
 y = data(:, 7);
+nm = data(:, 3);
+Zm = data(:, 4:6)
 Beta_1 = [mean(y); var(y)];
 Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
-Beta_0 = [Beta_1; Beta_2];
+Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
+Beta_0 = [Beta_1; Beta_2; Beta_3];
 disp(Beta_0);
 
 theta = [gamma; eta; mu; sigma];
@@ -115,7 +118,7 @@ disp('Outer loop optimization finished');
 disp(theta);
 c = clock;
 fix(c)
-writematrix(Theta, save_as);
+writematrix(theta, save_as);
 
 function dBeta = auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, X, Q, ...
         Qv, T, S, States, epsilon, ncol)
@@ -136,10 +139,13 @@ function dBeta = auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, X, Q, 
     disp(data_sim(1:20, :))
     Z = data_sim(:, 3:6);
     y = data_sim(:, 7);
+    nm = data_sim(:, 3);
+    Zm = data_sim(:, 4:6)
 
     Beta_1 = [mean(y); var(y)];
     Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
-    Beta = [Beta_1; Beta_2];
+    Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
+    Beta = [Beta_1; Beta_2; Beta_3];
     dBeta = (Beta_0 - Beta).'*(Beta_0 - Beta);
     disp('Objective function');
     disp(dBeta);

@@ -162,8 +162,6 @@ for cl = 1:T
                 end
             end 
         end
-        disp('% of states with negative output');
-        mean(S_neg)
     end
     
     for m = 1:M
@@ -219,7 +217,9 @@ for cl = 1:T
         n_m = sum(s_m);
         [~, s] = ismember(s_m, States, 'rows');
         if s == 0
-            data_c = [data_c; cl m 0 W_t(m) R_t(m) X_t(m) 0 0 0];
+            disp('Warning: outside state space')
+        elseif s == 1
+            data_c = [data_c; cl m 0 W(m) R(m) X(m) 0 0 0];
         else
             State_M(m) = s;
             for q = 1:Q
@@ -243,7 +243,6 @@ function z = fpe(cp, M, Q, States, A_hist, PiV, S)
     cp_mat = reshape(cp, [M, Q]);
     z = choice_prob(exp_profit(cp_mat, States, A_hist, PiV, M, Q, S), ...
         M, Q) - cp_mat;
-    disp(z);
 end
 
 function cp = choice_prob(EPi, M, Q)

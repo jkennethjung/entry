@@ -102,12 +102,15 @@ disp('True auxiliary model parameters');
 n_obs = size(data, 1);
 Z = [data(:, 3:6) ones(n_obs, 1)];
 y = data(:, 7);
-nm = data(:, 3);
-Zm = [data(:, 4:6) ones(n_obs, 1)];
+
+data_mt = collapse_data(data, T, M);
+nm_obs = size(data_mt, 1);
+nm = data_mt(:, 3);
+Zm = [data_mt(:, 4:6) ones(nm_obs, 1)];
+
 Beta_1 = [mean(y); var(y)];
 Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
-Beta_3_full = (Zm.'*Zm)^(-1)*(Zm.'*nm);
-Beta_3 = Beta_3_full(1:4);
+Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
 Beta_0 = [Beta_1; Beta_2; Beta_3];
 disp(Beta_0);
 
@@ -138,17 +141,27 @@ function dBeta = auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, X, Q, 
     end
     data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, epsilon, ncol);
-    n_obs = size(data_sim, 1);
-    Z = [data_sim(:, 3:6) ones(n_obs, 1)];
-    y = data_sim(:, 7);
-    nm = data_sim(:, 3);
-    Zm = [data_sim(:, 4:6) ones(n_obs, 1)];
+    Betas = [];
+    for ns = 1:NS
+        data_ns = data_sim{ns};
+        n_obs = size(data_ns, 1);
+        Z = [data_ns(:, 3:6) ones(n_obs, 1)];
+        y = data_ns(:, 7);
 
-    Beta_1 = [mean(y); var(y)];
-    Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
-    Beta_3_full = (Zm.'*Zm)^(-1)*(Zm.'*nm);
-    Beta_3 = Beta_3_full(1:4);
-    Beta = [Beta_1; Beta_2; Beta_3];
+        data_mt = collapse_data(data_ns, T, M);
+        nm_obs = size(data_mt, 1);
+        nm = data_mt(:, 3);
+        Zm = [data_mt(:, 4:6) ones(nm_obs, 1)];
+
+        Beta_1 = [mean(y); var(y)];
+        Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
+        Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
+        Beta = [Beta_1; Beta_2; Beta_3];
+        Betas = [Betas Beta];
+    end
+    Beta = mean(Betas, 2);
+    disp('Auxiliary model:');
+    disp(Beta);
     dBeta = (Beta_0 - Beta).'*(Beta_0 - Beta);
     disp('Objective function');
     disp(dBeta);
@@ -163,7 +176,7 @@ function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, 
 
     A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T);
     Aq_idx = A_draw{2};
-    data_sim = zeros(1, ncol);
+    data_sim = cell(NS, 1);
     for t = 1:T
         %%% IV. Calculate Cournot Payoffs in Each State %%%
         % This may require large amount of memory, so placing in inner loop of t
@@ -266,14 +279,15 @@ function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, 
             end
             
             State_M = zeros(M_t, 1);
-            data_c = zeros(1, ncol);
+            data_c = [];
             for m = 1:M_t
                 s_m = S_M(m, :);
                 n_m = sum(s_m);
                 [~, s] = ismember(s_m, States, 'rows');
                 if s == 0
-                    disp('Warning: eqm state is outside state space');
-                    disp(s_m);
+                    disp('Warning: outside state space');
+                elseif s == 1
+                    data_c = [data_c; t m 0 W_t(m) R_t(m) X_t(m) 0 0 0];
                 else
                     State_M(m) = s;
                     for q = 1:Q
@@ -287,11 +301,9 @@ function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, 
                     end
                 end
             end
-            data_c(1, :) = [];
-            data_sim = [data_sim; data_c];
+            data_sim{ns} = [data_sim{ns}; data_c];
         end
     end
-    data_sim(1, :) = [];
 end
 
 function A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T)
@@ -463,5 +475,16 @@ function iv = construct_blp_ivs(data, W, R, X, M, T)
         iv(n, 1) = (sum(W{t}) - data(n, 4)) / (M(t) - 1);
         iv(n, 2) = (sum(R{t}) - data(n, 5)) / (M(t) - 1);
         iv(n, 3) = (sum(X{t}) - data(n, 6)) / (M(t) - 1);
+    end
+end
+
+function collapsed = collapse_data(data, T, M)
+    collapsed = [];
+    for t = 1:T
+        for m = 1:M(t)
+            mt_rows  = ((data(:, 2) == m) & (data(:, 1) == t));
+            data_mt = data(mt_rows, :);
+            collapsed = [collapsed; data_mt(1, :)];
+        end
     end
 end

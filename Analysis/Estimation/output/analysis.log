@@ -1,7 +1,22 @@
 Starting parallel pool (parpool) using the 'local' profile ...
 Connected to the parallel pool (number of workers: 12).
 Number of entrants
+    11
+
+Number of entrants
     10
+
+Number of entrants
+    12
+
+Number of entrants
+    11
+
+Number of entrants
+    13
+
+Number of entrants
+    11
 
 Number of entrants
     10
@@ -10,43 +25,28 @@ Number of entrants
     10
 
 Number of entrants
-    10
+    13
 
 Number of entrants
-    10
-
-Number of entrants
-    10
-
-Number of entrants
-    10
-
-Number of entrants
-    10
-
-Number of entrants
-    10
-
-Number of entrants
-    10
+    11
 
 True auxiliary model parameters
-    0.1733
-    0.0540
-   -0.0250
-   -0.0349
-   -0.0067
-    0.0239
-    0.2800
-   -0.0555
-   -0.0392
-    0.2426
-    2.0299
+    0.1547
+    0.0511
+   -0.0048
+   -0.0279
+   -0.0047
+    0.0213
+    0.1860
+   -0.0854
+   -0.0142
+    0.1830
+    1.3549
 
 
 ans =
 
-        2021           1          21          23          58          35
+        2021           1          22          10          57          56
 
 theta:
      1
@@ -113,8 +113,21 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+Auxiliary model:
+    0.0452
+    0.0125
+   -0.0068
+   -0.0176
+   -0.0023
+    0.0276
+    0.0580
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
 Objective function
-    0.6372
+    0.3192
 
 theta:
     1.0000
@@ -181,8 +194,21 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+Auxiliary model:
+    0.0453
+    0.0126
+   -0.0069
+   -0.0177
+   -0.0023
+    0.0277
+    0.0582
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
 Objective function
-    0.6372
+    0.3192
 
 theta:
     1.0000
@@ -249,8 +275,21 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+Auxiliary model:
+    0.0454
+    0.0125
+   -0.0069
+   -0.0175
+   -0.0024
+    0.0273
+    0.0594
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
 Objective function
-    0.6366
+    0.3188
 
 theta:
     1.0000
@@ -317,13 +356,26 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+Auxiliary model:
+    0.0451
+    0.0123
+   -0.0070
+   -0.0174
+   -0.0023
+    0.0272
+    0.0588
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
 Objective function
-    0.6373
+    0.3191
 
 theta:
-    0.9944
+   14.9799
    99.5050
-    0.9943
+   40.5061
 
 
 Local minimum found.
@@ -384,14 +436,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    1.7733
+    4.2957
+   -0.2079
+   -0.4061
+   -0.0006
+    0.5656
+    2.1877
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6322
+   25.4134
 
 theta:
-    0.9972
+    7.9899
    50.2525
-    0.9972
+   20.7531
 
 
 Local minimum found.
@@ -452,14 +517,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.9096
+    1.1935
+   -0.1072
+   -0.2140
+   -0.0027
+    0.3005
+    1.1249
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6319
+    3.1689
 
 theta:
-    0.9972
-   50.2525
-    0.9972
+    4.4950
+   25.6262
+   10.8765
 
 
 Local minimum found.
@@ -520,14 +598,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.4775
+    0.3636
+   -0.0572
+   -0.1177
+   -0.0037
+    0.1675
+    0.5940
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6319
+    0.6898
 
 theta:
-    0.9972
-   50.2525
-    0.9972
+    4.4950
+   25.6262
+   10.8765
 
 
 Local minimum found.
@@ -588,14 +679,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.4778
+    0.3638
+   -0.0573
+   -0.1177
+   -0.0037
+    0.1676
+    0.5948
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6319
+    0.6907
 
 theta:
-    0.9972
-   50.2525
-    0.9972
+    4.4950
+   25.6263
+   10.8765
 
 
 Local minimum found.
@@ -656,14 +760,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.4774
+    0.3640
+   -0.0576
+   -0.1177
+   -0.0036
+    0.1676
+    0.5947
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6319
+    0.6906
 
 theta:
-    0.9979
-   50.2525
-    0.9972
+    4.4950
+   25.6262
+   10.8765
 
 
 Local minimum found.
@@ -724,14 +841,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.4773
+    0.3641
+   -0.0574
+   -0.1177
+   -0.0038
+    0.1677
+    0.5944
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6318
+    0.6903
 
 theta:
-    0.9979
-   50.2525
-    0.9972
+    0.0324
+   28.3706
+   11.0790
 
 
 Local minimum found.
@@ -792,14 +922,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+         0
+         0
+         0
+         0
+         0
+         0
+         0
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6318
+    0.3516
 
 theta:
-    0.9979
-   50.2525
-    0.9972
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -860,14 +1003,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2022
+    0.0851
+   -0.0253
+   -0.0560
+   -0.0042
+    0.0825
+    0.2553
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6318
+    0.3024
 
 theta:
-    0.9979
-   50.2525
-    0.9972
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -928,14 +1084,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2023
+    0.0851
+   -0.0255
+   -0.0560
+   -0.0042
+    0.0824
+    0.2559
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6318
+    0.3025
 
 theta:
-    1.1286
-   50.2552
-    1.0033
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -996,14 +1165,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2023
+    0.0852
+   -0.0256
+   -0.0560
+   -0.0042
+    0.0824
+    0.2561
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6195
+    0.3025
 
 theta:
-    1.1286
-   50.2552
-    1.0033
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -1064,14 +1246,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2026
+    0.0852
+   -0.0254
+   -0.0561
+   -0.0042
+    0.0824
+    0.2563
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6195
+    0.3026
 
 theta:
-    1.1286
-   50.2552
-    1.0033
+    3.6988
+   31.4276
+    0.0648
 
 
 Local minimum found.
@@ -1132,14 +1327,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.3806
+    0.2415
+   -0.0454
+   -0.0958
+   -0.0038
+    0.1373
+    0.4732
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6195
+    0.4787
 
 theta:
-    1.1286
-   50.2552
-    1.0033
+    2.9813
+   29.2130
+    5.5213
 
 
 Local minimum found.
@@ -1200,14 +1408,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2920
+    0.1531
+   -0.0351
+   -0.0760
+   -0.0040
+    0.1100
+    0.3644
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6195
+    0.3614
 
 theta:
-    3.5096
-   50.3045
-    1.1123
+    2.6225
+   28.1057
+    8.2495
 
 
 Local minimum found.
@@ -1268,14 +1489,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2479
+    0.1164
+   -0.0299
+   -0.0661
+   -0.0041
+    0.0963
+    0.3102
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6671
+    0.3253
 
 theta:
-    3.5096
-   50.3045
-    1.1123
+    2.4431
+   27.5521
+    9.6136
 
 
 Local minimum found.
@@ -1336,14 +1570,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2252
+    0.1002
+   -0.0278
+   -0.0611
+   -0.0042
+    0.0894
+    0.2834
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6671
+    0.3123
 
 theta:
-    3.5096
-   50.3045
-    1.1123
+    1.7038
+   30.6096
+    7.1138
 
 
 Local minimum found.
@@ -1404,14 +1651,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.1354
+    0.0457
+   -0.0169
+   -0.0406
+   -0.0044
+    0.0609
+    0.1727
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6671
+    0.2917
 
 theta:
-    3.5096
-   50.3045
-    1.1123
+    1.7643
+   28.7047
+    9.0090
 
 
 Local minimum found.
@@ -1472,14 +1732,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.1426
+    0.0494
+   -0.0178
+   -0.0423
+   -0.0044
+    0.0632
+    0.1817
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.6671
+    0.2915
 
 theta:
-    2.5404
-   50.2984
-    1.1576
+    1.7955
+   27.7230
+    9.9857
 
 
 Local minimum found.
@@ -1540,14 +1813,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.1459
+    0.0513
+   -0.0183
+   -0.0431
+   -0.0044
+    0.0644
+    0.1858
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5760
+    0.2916
 
 theta:
-    2.5404
-   50.2984
-    1.1576
+    1.8137
+   27.1502
+   10.5556
 
 
 Local minimum found.
@@ -1608,14 +1894,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.1476
+    0.0526
+   -0.0189
+   -0.0435
+   -0.0044
+    0.0649
+    0.1891
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5760
+    0.2916
 
 theta:
-    2.5404
-   50.2984
-    1.1576
+    1.9865
+   26.9623
+   10.8442
 
 
 Local minimum found.
@@ -1676,14 +1975,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.1686
+    0.0640
+   -0.0215
+   -0.0484
+   -0.0043
+    0.0717
+    0.2147
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5760
+    0.2936
 
 theta:
-    2.5404
-   50.2984
-    1.1576
+    2.1251
+   26.9804
+   10.9110
 
 
 Local minimum found.
@@ -1744,14 +2056,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.1854
+    0.0742
+   -0.0233
+   -0.0522
+   -0.0043
+    0.0771
+    0.2350
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5760
+    0.2971
 
 theta:
-    2.2931
-   50.2994
-    1.1855
+    2.1944
+   26.9894
+   10.9444
 
 
 Local minimum found.
@@ -1812,14 +2137,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.1938
+    0.0796
+   -0.0245
+   -0.0541
+   -0.0042
+    0.0797
+    0.2456
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5694
+    0.2996
 
 theta:
-    2.2931
-   50.2994
-    1.1855
+    2.2290
+   26.9939
+   10.9611
 
 
 Local minimum found.
@@ -1880,14 +2218,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.1980
+    0.0824
+   -0.0254
+   -0.0551
+   -0.0042
+    0.0810
+    0.2520
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5694
+    0.3011
 
 theta:
-    2.2931
-   50.2994
-    1.1855
+    2.2464
+   26.9962
+   10.9694
 
 
 Local minimum found.
@@ -1948,14 +2299,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2002
+    0.0837
+   -0.0256
+   -0.0556
+   -0.0043
+    0.0819
+    0.2543
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5694
+    0.3019
 
 theta:
-    2.2931
-   50.2994
-    1.1855
+    2.2550
+   26.9973
+   10.9736
 
 
 Local minimum found.
@@ -2016,14 +2380,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2012
+    0.0844
+   -0.0256
+   -0.0558
+   -0.0043
+    0.0822
+    0.2551
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5694
+    0.3022
 
 theta:
-    2.1721
-   50.2999
-    1.1991
+    2.2594
+   26.9979
+   10.9757
 
 
 Local minimum found.
@@ -2084,14 +2461,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2014
+    0.0848
+   -0.0254
+   -0.0559
+   -0.0042
+    0.0822
+    0.2551
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3022
 
 theta:
-    2.1721
-   50.2999
-    1.1991
+    2.2615
+   26.9982
+   10.9767
 
 
 Local minimum found.
@@ -2152,14 +2542,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2023
+    0.0850
+   -0.0255
+   -0.0561
+   -0.0042
+    0.0824
+    0.2563
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1721
-   50.2999
-    1.1991
+    2.2626
+   26.9983
+   10.9772
 
 
 Local minimum found.
@@ -2220,14 +2623,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2022
+    0.0850
+   -0.0253
+   -0.0560
+   -0.0042
+    0.0823
+    0.2556
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3024
 
 theta:
-    2.1721
-   50.2999
-    1.1991
+    2.2632
+   26.9984
+   10.9775
 
 
 Local minimum found.
@@ -2288,14 +2704,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2018
+    0.0852
+   -0.0257
+   -0.0560
+   -0.0042
+    0.0823
+    0.2562
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1618
-   50.3000
-    1.2005
+    2.2634
+   26.9984
+   10.9776
 
 
 Local minimum found.
@@ -2356,14 +2785,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2026
+    0.0851
+   -0.0251
+   -0.0561
+   -0.0042
+    0.0825
+    0.2554
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3024
 
 theta:
-    2.1618
-   50.3000
-    1.2005
+    2.2636
+   26.9984
+   10.9777
 
 
 Local minimum found.
@@ -2424,14 +2866,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2027
+    0.0851
+   -0.0254
+   -0.0561
+   -0.0042
+    0.0824
+    0.2562
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3026
 
 theta:
-    2.1618
-   50.3000
-    1.2005
+    2.2636
+   26.9984
+   10.9777
 
 
 Local minimum found.
@@ -2492,14 +2947,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2025
+    0.0851
+   -0.0253
+   -0.0561
+   -0.0042
+    0.0825
+    0.2559
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1618
-   50.3000
-    1.2005
+    2.2637
+   26.9984
+   10.9777
 
 
 Local minimum found.
@@ -2560,14 +3028,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2025
+    0.0851
+   -0.0253
+   -0.0561
+   -0.0042
+    0.0825
+    0.2558
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1611
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9777
 
 
 Local minimum found.
@@ -2628,14 +3109,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2025
+    0.0851
+   -0.0254
+   -0.0561
+   -0.0042
+    0.0825
+    0.2559
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1611
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9777
 
 
 Local minimum found.
@@ -2696,14 +3190,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2026
+    0.0850
+   -0.0252
+   -0.0561
+   -0.0043
+    0.0825
+    0.2558
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1611
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -2764,14 +3271,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2024
+    0.0851
+   -0.0253
+   -0.0560
+   -0.0042
+    0.0824
+    0.2557
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3024
 
 theta:
-    2.1611
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -2832,14 +3352,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2024
+    0.0852
+   -0.0253
+   -0.0561
+   -0.0042
+    0.0825
+    0.2559
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1610
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -2900,14 +3433,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2025
+    0.0851
+   -0.0254
+   -0.0561
+   -0.0042
+    0.0824
+    0.2563
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1610
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -2968,14 +3514,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2026
+    0.0850
+   -0.0252
+   -0.0560
+   -0.0042
+    0.0823
+    0.2559
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
 
 theta:
-    2.1610
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -3036,14 +3595,27 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2020
+    0.0852
+   -0.0256
+   -0.0560
+   -0.0042
+    0.0825
+    0.2557
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3024
 
 theta:
-    2.1610
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9778
 
 
 Local minimum found.
@@ -3104,24 +3676,1171 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2022
+    0.0851
+   -0.0255
+   -0.0560
+   -0.0042
+    0.0825
+    0.2557
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
 
 Objective function
-    0.5685
+    0.3025
+
+theta:
+    2.2637
+   26.9984
+   10.9778
 
 
-Local minimum found that satisfies the constraints.
+Local minimum found.
 
-Optimization completed because the objective function is non-decreasing in 
-feasible directions, to within the value of the optimality tolerance,
-and constraints are satisfied to within the value of the constraint tolerance.
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2020
+    0.0851
+   -0.0261
+   -0.0560
+   -0.0043
+    0.0825
+    0.2568
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3026
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2025
+    0.0850
+   -0.0253
+   -0.0560
+   -0.0042
+    0.0825
+    0.2555
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3024
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2026
+    0.0852
+   -0.0251
+   -0.0561
+   -0.0042
+    0.0825
+    0.2555
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3024
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2025
+    0.0852
+   -0.0255
+   -0.0561
+   -0.0042
+    0.0824
+    0.2566
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3026
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2025
+    0.0851
+   -0.0251
+   -0.0561
+   -0.0042
+    0.0825
+    0.2554
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3024
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2025
+    0.0852
+   -0.0255
+   -0.0561
+   -0.0042
+    0.0824
+    0.2565
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3026
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2022
+    0.0849
+   -0.0252
+   -0.0560
+   -0.0042
+    0.0823
+    0.2555
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3024
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2023
+    0.0850
+   -0.0251
+   -0.0560
+   -0.0043
+    0.0824
+    0.2552
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3024
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2022
+    0.0850
+   -0.0251
+   -0.0560
+   -0.0042
+    0.0824
+    0.2551
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3023
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2021
+    0.0851
+   -0.0254
+   -0.0560
+   -0.0042
+    0.0824
+    0.2555
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3024
+
+theta:
+    4.8309
+   31.7583
+    0.0648
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.5203
+    0.4221
+   -0.0617
+   -0.1270
+   -0.0035
+    0.1803
+    0.6453
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.8098
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2026
+    0.0851
+   -0.0253
+   -0.0561
+   -0.0042
+    0.0823
+    0.2564
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3026
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2022
+    0.0851
+   -0.0258
+   -0.0560
+   -0.0042
+    0.0825
+    0.2566
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3026
+
+theta:
+    2.2637
+   26.9984
+   10.9778
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+    0.2019
+    0.0852
+   -0.0257
+   -0.0560
+   -0.0042
+    0.0824
+    0.2562
+    0.0191
+   -0.0033
+   -0.0118
+    1.8450
+
+Objective function
+    0.3025
+
+
+Local minimum possible. Constraints satisfied.
+
+fmincon stopped because the size of the current step is less than
+the value of the step size tolerance and constraints are 
+satisfied to within the value of the constraint tolerance.
 
 Outer loop optimization finished
-    2.1610
-   50.3000
-    1.2006
+    2.2637
+   26.9984
+   10.9778
 
 
 ans =
 
-        2021           1          22           0          38          54
+        2021           1          22          12          30          20
 

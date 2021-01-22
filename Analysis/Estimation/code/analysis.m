@@ -9,7 +9,7 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(36);
+parpool(12);
 load_as = '../temp/data.csv';
 save_as = '../output/estimates.csv';
 NS = 100;
@@ -23,7 +23,7 @@ Nq_max = 9;
 mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
-Q = 4;
+Q = 3;
 Qv = zeros(Q, 1);
 for q = 1:Q
     Qv(q + 1) = 1.5*q;
@@ -97,17 +97,18 @@ for s = 2:S
 end
 
 disp('True auxiliary model parameters');
-Z = data(:, 3:6);
+n_obs = size(data, 1);
+Z = [data(:, 3:6) ones(n_obs, 1)];
 y = data(:, 7);
 nm = data(:, 3);
-Zm = data(:, 4:6)
+Zm = [data(:, 4:6) ones(n_obs, 1)];
 Beta_1 = [mean(y); var(y)];
 Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
 Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
 Beta_0 = [Beta_1; Beta_2; Beta_3];
 disp(Beta_0);
 
-theta = [gamma; eta; mu; sigma];
+theta = [eta; mu; sigma];
 c = clock;
 fix(c)
 aux = @(theta) auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, ...
@@ -124,23 +125,20 @@ function dBeta = auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, X, Q, 
         Qv, T, S, States, epsilon, ncol)
     disp('theta:')
     disp(theta)
-    gamma = theta(1);
-    eta = theta(2);
-    mu = theta(3);
-    sigma = theta(4);
+    eta = theta(1);
+    mu = theta(2);
+    sigma = theta(3);
     pr_hist = {};
     for t = 1:T
         pr_hist{end+1} = pr_firms(A_hists{t}, E(t), mu, sigma, Qv, Q);
     end
     data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, epsilon, ncol);
-    disp('data_sim generated')
-    disp(size(data_sim))
-    disp(data_sim(1:20, :))
-    Z = data_sim(:, 3:6);
+    n_obs = size(data_sim, 1);
+    Z = [data_sim(:, 3:6) ones(n_obs, 1)];
     y = data_sim(:, 7);
     nm = data_sim(:, 3);
-    Zm = data_sim(:, 4:6)
+    Zm = [data_sim(:, 4:6) ones(n_obs, 1)];
 
     Beta_1 = [mean(y); var(y)];
     Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
@@ -153,10 +151,10 @@ end
 
 function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, epsilon, ncol)
-    gamma = theta(1);
-    eta = theta(2);
-    mu = theta(3);
-    sigma = theta(4);
+    gamma = 1;
+    eta = theta(1);
+    mu = theta(2);
+    sigma = theta(3);
 
     A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T);
     Aq_idx = A_draw{2};
@@ -364,7 +362,7 @@ function [cp, resnorm, residual, exitflag, output] = nfp(t, M, Q, States, ...
         end
     end
     options = optimoptions(@lsqnonlin,'Algorithm','trust-region-reflective', ...
-            'JacobPattern', sparse, 'UseParallel', true);
+            'JacobPattern', sparse, 'UseParallel', false);
     f = @(z) fpe(z, M, Q, States, At_hist, prt_hist, PiV, S);
     [cp, resnorm, residual, exitflag, output] = lsqnonlin(f, cp, ...
         lb, ub, options);
@@ -387,18 +385,21 @@ end
 
 function EPi = exp_profit(p, States, At_hist, prt_hist, PiV, M, Q, S) 
     EPi = zeros(M, Q);
-    for q = 1:Q
+    len = size(At_hist, 1);
+    p_sm = zeros(S, M);
+    parfor s = 1:S
         for m = 1:M
-            p_s = zeros(S, 1);
-            for s = 1:S
-                len = size(At_hist, 1);
-                pr_states = zeros(len, 1);
-                for i = 1:len 
-                    hist = At_hist(i, :);
-                    pr_states(i) = pr_state(p(m, :), s, States, hist, Q);
-                end
-                p_s(s) = prt_hist.' * pr_states;
+            pr_states = zeros(len, 1);
+            for i = 1:len 
+                hist = At_hist(i, :);
+                pr_states(i) = pr_state(p(m, :), s, States, hist, Q);
             end
+            p_s(s, m) = prt_hist.' * pr_states;
+        end
+    end
+    for m = 1:M
+        p_s = p_sm(:, m);
+        for q = 1:Q
             EPi(m, q) = PiV(m, :, q)*p_s;
         end
     end
@@ -446,4 +447,16 @@ function x = nsumk(n, k)
     m = nchoosek(k+n-1,n-1);
     dividers = [zeros(m,1),nchoosek((1:(k+n-1))',n-1),ones(m,1)*(k+n)];
     x = diff(dividers,1,2)-1;
+end
+
+function iv = construct_blp_ivs(data, W, R, X, M, T)
+    n_obs = size(data, 1);
+    iv = [];
+    for n = 1:n_obs
+        t = data(n, 1);
+        m = data(n, 2);
+        iv(n, 1) = (sum(W{t}) - data(n, 4)) / (M(t) - 1);
+        iv(n, 2) = (sum(R{t}) - data(n, 5)) / (M(t) - 1);
+        iv(n, 3) = (sum(X{t}) - data(n, 6)) / (M(t) - 1);
+    end
 end

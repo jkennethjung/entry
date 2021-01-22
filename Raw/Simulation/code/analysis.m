@@ -219,8 +219,7 @@ for cl = 1:T
         n_m = sum(s_m);
         [~, s] = ismember(s_m, States, 'rows');
         if s == 0
-            disp('Eqm state is outside state space');
-            disp(s_m);
+            data_c = [data_c; cl m 0 W_t(m) R_t(m) X_t(m) 0 0 0];
         else
             State_M(m) = s;
             for q = 1:Q

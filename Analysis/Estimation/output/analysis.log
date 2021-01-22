@@ -1,52 +1,61 @@
 Starting parallel pool (parpool) using the 'local' profile ...
 Connected to the parallel pool (number of workers: 12).
 Number of entrants
-    10
+     3
+
+Number of entrants
+     3
+
+Number of entrants
+     3
+
+Number of entrants
+     6
+
+Number of entrants
+     3
+
+Number of entrants
+     9
 
 Number of entrants
     10
 
 Number of entrants
-    10
+     6
 
 Number of entrants
-    10
+     1
 
 Number of entrants
-    10
+     8
 
 Number of entrants
-    10
+     9
 
 Number of entrants
-    10
+     2
 
 Number of entrants
-    10
-
-Number of entrants
-    10
-
-Number of entrants
-    10
+     6
 
 True auxiliary model parameters
-    0.1733
-    0.0540
-   -0.0250
-   -0.0349
-   -0.0067
-    0.0239
-    0.2800
-   -0.0555
-   -0.0392
-    0.2426
-    2.0299
+    1.0392
+    2.2578
+    0.3596
+   -2.9327
+    1.5970
+  -25.8053
+    3.6555
+    4.2225
+   -0.7931
+   59.2868
+   -6.0019
 
 
 ans =
 
-        2021           1          21          14          53          57
+        2021           1          21          14          19          41
 
 theta:
      1
@@ -113,8 +122,26 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
 Objective function
-    0.6372
+   4.2222e+03
 
 theta:
     1.0000
@@ -181,8 +208,26 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
 Objective function
-    0.6372
+   4.2223e+03
 
 theta:
     1.0000
@@ -249,8 +294,26 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
 Objective function
-    0.6366
+   4.2222e+03
 
 theta:
     1.0000
@@ -317,14 +380,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.6373
-
-theta:
-    0.9944
-   99.5050
-    0.9943
-
 
 Local minimum found.
 
@@ -343,11 +398,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2222e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    0.0150
+    1.2737
+    1.1448
 
 
 Local minimum found.
@@ -384,15 +441,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6314
 
-theta:
-    0.9972
-   50.2525
-    0.9972
-
 
 Local minimum found.
 
@@ -434,7 +483,15 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.5919e+03
 
+theta:
+    0.5075
+    1.1369
+    1.0724
+
 
 Local minimum found.
 
@@ -452,15 +509,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6315
 
-theta:
-    0.9972
-   50.2525
-    0.9972
-
 
 Local minimum found.
 
@@ -522,12 +571,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.6315
+   4.2245e+03
 
 theta:
-    0.9972
-   50.2525
-    0.9972
+    0.7537
+    1.0684
+    1.0362
 
 
 Local minimum found.
@@ -588,15 +637,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6315
 
-theta:
-    0.9972
-   50.2525
-    0.9972
-
 
 Local minimum found.
 
@@ -615,11 +656,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2230e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    0.8769
+    1.0342
+    1.0181
 
 
 Local minimum found.
@@ -657,14 +700,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.6315
-
-theta:
-    0.9974
-   50.2525
-    0.9972
-
 
 Local minimum found.
 
@@ -706,6 +741,14 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.2226e+03
+
+theta:
+    0.9384
+    1.0171
+    1.0091
 
 
 Local minimum found.
@@ -725,14 +768,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.6315
-
-theta:
-    0.9974
-   50.2525
-    0.9972
-
 
 Local minimum found.
 
@@ -794,12 +829,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.6315
+   4.2224e+03
 
 theta:
-    0.9974
-   50.2525
-    0.9972
+    0.9692
+    1.0086
+    1.0045
 
 
 Local minimum found.
@@ -860,14 +895,6 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6315
-
-theta:
-    0.9974
-   50.2525
-    0.9972
 
 
 Local minimum found.
@@ -887,11 +914,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2224e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    0.9846
+    1.0043
+    1.0023
 
 
 Local minimum found.
@@ -928,15 +957,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6315
 
-theta:
-    1.0350
-   50.2540
-    1.0036
-
 
 Local minimum found.
 
@@ -978,7 +999,15 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.2223e+03
 
+theta:
+    0.9923
+    1.0021
+    1.0011
+
 
 Local minimum found.
 
@@ -996,15 +1025,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6330
 
-theta:
-    1.0350
-   50.2540
-    1.0036
-
 
 Local minimum found.
 
@@ -1066,12 +1087,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.6330
+   4.2223e+03
 
 theta:
-    1.0350
-   50.2540
-    1.0036
+    0.9962
+    1.0011
+    1.0006
 
 
 Local minimum found.
@@ -1132,15 +1153,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6330
 
-theta:
-    1.0350
-   50.2540
-    1.0036
-
 
 Local minimum found.
 
@@ -1159,11 +1172,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2223e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    0.9981
+    1.0005
+    1.0003
 
 
 Local minimum found.
@@ -1200,14 +1215,6 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6330
-
-theta:
-    0.8606
-   50.2509
-    0.9986
 
 
 Local minimum found.
@@ -1251,6 +1258,14 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+Objective function
+   4.2222e+03
+
+theta:
+    0.9990
+    1.0003
+    1.0001
+
 
 Local minimum found.
 
@@ -1268,14 +1283,6 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6251
-
-theta:
-    0.8606
-   50.2509
-    0.9986
 
 
 Local minimum found.
@@ -1338,12 +1345,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.6251
+   4.2223e+03
 
 theta:
-    0.8606
-   50.2509
-    0.9986
+    0.9995
+    1.0001
+    1.0001
 
 
 Local minimum found.
@@ -1405,14 +1412,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.6251
-
-theta:
-    0.8606
-   50.2509
-    0.9986
-
 
 Local minimum found.
 
@@ -1431,11 +1430,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2223e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    0.9998
+    1.0001
+    1.0000
 
 
 Local minimum found.
@@ -1472,15 +1473,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6251
 
-theta:
-    0.1786
-   50.2347
-    0.9540
-
 
 Local minimum found.
 
@@ -1522,7 +1515,15 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.2223e+03
 
+theta:
+    0.9999
+    1.0000
+    1.0000
+
 
 Local minimum found.
 
@@ -1540,15 +1541,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.6421
 
-theta:
-    0.5196
-   50.2428
-    0.9763
-
 
 Local minimum found.
 
@@ -1610,12 +1603,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.5996
+   4.2223e+03
 
 theta:
-    0.5196
-   50.2428
-    0.9763
+    0.9999
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -1676,15 +1669,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5996
 
-theta:
-    0.5196
-   50.2428
-    0.9763
-
 
 Local minimum found.
 
@@ -1703,11 +1688,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2223e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -1745,14 +1732,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.5996
-
-theta:
-    0.5196
-   50.2428
-    0.9763
-
 
 Local minimum found.
 
@@ -1794,6 +1773,14 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.2223e+03
+
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -1813,14 +1800,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.5996
-
-theta:
-    0.0125
-   50.2306
-    0.9422
-
 
 Local minimum found.
 
@@ -1882,12 +1861,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-   2.7361e+03
+   4.2223e+03
 
 theta:
-    0.2661
-   50.2367
-    0.9593
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -1948,14 +1927,6 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5792
-
-theta:
-    0.2661
-   50.2367
-    0.9593
 
 
 Local minimum found.
@@ -1975,11 +1946,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2223e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -2016,15 +1989,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5792
 
-theta:
-    0.2661
-   50.2367
-    0.9593
-
 
 Local minimum found.
 
@@ -2066,7 +2031,15 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.2223e+03
 
+theta:
+    1.0000
+    1.0000
+    1.0000
+
 
 Local minimum found.
 
@@ -2084,15 +2057,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5792
 
-theta:
-    0.2661
-   50.2367
-    0.9593
-
 
 Local minimum found.
 
@@ -2154,12 +2119,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.5792
+   4.2223e+03
 
 theta:
-    0.4381
-   50.2434
-    0.9870
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -2220,15 +2185,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5907
 
-theta:
-    0.3521
-   50.2400
-    0.9731
-
 
 Local minimum found.
 
@@ -2247,11 +2204,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2222e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -2288,14 +2247,6 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5812
-
-theta:
-    0.3521
-   50.2400
-    0.9731
 
 
 Local minimum found.
@@ -2339,6 +2290,14 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+Objective function
+   4.2223e+03
+
+theta:
+    1.0000
+    1.0000
+    1.0000
+
 
 Local minimum found.
 
@@ -2356,14 +2315,6 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5812
-
-theta:
-    0.3521
-   50.2400
-    0.9731
 
 
 Local minimum found.
@@ -2426,12 +2377,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.5812
+   4.2223e+03
 
 theta:
-    0.3521
-   50.2400
-    0.9731
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -2493,14 +2444,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.5812
-
-theta:
-    0.3392
-   50.2421
-    0.9875
-
 
 Local minimum found.
 
@@ -2519,11 +2462,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2223e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -2560,15 +2505,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5801
 
-theta:
-    0.3392
-   50.2421
-    0.9875
-
 
 Local minimum found.
 
@@ -2610,7 +2547,15 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.2223e+03
 
+theta:
+    1.0000
+    1.0000
+    1.0000
+
 
 Local minimum found.
 
@@ -2628,15 +2573,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5801
 
-theta:
-    0.3392
-   50.2421
-    0.9875
-
 
 Local minimum found.
 
@@ -2698,12 +2635,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.5801
+   4.2223e+03
 
 theta:
-    0.3392
-   50.2421
-    0.9875
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -2764,15 +2701,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5801
 
-theta:
-    0.2984
-   50.2528
-    1.0597
-
 
 Local minimum found.
 
@@ -2791,11 +2720,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2224e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -2833,14 +2764,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.5779
-
-theta:
-    0.2984
-   50.2528
-    1.0597
-
 
 Local minimum found.
 
@@ -2882,6 +2805,14 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.2223e+03
+
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -2901,14 +2832,6 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.5779
-
-theta:
-    0.2984
-   50.2528
-    1.0597
-
 
 Local minimum found.
 
@@ -2970,12 +2893,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.5779
+   4.2223e+03
 
 theta:
-    0.2984
-   50.2528
-    1.0597
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -3036,14 +2959,6 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.3099
-   50.2556
-    1.0765
 
 
 Local minimum found.
@@ -3063,11 +2978,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2223e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -3104,15 +3021,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5782
 
-theta:
-    0.3099
-   50.2556
-    1.0765
-
 
 Local minimum found.
 
@@ -3154,7 +3063,15 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Objective function
+   4.2223e+03
 
+theta:
+    1.0000
+    1.0000
+    1.0000
+
 
 Local minimum found.
 
@@ -3172,15 +3089,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5782
 
-theta:
-    0.3099
-   50.2556
-    1.0765
-
 
 Local minimum found.
 
@@ -3242,12 +3151,12 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.5782
+   4.2223e+03
 
 theta:
-    0.3099
-   50.2556
-    1.0765
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -3308,15 +3217,7 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5782
 
-theta:
-    0.3290
-   50.2803
-    1.2332
-
 
 Local minimum found.
 
@@ -3335,11 +3236,13 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-
-Local minimum found.
+Objective function
+   4.2223e+03
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+theta:
+    1.0000
+    1.0000
+    1.0000
 
 
 Local minimum found.
@@ -3377,15 +3280,7 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Objective function
-    0.5793
-
-theta:
-    0.3290
-   50.2803
-    1.2332
 
-
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
@@ -3427,5787 +3322,15 @@ Local minimum found.
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
+Objective function
+   4.2223e+03
 
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5793
-
-theta:
-    0.3290
-   50.2803
-    1.2332
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5793
-
-theta:
-    0.3290
-   50.2803
-    1.2332
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5793
-
-theta:
-    0.3128
-   50.2751
-    1.2009
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5783
-
-theta:
-    0.3128
-   50.2751
-    1.2009
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5783
-
-theta:
-    0.3128
-   50.2751
-    1.2009
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5783
-
-theta:
-    0.3128
-   50.2751
-    1.2009
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5783
-
-theta:
-    0.2959
-   50.2930
-    1.3177
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2959
-   50.2930
-    1.3177
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2959
-   50.2930
-    1.3177
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2959
-   50.2930
-    1.3177
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2918
-   50.3354
-    1.5892
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2918
-   50.3354
-    1.5892
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2918
-   50.3354
-    1.5892
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2918
-   50.3354
-    1.5892
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2931
-   50.4663
-    2.4285
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2931
-   50.4663
-    2.4285
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2931
-   50.4663
-    2.4285
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2931
-   50.4663
-    2.4285
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2957
-   50.7845
-    4.4673
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2957
-   50.7845
-    4.4673
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2957
-   50.7845
-    4.4673
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2957
-   50.7845
-    4.4673
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2979
-   51.4887
-    8.9800
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2979
-   51.4887
-    8.9800
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2979
-   51.4887
-    8.9800
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2979
-   51.4887
-    8.9800
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2954
-   51.7848
-   10.8778
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2954
-   51.7848
-   10.8778
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2954
-   51.7848
-   10.8778
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2954
-   51.7848
-   10.8778
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2873
-   53.8880
-   24.3580
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.2873
-   53.8880
-   24.3580
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5775
-
-theta:
-    0.2873
-   53.8880
-   24.3580
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.2873
-   53.8880
-   24.3580
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    7.5990
-   54.2333
-   25.7072
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.6725
-
-theta:
-    3.9432
-   54.0607
-   25.0326
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.6661
-
-theta:
-    2.1152
-   53.9743
-   24.6953
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.6554
-
-theta:
-    1.2012
-   53.9312
-   24.5267
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.6390
-
-theta:
-    0.7443
-   53.9096
-   24.4424
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.6187
-
-theta:
-    0.5158
-   53.8988
-   24.4002
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5994
-
-theta:
-    0.4015
-   53.8934
-   24.3791
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5867
-
-theta:
-    0.3444
-   53.8907
-   24.3686
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5808
-
-theta:
-    0.3158
-   53.8894
-   24.3633
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5784
-
-theta:
-    0.3015
-   53.8887
-   24.3607
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5776
-
-theta:
-    0.3015
-   53.8887
-   24.3607
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.3015
-   53.8887
-   24.3607
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.3015
-   53.8887
-   24.3607
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.4953
-   52.6432
-   16.6606
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5970
-
-theta:
-    0.3029
-   53.8802
-   24.3081
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5780
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5775
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5774
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.8060
-   50.4506
-    4.5351
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.6221
-
-theta:
-    0.5541
-   52.1675
-   14.4348
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.6030
-
-theta:
-    0.4282
-   53.0260
-   19.3846
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5895
-
-theta:
-    0.3652
-   53.4552
-   21.8595
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5827
-
-theta:
-    0.3040
-   53.8570
-   24.2889
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.3033
-   53.8707
-   24.3117
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5781
-
-theta:
-    0.3030
-   53.8776
-   24.3232
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5780
-
-theta:
-    0.3028
-   53.8811
-   24.3289
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5776
-
-theta:
-    0.3027
-   53.8829
-   24.3319
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.3026
-   53.8841
-   24.3338
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5781
-
-theta:
-    0.3024
-   53.8843
-   24.3341
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5782
-
-theta:
-    0.3023
-   53.8844
-   24.3342
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5780
-
-theta:
-    0.3023
-   53.8844
-   24.3343
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.3022
-   53.8844
-   24.3343
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5781
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5781
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5779
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5777
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5780
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5781
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5777
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5780
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5778
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5780
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5777
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5781
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5780
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5782
-
-theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Objective function
-    0.5777
-
 theta:
-    0.3022
-   53.8844
-   24.3344
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
+    1.0000
+    1.0000
+    1.0000
 
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
 
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
@@ -9224,14 +3347,6 @@ Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
-
-Objective function
-    0.5780
-
-theta:
-    0.3022
-   53.8844
-   24.3344
 
 
 Local minimum found.
@@ -9294,7 +3409,7 @@ Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
 Objective function
-    0.5777
+   4.2223e+03
 
 
 Local minimum possible. Constraints satisfied.
@@ -9304,12 +3419,12 @@ the value of the step size tolerance and constraints are
 satisfied to within the value of the constraint tolerance.
 
 Outer loop optimization finished
-    0.3022
-   53.8844
-   24.3344
+     1
+     1
+     1
 
 
 ans =
 
-        2021           1          21          17           8          42
+        2021           1          21          16          18           7
 

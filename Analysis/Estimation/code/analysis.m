@@ -10,7 +10,7 @@ rng(1);
 %%% I. Initialize  %%%
 
 parpool(12);
-load_as = '../temp/data.csv';
+load_as = '../temp/small.csv';
 save_as = '../output/estimates.csv';
 NS = 100;
 mu = 1;
@@ -23,7 +23,7 @@ Nq_max = 9;
 mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
-Q = 3;
+Q = 4;
 Qv = zeros(Q, 1);
 for q = 1:Q
     Qv(q + 1) = 1.5*q;
@@ -55,6 +55,8 @@ for t = 1:T
         X{t}(m) = data_mt(6);
     end
 end
+
+iv = construct_blp_ivs(data, W, R, X, M, T);
 
 %%% II. Draw Characteristics %%%
 epsilon = cell(T, NS);
@@ -138,6 +140,7 @@ function dBeta = auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, X, Q, 
     Z = [data_sim(:, 3:6) ones(n_obs, 1)];
     y = data_sim(:, 7);
     nm = data_sim(:, 3);
+    iv = construct_blp_ivs(data_sim, W, R, X, M, T);
     Zm = [data_sim(:, 4:6) ones(n_obs, 1)];
 
     Beta_1 = [mean(y); var(y)];

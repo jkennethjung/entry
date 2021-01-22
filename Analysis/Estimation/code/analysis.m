@@ -110,7 +110,7 @@ Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
 Beta_0 = [Beta_1; Beta_2; Beta_3];
 disp(Beta_0);
 
-theta = [eta; mu; sigma];
+theta = [gamma; eta; mu; sigma];
 c = clock;
 fix(c)
 aux = @(theta) auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, ...
@@ -127,9 +127,10 @@ function dBeta = auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, X, Q, 
         Qv, T, S, States, epsilon, ncol)
     disp('theta:')
     disp(theta)
-    eta = theta(1);
-    mu = theta(2);
-    sigma = theta(3);
+    gamma = theta(1);
+    eta = theta(2);
+    mu = theta(3);
+    sigma = theta(4);
     pr_hist = {};
     for t = 1:T
         pr_hist{end+1} = pr_firms(A_hists{t}, E(t), mu, sigma, Qv, Q);
@@ -154,10 +155,10 @@ end
 
 function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, epsilon, ncol)
-    gamma = 1;
-    eta = theta(1);
-    mu = theta(2);
-    sigma = theta(3);
+    gamma = theta(1);
+    eta = theta(2);
+    mu = theta(3);
+    sigma = theta(4);
 
     A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T);
     Aq_idx = A_draw{2};

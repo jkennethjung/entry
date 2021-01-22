@@ -59,7 +59,7 @@ forv i = 1/4 {
 count if rmc
 keep if rmc
 
-merge m:1 fips using ../temp/demand.dta, keep(1 3)
+merge m:1 fips using ../temp/demand.dta
 drop if _merge == 1
 drop _merge
 
@@ -72,13 +72,15 @@ drop _merge
 gen j = parent_number
 replace j = abi if missing(j) 
 count
+replace j = "NONE" if missing(j) 
+replace labor = 0 if j == "NONE" 
 collapse (sum) labor (mean) wage_jt = wage rent_jt = rent x t_state, by(j cea)
 bysort cea: egen wage = mean(wage_jt)
 bysort cea: egen rent = mean(rent_jt)
 drop wage_jt rent_jt
 count
 unique j 
-gen k = 1
+gen k = (j != "NONE")
 bysort cea: egen N_m = sum(k)
 drop k
 tab N_m

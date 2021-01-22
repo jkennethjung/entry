@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Main/code/../output/analy
 > sis.log
   log type:  text
- opened on:  12 Jan 2021, 21:02:58
+ opened on:  22 Jan 2021, 16:31:15
 
 . 
 . import delimited using ../temp/cea_fips_xw.csv, clear varnames(1)
@@ -202,14 +202,14 @@ fips: all characters numeric; replaced as long
 (29,099 observations deleted)
 
 . 
-. merge m:1 fips using ../temp/demand.dta, keep(1 3)
+. merge m:1 fips using ../temp/demand.dta
 (note: variable fips was long, now double to accommodate using data's values)
 
     Result                           # of obs.
     -----------------------------------------
-    not matched                           124
+    not matched                         1,560
         from master                       124  (_merge==1)
-        from using                          0  (_merge==2)
+        from using                      1,436  (_merge==2)
 
     matched                             1,514  (_merge==3)
     -----------------------------------------
@@ -224,15 +224,15 @@ fips: all characters numeric; replaced as long
 
     Result                           # of obs.
     -----------------------------------------
-    not matched                         2,168
-        from master                         0  (_merge==1)
-        from using                      2,168  (_merge==2)
+    not matched                           734
+        from master                         1  (_merge==1)
+        from using                        733  (_merge==2)
 
-    matched                             1,514  (_merge==3)
+    matched                             2,949  (_merge==3)
     -----------------------------------------
 
 . keep if _merge == 3
-(2,168 observations deleted)
+(734 observations deleted)
 
 . drop _merge
 
@@ -240,13 +240,19 @@ fips: all characters numeric; replaced as long
 . // Firm Definition: Two firms with same parent company in a CEA are the same
 . // Note that j is a unique firm ID within a CEA but not necessary across CEAs
 . gen j = parent_number
-(912 missing values generated)
+(2,347 missing values generated)
 
 . replace j = abi if missing(j) 
 (912 real changes made)
 
 . count
-  1,514
+  2,949
+
+. replace j = "NONE" if missing(j) 
+(1,435 real changes made)
+
+. replace labor = 0 if j == "NONE" 
+(1,435 real changes made)
 
 . collapse (sum) labor (mean) wage_jt = wage rent_jt = rent x t_state, by(j cea
 > )
@@ -258,13 +264,13 @@ fips: all characters numeric; replaced as long
 . drop wage_jt rent_jt
 
 . count
-  1,204
+  1,491
 
 . unique j 
-Number of unique values of j is  988
-Number of records is  1204
+Number of unique values of j is  989
+Number of records is  1491
 
-. gen k = 1
+. gen k = (j != "NONE")
 
 . bysort cea: egen N_m = sum(k)
 
@@ -274,30 +280,31 @@ Number of records is  1204
 
         N_m |      Freq.     Percent        Cum.
 ------------+-----------------------------------
-          1 |         81        6.73        6.73
-          2 |        112        9.30       16.03
-          3 |        156       12.96       28.99
-          4 |        136       11.30       40.28
-          5 |         85        7.06       47.34
-          6 |         78        6.48       53.82
-          7 |         70        5.81       59.63
-          8 |         88        7.31       66.94
-          9 |         63        5.23       72.18
-         10 |         30        2.49       74.67
-         11 |         44        3.65       78.32
-         12 |         24        1.99       80.32
-         13 |         13        1.08       81.40
-         14 |         14        1.16       82.56
-         15 |         15        1.25       83.80
-         16 |         16        1.33       85.13
-         17 |         34        2.82       87.96
-         18 |         36        2.99       90.95
-         19 |         19        1.58       92.52
-         22 |         22        1.83       94.35
-         33 |         33        2.74       97.09
-         35 |         35        2.91      100.00
+          0 |         46        3.09        3.09
+          1 |        142        9.52       12.61
+          2 |        151       10.13       22.74
+          3 |        197       13.21       35.95
+          4 |        162       10.87       46.81
+          5 |        101        6.77       53.59
+          6 |         90        6.04       59.62
+          7 |         79        5.30       64.92
+          8 |         99        6.64       71.56
+          9 |         70        4.69       76.26
+         10 |         33        2.21       78.47
+         11 |         48        3.22       81.69
+         12 |         26        1.74       83.43
+         13 |         13        0.87       84.31
+         14 |         15        1.01       85.31
+         15 |         16        1.07       86.38
+         16 |         17        1.14       87.53
+         17 |         35        2.35       89.87
+         18 |         38        2.55       92.42
+         19 |         20        1.34       93.76
+         22 |         23        1.54       95.31
+         33 |         34        2.28       97.59
+         35 |         36        2.41      100.00
 ------------+-----------------------------------
-      Total |      1,204      100.00
+      Total |      1,491      100.00
 
 . plot N_m x 
 
@@ -312,16 +319,16 @@ Number of records is  1204
          |  
     N    |                                         *
     _    |                                          *
-    m    |           *        *
-         |              **                    *
-         |         *            *
-         |    *    *  *
+    m    |           *  **    *
+         |                      *             *
+         |         *  *
+         |    *    *
          |  *     **   * * *           *
-         |       ***   * *         *                   *
-         | *********       *       *                *         *
-         | *****   ** *** **  *       *
-         | **********    ** *           *        *   *                     *
-       1 + ********  **   *       **
+         | *** *****   * *         *                   *      *
+         |  ***  * **   *  *  *                     *
+         | ******* ** ** ** *         *          *   *                     *
+         | ************  ** *           *
+       0 + ******                 **
           +----------------------------------------------------------------+
                48                    (mean) x                       20513
 
@@ -330,15 +337,15 @@ Number of records is  1204
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-         cea |      1,204    161.4444    92.58265          1        348
+         cea |      1,491     164.497    94.83038          1        348
            j |          0
-       labor |      1,204    31.99917    62.70185          0       1000
-           x |      1,204    3225.413    3726.876         48      20513
-     t_state |      1,204    30.96678    14.94747          1         56
+       labor |      1,491     25.8397    57.73654          0       1000
+           x |      1,491    2924.116    3616.177         48      20513
+     t_state |      1,491    30.57612    15.12081          1         56
 -------------+---------------------------------------------------------
-        wage |      1,204    906.5178    160.2319   536.3333   2168.333
-        rent |      1,204    605.0363    164.8303        418       1559
-         N_m |      1,204    8.533223    8.028299          1         35
+        wage |      1,491    887.7174    153.4152   560.2916   1898.417
+        rent |      1,491    601.3295    160.2893      421.5       1559
+         N_m |      1,491    7.586184    7.719568          0         35
 
 . save ../output/data_firms.dta, replace
 (note: file ../output/data_firms.dta not found)
@@ -356,10 +363,10 @@ file ../output/data_cea.dta saved
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-         cea |        302    174.1854    99.05335          1        348
-     t_state |        302    29.64901    16.02477          1         56
-         N_m |        302    3.986755    4.264489          1         35
-       labor |        302    127.5728    168.8305          2       1207
+         cea |        348       174.5    100.6032          1        348
+     t_state |        348    29.02011    16.14174          1         56
+         N_m |        348     3.45977     4.19566          0         35
+       labor |        348    110.7098    163.0872          0       1207
 
 . gen M_t = 1 
 
@@ -376,7 +383,7 @@ file ../output/data_state.dta saved
 -------------+---------------------------------------------------------
      t_state |         50       29.32    15.78224          1         56
          N_t |         50       24.08    20.73727          1         85
-         M_t |         50        6.04    4.956793          1         24
+         M_t |         50        6.96    5.671123          1         28
 
 . 
 . 

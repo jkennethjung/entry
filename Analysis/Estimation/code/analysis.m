@@ -41,7 +41,8 @@ for t = 1:T
     t_rows  = (data(:, 1) == t);
     data_t = data(t_rows, :);
     M(t) = max(data_t(:, 2));
-    E(t) = sum(t_rows);
+    t_nozero = (data(:, 3) > 0);
+    E(t) = sum(t_rows & t_nozero);
     disp('Number of entrants')
     disp(E(t))
     W{t} = zeros(M(t), 1);

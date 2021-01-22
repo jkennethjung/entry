@@ -7,6 +7,6 @@ rm -rf ../temp/
 
 mkdir ../temp/
 mkdir ../output/
-ln -s ../../../Data/Sample/output/* ../temp/
+ln -s ../../../Data/Simulation/output/* ../temp/
 
 matlab -nodisplay -nodesktop -r "run('./analysis.m')"

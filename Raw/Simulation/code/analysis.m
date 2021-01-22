@@ -11,11 +11,9 @@ rng(1);
 
 parpool(12);
 save_as = '../output/data.csv';
-T = 10;
-E = 10;
+NS = 1;
 mu = 1;
 sigma = 1;
-M = 6;
 alpha = 0.6;
 gamma = 1;
 eta = 1;
@@ -24,154 +22,270 @@ Nq_max = 9;
 mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
-Q = 4;
+Q = 3;
 Qv = zeros(Q, 1);
 for q = 1:Q
     Qv(q + 1) = 1.5*q;
 end
 ncol = 9;
-data = zeros(1, ncol);
 
-for cl = 1:T
-    
-    %%% II. Draw Characteristics %%%
-    A = random('Lognormal', mu, sigma, E, 1);
-    Aq = zeros(E, 1);
-    Aq_idx = zeros(E, 1);
-    for j = 1:E
-        q = 1;
-        qj = 0;
-        while qj == 0
-            if q < Q
-                if (A(j) - Qv(q) > 0) & (A(j) - Qv(q + 1) <= 0)
-                    d1 = A(j) - Qv(q);
-                    d2 = Qv(q) - A(j);
-                    if d1 == min(d1, d2)
-                        qj = q;   
-                    else
-                        qj = q + 1;
-                    end
-                end
-            else
-                qj = q;
-            end
-            q = q + 1;
-        end 
-        Aq_idx(j) = qj;
-        Aq(j) = Qv(qj);
+T = 10;
+M = 6*ones(T, 1);
+E = 10*ones(T, 1);
+W = cell(T, 1);
+R = cell(T, 1);
+X = cell(T, 1);
+for t = 1:T
+    W{t} = random('Lognormal', mu, sigma, [M(t), 1]);
+    R{t} = random('Lognormal', mu, sigma, [M(t), 1]);
+    X{t} = random('Lognormal', mu, sigma, [M(t), 1]);
+end
+
+%%% II. Draw Characteristics %%%
+epsilon = cell(T, NS);
+for t = 1:T
+    for ns = 1:NS
+        epsilon{t, ns} = -evrnd(mu_eps, beta_eps, [M(t), E(t)]);
     end
-    A_hist = zeros(Q,1);
-    for q = 1:Q
-        flags = (Aq_idx == q);
-        A_hist(q) = sum(flags);
-    end
-    
-    epsilon = -evrnd(mu_eps, beta_eps, [M,E]);
-    
-    W = random('Lognormal', mu, sigma, M, 1);
-    R = random('Lognormal', mu, sigma, M, 1);
-    X = random('Lognormal', mu, sigma, M, 1);
-    
-    %%% III. Construct State Space %%%
-    
-    S = (Nq_max)^Q;
-    States = zeros(S, Q);
-    State = zeros(1, Q);
-    for s = 2:S
-        maxed = (State == Nq_max);
-        if maxed(Q) == 0
-            State(Q) = State(Q) + 1;
-        else
-            q = Q;
-            q0 = 0;
-            while q0 == 0 & q > 0
-                if maxed(q) == 1
-                    q = q - 1;
-                else 
-                    q0 = q;
-                end
-            end
-            State(q0) = State(q0) + 1;
-            for q = (q0+1):Q
-                State(q) = 0;
+end
+
+%%% III. Construct State Space %%%
+
+A_hists = {};
+for t = 1:T
+    A_hists{end+1} = nsumk(Q, E(t));
+end
+
+S = (Nq_max)^Q;
+States = zeros(S, Q);
+State = zeros(1, Q);
+for s = 2:S
+    maxed = (State == Nq_max);
+    if maxed(Q) == 0
+        State(Q) = State(Q) + 1;
+    else
+        q = Q;
+        q0 = 0;
+        while q0 == 0 & q > 0
+            if maxed(q) == 1
+                q = q - 1;
+            else 
+                q0 = q;
             end
         end
-        States(s, :) = State;
-    end
-    
-    %%% IV. Calculate Cournot Payoffs in Each State %%%
-    
-    P = zeros(M, S);
-    Y = zeros(M, S, Q);
-    L = zeros(M, S, Q);
-    K = zeros(M, S, Q);
-    PiV = zeros(M, S, Q);
-    
-    for m = 1:M
-        w = W(m);
-        r = R(m);        
-        x = X(m);
-        S_neg = zeros(S, 1);
-        MC = zeros(Q, 1);
-        for q = 1:Q
-            a = Qv(q);
-            MC(q) = marginal_cost(a, w, r, alpha);
+        State(q0) = State(q0) + 1;
+        for q = (q0+1):Q
+            State(q) = 0;
         end
-        for s = 2:S
-            State = States(s, :);
-            C = zeros(Q, 1);
-            Qs = [0];    % Number of firms by quantile (excludes zeros)
-            Cs = [0];    % Constant by quantile (excludes zeros)
+    end
+    States(s, :) = State;
+end
+
+pr_hist = {};
+for t = 1:T
+    pr_hist{end+1} = pr_firms(A_hists{t}, E(t), mu, sigma, Qv, Q);
+end
+
+theta = [gamma; eta; mu; sigma];
+data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+    States, epsilon, ncol);
+
+writematrix(data_sim{1}, save_as);
+
+function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+        States, epsilon, ncol)
+    gamma = theta(1);
+    eta = theta(2);
+    mu = theta(3);
+    sigma = theta(4);
+
+    A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T);
+    Aq_idx = A_draw{2};
+    data_sim = cell(NS, 1);
+    for t = 1:T
+        %%% IV. Calculate Cournot Payoffs in Each State %%%
+        % This may require large amount of memory, so placing in inner loop of t
+        % rather than over all t beforehand
+        
+        M_t = M(t);
+        E_t = E(t);
+        P = zeros(M_t, S);
+        Y = zeros(M_t, S, Q);
+        L = zeros(M_t, S, Q);
+        K = zeros(M_t, S, Q);
+        PiV = zeros(M_t, S, Q);
+        W_t = W{t};
+        R_t = R{t};
+        X_t = X{t};
+        
+        for m = 1:M_t
+            w = W_t(m);
+            r = R_t(m);        
+            x = X_t(m);
+            S_neg = zeros(S, 1);
+            MC = zeros(Q, 1);
             for q = 1:Q
-                Qn = State(q);
-                if Qn > 0
-                    a = Qv(q);
-                    c = (x*gamma - MC(q))/eta;
-                    if c > 0
-                        C(q) = c;
-                        Qs = [Qs; Qn];
-                        Cs = [Cs; c];
-                    end
-                end
+                a = Qv(q);
+                MC(q) = marginal_cost(a, w, r, alpha);
             end
-    
-            Iq = (C > 0); % Dummies for quantile inclusion
-            Nq = sum(Iq); % Number of quantiles represented in eqm
-            if Nq > 0
-                Qs = Qs(2:(Nq+1)); 
-                Cs = Cs(2:(Nq+1)); 
-                B = zeros(Nq);
-                for r = 1:Nq
-                    row = Qs;
-                    row(r) = row(r) + 1;
-                    B(r, :) = row;
-                end
-                y = inv(B)*Cs;
-                if sum(y < 0) == 0
-                    S_neg(s) = 1;
-                    p = x*gamma - y' * Qs;
-                    P(m, s) = p;
-                    j = 1;
-                    for q = 1:Q
-                        if Iq(q) == 1
-                            Y(m, s, q) = y(j);
-                            PiV(m, s, q) = (p - MC(q)) * y(j);
-                            j = j + 1;
+            for s = 2:S
+                State = States(s, :);
+                C = zeros(Q, 1);
+                Qs = [0];    % Number of firms by quantile (excludes zeros)
+                Cs = [0];    % Constant by quantile (excludes zeros)
+                for q = 1:Q
+                    Qn = State(q);
+                    if Qn > 0
+                        a = Qv(q);
+                        c = (x*gamma - MC(q))/eta;
+                        if c > 0
+                            C(q) = c;
+                            Qs = [Qs; Qn];
+                            Cs = [Cs; c];
                         end
                     end
                 end
-            end 
+        
+                Iq = (C > 0); % Dummies for quantile inclusion
+                Nq = sum(Iq); % Number of quantiles represented in eqm
+                if Nq > 0
+                    Qs = Qs(2:(Nq+1)); 
+                    Cs = Cs(2:(Nq+1)); 
+                    B = zeros(Nq);
+                    for r = 1:Nq
+                        row = Qs;
+                        row(r) = row(r) + 1;
+                        B(r, :) = row;
+                    end
+                    y = inv(B)*Cs;
+                    if sum(y < 0) == 0
+                        S_neg(s) = 1;
+                        p = x*gamma - y' * Qs;
+                        P(m, s) = p;
+                        j = 1;
+                        for q = 1:Q
+                            if Iq(q) == 1
+                                Y(m, s, q) = y(j);
+                                PiV(m, s, q) = (p - MC(q)) * y(j);
+                                j = j + 1;
+                            end
+                        end
+                    end
+                end 
+            end
+            %disp('% of states with negative output');
+            %mean(S_neg)
+        end
+        
+        for m = 1:M_t
+            L(m, :, :) = (1-alpha)*Y(m, :, :)/W_t(m);
+            K(m, :, :) = (alpha)*Y(m, :, :)/R_t(m);
+        end
+    
+        %%% V. Fixed Point to Solve for Firm Beliefs%%%
+    
+        At_hist = A_hists{t}; 
+        prt_hist = pr_hist{t};
+        [cp, resnorm, residual, exitflag, output] = nfp(t, M_t, Q, States, ...
+            At_hist, prt_hist, PiV, S);
+        cp_mat = reshape(cp, [M_t, Q]);
+        EPi = exp_profit(cp_mat, States, At_hist, prt_hist, PiV, M_t, Q, S);
+        for ns = 1:NS
+            %%% VI. Entry and Ex-Post Outcomes  %%%
+            M_J = zeros(E_t, 1);
+            S_M = zeros(M_t, Q);
+            for j = 1:E_t
+                q = Aq_idx{t, ns}(j);
+                shocks = reshape(epsilon{t, ns}(:, j), [M_t, 1]);
+                Pi_j = EPi(:, q) + shocks ;
+                [Pi_mj, m_j] = max(Pi_j);
+                M_J(j) = m_j;
+                S_M(m_j, q) = S_M(m_j, q) + 1;
+            end
+            
+            State_M = zeros(M_t, 1);
+            data_c = [];
+            for m = 1:M_t
+                s_m = S_M(m, :);
+                n_m = sum(s_m);
+                [~, s] = ismember(s_m, States, 'rows');
+                if s == 0
+                    disp('Warning: outside state space');
+                elseif s == 1
+                    data_c = [data_c; t m 0 W_t(m) R_t(m) X_t(m) 0 0 0];
+                else
+                    State_M(m) = s;
+                    for q = 1:Q
+                        if s_m(q) > 0
+                            for n = 1:s_m(q)
+                                l = L(m, s, q);
+                                k = K(m, s, q);
+                                data_c = [data_c; t m n_m W_t(m) R_t(m) X_t(m) l k PiV(m, s, q) + W_t(m)*l + R_t(m)*k];
+                            end
+                        end
+                    end
+                end
+            end
+            data_sim{ns} = [data_sim{ns}; data_c];
+        end
+    end
+end
+
+function A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T)
+    
+    A_draw = cell(2, 1);
+    A = cell(T, NS);
+    A_hist = cell(T, NS);
+    Aq_idx = cell(T, NS);
+    
+    for t = 1:T
+        for bs = 1:NS
+            A{t, bs} = random('Lognormal', mu, sigma, [E(t), 1]);
+            A_hist{t, bs} = zeros(Q, 1);
+            Aq_idx{t, bs} = zeros(E(t), 1);
         end
     end
     
-    for m = 1:M
-        L(m, :, :) = (1-alpha)*Y(m, :, :)/W(m);
-        K(m, :, :) = (alpha)*Y(m, :, :)/R(m);
+    for t = 1:T
+        for ns = 1:NS
+            Aq = zeros(E(t), 1);
+            for j = 1:E(t)
+                q = 1;
+                qj = 0;
+                while qj == 0
+                    if q < Q
+                        A_j = A{t, ns}(j);
+                        if (A_j - Qv(q) > 0) & (A_j - Qv(q + 1) <= 0)
+                            d1 = A_j - Qv(q);
+                            d2 = Qv(q) - A_j;
+                            if d1 == min(d1, d2)
+                                qj = q;   
+                            else
+                                qj = q + 1;
+                            end
+                        end
+                    else
+                        qj = q;
+                    end
+                    q = q + 1;
+                end 
+                Aq_idx{t, ns}(j) = qj;
+                Aq(j) = Qv(qj);
+            end
+            for q = 1:Q
+                flags = (Aq_idx{t, ns} == q);
+                A_hist{t, ns}(q) = sum(flags);
+            end
+        end
     end
-    
-    %%% V. Fixed Point to Solve for Firm Beliefs%%%
-    
-    cp_mat = ones(M, Q)/(M*Q); 
+
+    A_draw{1} = A_hist;
+    A_draw{2} = Aq_idx;
+end
+
+function [cp, resnorm, residual, exitflag, output] = nfp(t, M, Q, States, ...
+        At_hist, prt_hist, PiV, S)
+    cp_mat = ones(M, Q)/(M*Q);
     cp = cp_mat(:);
     lb = zeros(M, Q);
     ub = ones(M, Q);
@@ -179,9 +293,9 @@ for cl = 1:T
     k = 1;
     for q = 1:Q
         for m = 1:M
-            for t = 1:Q
+            for i = 1:Q
                 for l = 1:M
-                    if (m == l) | (q == t)
+                    if (m == l) | (q == i)
                         sparse(k) = 1;
                     end
                     k = k + 1;
@@ -190,58 +304,15 @@ for cl = 1:T
         end
     end
     options = optimoptions(@lsqnonlin,'Algorithm','trust-region-reflective', ...
-        'JacobPattern', sparse, 'UseParallel', true);
-    f = @(z) fpe(z, M, Q, States, A_hist, PiV, S);
-    tic
+            'JacobPattern', sparse, 'UseParallel', false);
+    f = @(z) fpe(z, M, Q, States, At_hist, prt_hist, PiV, S);
     [cp, resnorm, residual, exitflag, output] = lsqnonlin(f, cp, ...
         lb, ub, options);
-    toc
-    
-    %%% VI. Entry and Ex-Post Outcomes  %%%
-    cp_mat = reshape(cp, [M, Q]);
-    EPi = exp_profit(cp_mat, States, A_hist, PiV, M, Q, S);
-    M_J = zeros(E, 1);
-    S_M = zeros(M, Q);
-    for j = 1:E
-        q = Aq_idx(j);
-        Pi_j = EPi(:, q) + epsilon(:, j);
-        [Pi_mj, m_j] = max(Pi_j);
-        M_J(j) = m_j;
-        S_M(m_j, q) = S_M(m_j, q) + 1;
-    end
-    
-    State_M = zeros(M, 1);
-    data_c = zeros(1, ncol);
-    for m = 1:M
-        s_m = S_M(m, :);
-        n_m = sum(s_m);
-        [~, s] = ismember(s_m, States, 'rows');
-        if s == 0
-            disp('Warning: outside state space')
-        elseif s == 1
-            data_c = [data_c; cl m 0 W(m) R(m) X(m) 0 0 0];
-        else
-            State_M(m) = s;
-            for q = 1:Q
-                if s_m(q) > 0
-                    for n = 1:s_m(q)
-                        l = L(m, s, q);
-                        k = K(m, s, q);
-                        data_c = [data_c; cl m n_m W(m) R(m) X(m) l k PiV(m, s, q) + W(m)*l + R(m)*k];
-                    end
-                end
-            end
-        end
-    end
-    data_c(1, :) = [];
-    data = [data; data_c];
 end
-data(1, :) = [];
-writematrix(data, save_as);
 
-function z = fpe(cp, M, Q, States, A_hist, PiV, S)
+function z = fpe(cp, M, Q, States, At_hist, prt_hist, PiV, S)
     cp_mat = reshape(cp, [M, Q]);
-    z = choice_prob(exp_profit(cp_mat, States, A_hist, PiV, M, Q, S), ...
+    z = choice_prob(exp_profit(cp_mat, States, At_hist, prt_hist, PiV, M, Q, S), ...
         M, Q) - cp_mat;
 end
 
@@ -254,29 +325,38 @@ function cp = choice_prob(EPi, M, Q)
     end
 end
 
-function EPi = exp_profit(p, States, A_hist, PiV, M, Q, S) 
+function EPi = exp_profit(p, States, At_hist, prt_hist, PiV, M, Q, S) 
     EPi = zeros(M, Q);
-    for q = 1:Q
+    len = size(At_hist, 1);
+    p_sm = zeros(S, M);
+    parfor s = 1:S
         for m = 1:M
-            p_s = zeros(S, 1);
-            for s = 1:S
-                p_s(s) = pr_state(p(m, :), s, States, A_hist, Q);
+            pr_states = zeros(len, 1);
+            for i = 1:len 
+                hist = At_hist(i, :);
+                pr_states(i) = pr_state(p(m, :), s, States, hist, Q);
             end
+            p_s(s, m) = prt_hist.' * pr_states;
+        end
+    end
+    for m = 1:M
+        p_s = p_sm(:, m);
+        for q = 1:Q
             EPi(m, q) = PiV(m, :, q)*p_s;
         end
     end
 end
 
-function p_s = pr_state(pr, s, States, A_hist, Q) 
+function p_s = pr_state(pr, s, States, At_hist, Q) 
     p_s = 1;
-    impossible = 0;
-    for q = 1:Q
-        n = A_hist(q);
-        k = States(s, q);
-        if (n < k) | impossible
-            p_s = 0;
-            impossible = 1;
-        else
+    state = States(s, :);
+    impossible = (state > At_hist);
+    if sum(impossible) > 0
+        p_s = 0;
+    else
+        for q = 1:Q
+            n = At_hist(q);
+            k = States(s, q);
             pr_q = pr(q);
             p_s = p_s*nchoosek(n, k)*pr_q^k*(1-pr_q)^(n-k); 
         end
@@ -287,3 +367,49 @@ function mc = marginal_cost(a, w, r, alpha)
      mc = [w*(alpha*r/((1-alpha)*w))^(1-alpha) + ...
            r*((1-alpha)*w/(alpha*r))^alpha]/a;
 end 
+
+function pr_part = pr_firms(At_hists, e, mu, sigma, Qv, Q)
+    probs = discrete_probs(mu, sigma, Qv, Q);
+    len = size(At_hists, 1);
+    pr_part = [];
+    for j = 1:len
+        pr_part = [pr_part; prod(probs.^At_hists(j, :))];
+    end
+end
+
+function probs = discrete_probs(mu, sigma, Qv, Q)
+    probs = [cdf('Lognormal', Qv(1), mu, sigma)];
+    for q = 2:(Q-1)
+        probs = [probs, cdf('Lognormal', Qv(q), mu, sigma) - cdf('Lognormal', Qv(q-1), mu, sigma)];
+    end
+    probs = [probs, 1 - cdf('Lognormal', Qv(Q-1), mu, sigma)];
+end
+
+function x = nsumk(n, k)
+    m = nchoosek(k+n-1,n-1);
+    dividers = [zeros(m,1),nchoosek((1:(k+n-1))',n-1),ones(m,1)*(k+n)];
+    x = diff(dividers,1,2)-1;
+end
+
+function iv = construct_blp_ivs(data, W, R, X, M, T)
+    n_obs = size(data, 1);
+    iv = [];
+    for n = 1:n_obs
+        t = data(n, 1);
+        m = data(n, 2);
+        iv(n, 1) = (sum(W{t}) - data(n, 4)) / (M(t) - 1);
+        iv(n, 2) = (sum(R{t}) - data(n, 5)) / (M(t) - 1);
+        iv(n, 3) = (sum(X{t}) - data(n, 6)) / (M(t) - 1);
+    end
+end
+
+function collapsed = collapse_data(data, T, M)
+    collapsed = [];
+    for t = 1:T
+        for m = 1:M(t)
+            mt_rows  = ((data(:, 2) == m) & (data(:, 1) == t));
+            data_mt = data(mt_rows, :);
+            collapsed = [collapsed; data_mt(1, :)];
+        end
+    end
+end

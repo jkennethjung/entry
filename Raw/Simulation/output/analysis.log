@@ -1,72 +1,62 @@
 Starting parallel pool (parpool) using the 'local' profile ...
 Connected to the parallel pool (number of workers: 12).
 
-Local minimum possible.
+Local minimum found.
 
-lsqnonlin stopped because the final change in the sum of squares relative to 
-its initial value is less than the value of the function tolerance.
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
-Elapsed time is 6.189801 seconds.
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Elapsed time is 4.665807 seconds.
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Elapsed time is 2.281196 seconds.
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Elapsed time is 2.209401 seconds.
-
-Local minimum possible.
-
-lsqnonlin stopped because the final change in the sum of squares relative to 
-its initial value is less than the value of the function tolerance.
-
-Elapsed time is 7.189812 seconds.
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Elapsed time is 2.181560 seconds.
-
-Local minimum possible.
-
-lsqnonlin stopped because the final change in the sum of squares relative to 
-its initial value is less than the value of the function tolerance.
-
-Elapsed time is 3.394205 seconds.
-
-Local minimum possible.
-
-lsqnonlin stopped because the final change in the sum of squares relative to 
-its initial value is less than the value of the function tolerance.
-
-Elapsed time is 4.785934 seconds.
-
-Local minimum possible.
-
-lsqnonlin stopped because the final change in the sum of squares relative to 
-its initial value is less than the value of the function tolerance.
-
-Elapsed time is 10.268154 seconds.
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
 
-Elapsed time is 1.576593 seconds.
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+

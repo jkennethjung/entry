@@ -5,6 +5,7 @@ log using ../output/analysis.log, replace
 use ../temp/data_firms.dta, clear
 merge m:1 t_state using ../temp/data_state.dta, assert(3) keep(3) ///
     keepusing(N_t M_t) nogen
+drop if labor == 0 & N_m != 0 
 keep if N_t <= 20 & M_t <= 10
 unique t_state
 rename N_m n

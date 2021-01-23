@@ -14,7 +14,7 @@ save_as = '../output/data.csv';
 NS = 1;
 mu = 1;
 sigma = 1;
-alpha = 0.6;
+alpha = 0.4;
 gamma = 1;
 eta = 1;
 Nq_max = 9;
@@ -23,9 +23,9 @@ mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
 Q = 3;
-Qv = zeros(Q, 1);
+Qv = ones(Q, 1);
 for q = 1:Q
-    Qv(q + 1) = 1.5*q;
+    Qv(q + 1) = 0.5*q;
 end
 ncol = 9;
 
@@ -83,10 +83,10 @@ end
 
 pr_hist = {};
 for t = 1:T
-    pr_hist{end+1} = pr_firms(A_hists{t}, E(t), mu, sigma, Qv, Q);
+    pr_hist{end+1} = pr_firms(A_hists{t}, E(t), mu, Qv, Q);
 end
 
-theta = [gamma; eta; mu; sigma];
+theta = [gamma; eta; mu];
 data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
     States, epsilon, ncol);
 
@@ -97,9 +97,8 @@ function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, 
     gamma = theta(1);
     eta = theta(2);
     mu = theta(3);
-    sigma = theta(4);
 
-    A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T);
+    A_draw = draw_firms(mu, NS, E, Q, Qv, T);
     Aq_idx = A_draw{2};
     data_sim = cell(NS, 1);
     for t = 1:T
@@ -231,7 +230,7 @@ function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, 
     end
 end
 
-function A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T)
+function A_draw = draw_firms(mu, NS, E, Q, Qv, T)
     
     A_draw = cell(2, 1);
     A = cell(T, NS);
@@ -240,7 +239,7 @@ function A_draw = draw_firms(mu, sigma, NS, E, Q, Qv, T)
     
     for t = 1:T
         for bs = 1:NS
-            A{t, bs} = random('Lognormal', mu, sigma, [E(t), 1]);
+            A{t, bs} = random('Exponential', mu, [E(t), 1]);
             A_hist{t, bs} = zeros(Q, 1);
             Aq_idx{t, bs} = zeros(E(t), 1);
         end
@@ -368,8 +367,8 @@ function mc = marginal_cost(a, w, r, alpha)
            r*((1-alpha)*w/(alpha*r))^alpha]/a;
 end 
 
-function pr_part = pr_firms(At_hists, e, mu, sigma, Qv, Q)
-    probs = discrete_probs(mu, sigma, Qv, Q);
+function pr_part = pr_firms(At_hists, e, mu, Qv, Q)
+    probs = discrete_probs(mu, Qv, Q);
     len = size(At_hists, 1);
     pr_part = [];
     for j = 1:len
@@ -377,12 +376,12 @@ function pr_part = pr_firms(At_hists, e, mu, sigma, Qv, Q)
     end
 end
 
-function probs = discrete_probs(mu, sigma, Qv, Q)
-    probs = [cdf('Lognormal', Qv(1), mu, sigma)];
+function probs = discrete_probs(mu, Qv, Q)
+    probs = [cdf('Exponential', Qv(1), mu)];
     for q = 2:(Q-1)
-        probs = [probs, cdf('Lognormal', Qv(q), mu, sigma) - cdf('Lognormal', Qv(q-1), mu, sigma)];
+        probs = [probs, cdf('Exponential', Qv(q), mu) - cdf('Exponential', Qv(q-1), mu)];
     end
-    probs = [probs, 1 - cdf('Lognormal', Qv(Q-1), mu, sigma)];
+    probs = [probs, 1 - cdf('Exponential', Qv(Q-1), mu)];
 end
 
 function x = nsumk(n, k)

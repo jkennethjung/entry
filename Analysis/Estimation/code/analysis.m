@@ -115,7 +115,7 @@ Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
 Beta_0 = [Beta_1; Beta_2; Beta_3];
 disp(Beta_0);
 
-theta = [gamma; eta; mu; sigma];
+theta = rand(4, 1);
 c = clock;
 fix(c)
 aux = @(theta) auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, ...

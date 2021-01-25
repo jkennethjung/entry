@@ -13,7 +13,7 @@ parpool(12);
 load_as = '../temp/small.csv';
 save_as = '../output/estimates.csv';
 NS = 100;
-mu = 4;
+mu = 50;
 alpha = 0.4;
 gamma = 1;
 eta = 1;
@@ -23,10 +23,7 @@ mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
 Q = 3;
-Qv = ones(Q, 1);
-for q = 1:Q
-    Qv(q + 1) = 2*q;
-end
+Qv = [25; 50; 75];
 ncol = 9;
 
 data = readmatrix(load_as);
@@ -55,8 +52,6 @@ for t = 1:T
         X{t}(m) = data_mt(6);
     end
 end
-
-iv = construct_blp_ivs(data, W, R, X, M, T);
 
 %%% II. Draw Characteristics %%%
 epsilon = cell(T, NS);
@@ -120,7 +115,7 @@ fix(c)
 aux = @(theta) auxiliary(theta, Beta_0, NS, alpha, A_hists, M, E, W, R, ...
         X, Q, Qv, T, S, States, epsilon, ncol);
 [theta, dBeta, exitflag, output] = patternsearch(aux, theta, [], [], [], [], ...
-    theta*1e-3, theta*1e3);
+    theta*1e-2, theta*1e2);
 disp('Outer loop optimization finished');
 disp(theta);
 c = clock;
@@ -237,8 +232,12 @@ function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, 
                         P(m, s) = p;
                         j = 1;
                         for q = 1:Q
+                            a = Qv(q);
                             if Iq(q) == 1
                                 Y(m, s, q) = y(j);
+                                [lab, cap] =  factor_demand(y(j), a, w, r, alpha);
+                                L(m, s, q) = lab;
+                                K(m, s, q) = cap;
                                 PiV(m, s, q) = (p - MC(q)) * y(j);
                                 j = j + 1;
                             end
@@ -249,12 +248,7 @@ function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, 
             %disp('% of states with negative output');
             %mean(S_neg)
         end
-        
-        for m = 1:M_t
-            L(m, :, :) = (1-alpha)*Y(m, :, :)/W_t(m);
-            K(m, :, :) = (alpha)*Y(m, :, :)/R_t(m);
-        end
-    
+           
         %%% V. Fixed Point to Solve for Firm Beliefs%%%
     
         At_hist = A_hists{t}; 
@@ -437,8 +431,13 @@ function p_s = pr_state(pr, s, States, At_hist, Q)
 end
 
 function mc = marginal_cost(a, w, r, alpha)
-     mc = [w*(alpha*r/((1-alpha)*w))^(1-alpha) + ...
-           r*((1-alpha)*w/(alpha*r))^alpha]/a;
+    [l, k] = factor_demand(1, a, w, r, alpha);
+    mc = w*l + r*k;
+end 
+
+function [l, k] = factor_demand(y, a, w, r, alpha)
+    l = y*((1-alpha)*r/(alpha*w))^alpha/a;
+    k = y*(alpha*w/((1-alpha)*r))^(1-alpha)/a;
 end 
 
 function pr_part = pr_firms(At_hists, e, mu, Qv, Q)
@@ -462,18 +461,6 @@ function x = nsumk(n, k)
     m = nchoosek(k+n-1,n-1);
     dividers = [zeros(m,1),nchoosek((1:(k+n-1))',n-1),ones(m,1)*(k+n)];
     x = diff(dividers,1,2)-1;
-end
-
-function iv = construct_blp_ivs(data, W, R, X, M, T)
-    n_obs = size(data, 1);
-    iv = [];
-    for n = 1:n_obs
-        t = data(n, 1);
-        m = data(n, 2);
-        iv(n, 1) = (sum(W{t}) - data(n, 4)) / (M(t) - 1);
-        iv(n, 2) = (sum(R{t}) - data(n, 5)) / (M(t) - 1);
-        iv(n, 3) = (sum(X{t}) - data(n, 6)) / (M(t) - 1);
-    end
 end
 
 function collapsed = collapse_data(data, T, M)

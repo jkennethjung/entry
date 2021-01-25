@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Sample/code/../output/ana
 > lysis.log
   log type:  text
- opened on:  22 Jan 2021, 17:17:33
+ opened on:  23 Jan 2021, 23:53:56
 
 . 
 . use ../temp/data_firms.dta, clear
@@ -37,18 +37,6 @@ Number of records is  328
 
 . keep t_state cea n w r x l N_t M_t
 
-. replace x = log(x)
-(328 real changes made)
-
-. sum x
-
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-           x |        328    7.196469    1.223974   4.143135   9.720706
-
-. replace x = 0.1 * x / r(mean)
-(328 real changes made)
-
 . sum w
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
@@ -66,15 +54,6 @@ Number of records is  328
 
 . replace r = r / r(mean)
 (328 real changes made)
-
-. sum l
-
-    Variable |        Obs        Mean    Std. Dev.       Min        Max
--------------+---------------------------------------------------------
-           l |        328    38.30793    90.40618          0       1000
-
-. replace l = l / r(mean)
-(308 real changes made)
 
 . save ../temp/raw.dta, replace
 (note: file ../temp/raw.dta not found)
@@ -174,8 +153,8 @@ l        t_state  r        N_t      t
 -------------+---------------------------------------------------------
            w |        328           1    .1856119   .6327837   1.666592
            r |        328           1    .2826497   .6665092   1.809262
-           x |        328          .1     .017008   .0575718   .1350761
-           l |        328           1    2.359986          0   26.10426
+           x |        328    2725.067    3645.892         63      16659
+           l |        328    38.30793    90.40618          0       1000
          N_t |        328    13.60366    4.614323          1         20
 -------------+---------------------------------------------------------
          M_t |        328    4.887195    1.999102          1          8
@@ -266,8 +245,8 @@ l        t_state  r        N_t      t
 -------------+---------------------------------------------------------
            w |         73    .9666553    .1656397   .6327837   1.341128
            r |         73    1.032735    .2711458   .7231558   1.726865
-           x |         73    .0974496    .0174067   .0575718   .1318189
-           l |         73    1.032012    1.554477          0    10.4417
+           x |         73    2495.027     3758.28         63      13178
+           l |         73    39.53425    59.54879          0        400
          N_t |         73    6.917808    2.618065          1         10
 -------------+---------------------------------------------------------
          M_t |         73    3.315068    1.544495          1          6
@@ -288,5 +267,5 @@ file ../output/small.csv saved
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Sample/code/../output/ana
 > lysis.log
   log type:  text
- closed on:  22 Jan 2021, 17:17:34
+ closed on:  23 Jan 2021, 23:53:56
 -------------------------------------------------------------------------------

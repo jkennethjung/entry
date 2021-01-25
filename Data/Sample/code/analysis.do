@@ -13,15 +13,10 @@ rename wage w
 rename rent r
 rename labor l 
 keep t_state cea n w r x l N_t M_t
-replace x = log(x)
-sum x
-replace x = 0.1 * x / r(mean)
 sum w
 replace w = w / r(mean)
 sum r
 replace r = r / r(mean)
-sum l
-replace l = l / r(mean)
 save ../temp/raw.dta, replace
 
 collapse (first) n, by(t_state)

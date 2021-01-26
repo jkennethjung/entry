@@ -9,21 +9,21 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(12);
+parpool(24);
 load_as = '../temp/small.csv';
 save_as = '../output/estimates.csv';
 NS = 100;
-mu = 50;
+mu = 20;
 alpha = 0.4;
-gamma = 1;
+gamma = 40;
 eta = 1;
 Nq_max = 9;
 
 mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
-Q = 3;
-Qv = [25; 50; 75];
+Q = 4;
+Qv = [10; 20; 30; 40];
 ncol = 9;
 
 data = readmatrix(load_as);

@@ -1,0 +1,455 @@
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 12).
+
+Qv =
+
+    10
+    15
+    25
+    45
+
+Number of entrants
+     3
+
+Number of entrants
+     3
+
+Number of entrants
+     3
+
+Number of entrants
+     6
+
+Number of entrants
+     3
+
+Number of entrants
+     9
+
+Number of entrants
+    10
+
+Number of entrants
+     6
+
+Number of entrants
+     1
+
+Number of entrants
+     8
+
+Number of entrants
+     9
+
+Number of entrants
+     2
+
+Number of entrants
+     6
+
+True auxiliary model parameters
+   1.0e+03 *
+
+    0.0395
+    3.5461
+    0.0182
+   -0.0986
+    0.0755
+   -0.0000
+    0.0208
+    0.0014
+   -0.0018
+    0.0000
+    0.0019
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Auxiliary model:
+   1.0e+03 *
+
+    0.0253
+    3.3086
+   -0.0012
+   -0.0005
+    0.0006
+    0.0002
+    0.0029
+    0.0001
+    0.0002
+    0.0000
+    0.0014
+
+Objective function
+   7.2519e+04
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Assembling standard error matrix
+   1.0e+07 *
+
+   -0.0075   -0.0044    0.0028
+   -1.5355   -1.2545    1.6723
+   -0.0178   -0.0054   -0.0068
+    0.0043    0.0018    0.0005
+    0.0006    0.0003    0.0009
+   -0.0001   -0.0000   -0.0000
+    0.0386    0.0082    0.0189
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+
+   1.0e+08 *
+
+  Columns 1 through 7
+
+    0.0001    0.0206   -0.0000    0.0000    0.0000    0.0000    0.0000
+    0.0206    8.6667   -0.0048   -0.0008    0.0029    0.0002    0.0010
+   -0.0000   -0.0048    0.0001   -0.0000   -0.0000   -0.0000   -0.0001
+    0.0000   -0.0008   -0.0000    0.0000   -0.0000   -0.0000    0.0000
+    0.0000    0.0029   -0.0000   -0.0000    0.0000    0.0000    0.0000
+    0.0000    0.0002   -0.0000   -0.0000    0.0000    0.0000   -0.0000
+    0.0000    0.0010   -0.0001    0.0000    0.0000   -0.0000    0.0002
+   -0.0000   -0.0001   -0.0000    0.0000   -0.0000   -0.0000    0.0000
+    0.0000    0.0001    0.0000   -0.0000    0.0000    0.0000   -0.0000
+    0.0000    0.0000   -0.0000    0.0000    0.0000   -0.0000    0.0000
+   -0.0000   -0.0002    0.0000   -0.0000   -0.0000   -0.0000   -0.0000
+
+  Columns 8 through 11
+
+   -0.0000    0.0000    0.0000   -0.0000
+   -0.0001    0.0001    0.0000   -0.0002
+   -0.0000    0.0000   -0.0000    0.0000
+    0.0000   -0.0000    0.0000   -0.0000
+   -0.0000    0.0000    0.0000   -0.0000
+   -0.0000    0.0000   -0.0000   -0.0000
+    0.0000   -0.0000    0.0000   -0.0000
+    0.0000   -0.0000   -0.0000    0.0000
+   -0.0000    0.0000    0.0000   -0.0000
+   -0.0000    0.0000    0.0000   -0.0000
+    0.0000   -0.0000   -0.0000    0.0000
+
+[Warning: Matrix is close to singular or badly scaled. Results may be
+inaccurate. RCOND =  1.467228e-26.] 
+[> In mpower>integerMpower (line 80)
+  In ^ (line 49)
+  In analysis>standard_errors (line 211)
+  In analysis (line 150)
+  In run (line 91)] 
+
+ans =
+
+   1.0e-06 *
+
+    0.1353   -0.1240   -0.1414
+   -0.1240    0.3428    0.1421
+   -0.1414    0.1421    0.3050
+

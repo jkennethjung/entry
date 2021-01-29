@@ -18,21 +18,53 @@ rename v11 ns
 replace tfp = tfp * 10
 save ../output/sample.dta, replace
 
+use ../temp/small.dta, clear
+reg l n w r x
+sum l
+reg n w r x
+
+use ../output/sample.dta, clear
+* Aux regressions
+forv s = 1/100 {
+    preserve
+    keep if ns == `s'
+    reg l n w r x
+    matrix b = e(b)
+    sum l
+    matrix b = b, r(mean), r(sd)^2 
+    reg n w r x
+    matrix b = b, e(b)
+    restore
+    matrix b_aux = nullmat(b_aux) \ b 
+}
+preserve
+svmat b_aux
+sum
+restore
+
+* Simulated productivities
 drop if n == 0
 collapse (mean) x w r tfp_mean = tfp (sd) tfp_sd = tfp, by(m t ns)
 
 forv s = 1/100 {
     reg tfp_mean x if ns == `s'
-    matrix betas = nullmat(betas) \ e(b)
+    matrix b = e(b)
+    matrix beta = b[1,1]
+
+    reg tfp_mean x w r if ns == `s'
+    matrix b = e(b)
+    matrix beta = beta, b[1,1] 
+
     reg tfp_sd x if ns == `s'
-    matrix alphas = nullmat(alphas) \ e(b)
+    matrix b = e(b)
+    matrix beta = beta, b[1,1] 
+
+    reg tfp_sd x w r if ns == `s'
+    matrix b = e(b)
+    matrix beta = beta, b[1,1] 
+
+    matrix betas = nullmat(betas) \ beta
 }
 clear
 svmat betas
 sum
-clear
-svmat alphas
-sum
-
-
-

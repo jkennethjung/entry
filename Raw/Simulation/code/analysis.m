@@ -9,7 +9,7 @@ rng(1);
 
 %%% I. Initialize  %%%
 
-parpool(12);
+parpool(24);
 save_as = '../output/data.csv';
 NS = 1;
 mu = 1;
@@ -22,11 +22,9 @@ Nq_max = 9;
 mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
-Q = 3;
+Q = 4;
+Qv = [20 40 60 80];
 Qv = ones(Q, 1);
-for q = 1:Q
-    Qv(q + 1) = 0.5*q;
-end
 ncol = 9;
 
 T = 10;

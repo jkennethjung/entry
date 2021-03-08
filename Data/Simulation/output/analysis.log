@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Simulation/code/../output
 > /analysis.log
   log type:  text
- opened on:  24 Jan 2021, 22:29:05
+ opened on:   7 Mar 2021, 19:11:25
 
 . 
 . import delimited using ../temp/data.csv, clear
@@ -147,5 +147,5 @@ file ../output/data.csv saved
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Simulation/code/../output
 > /analysis.log
   log type:  text
- closed on:  24 Jan 2021, 22:29:06
+ closed on:   7 Mar 2021, 19:11:26
 -------------------------------------------------------------------------------

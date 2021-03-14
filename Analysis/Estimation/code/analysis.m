@@ -23,7 +23,7 @@ mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
 Q = 4;
-Qv = [10; 20; 30; 40];
+Qv = [20; 40; 60; 80];
 ncol = 9;
 
 data = readmatrix(load_as);

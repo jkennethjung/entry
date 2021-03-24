@@ -3,7 +3,7 @@
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Sample/code/../output/ana
 > lysis.log
   log type:  text
- opened on:  23 Jan 2021, 23:53:56
+ opened on:  24 Mar 2021, 18:08:29
 
 . 
 . use ../temp/data_firms.dta, clear
@@ -262,10 +262,102 @@ file ../output/small.dta saved
 file ../output/small.csv saved
 
 . 
+. * Medium sample
+. use ../temp/raw.dta, clear
+
+. keep if N_t <= 11
+(219 observations deleted)
+
+. save ../temp/medium.dta, replace
+(note: file ../temp/medium.dta not found)
+file ../temp/medium.dta saved
+
+. 
+. collapse (first) n, by(t_state)
+
+. gen t = _n
+
+. keep t t_state
+
+. save ../temp/medium_xw.dta, replace 
+(note: file ../temp/medium_xw.dta not found)
+file ../temp/medium_xw.dta saved
+
+. 
+. use ../temp/medium.dta, clear
+
+. merge m:1 t_state using ../temp/medium_xw.dta, assert(3) keep(3) nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                               109  
+    -----------------------------------------
+
+. collapse (first) n t_state, by(t cea)
+
+. bysort t: egen n_rank = rank(-n), unique
+
+. sort t n_rank
+
+. rename n_rank m
+
+. save ../temp/medium_mt.dta, replace
+(note: file ../temp/medium_mt.dta not found)
+file ../temp/medium_mt.dta saved
+
+. 
+. use ../temp/medium.dta, clear
+
+. merge m:1 cea t using ../temp/medium_mt.dta, assert(3) nogen
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             0
+    matched                               109  
+    -----------------------------------------
+
+. ds
+cea      x        w        n        M_t      m
+l        t_state  r        N_t      t
+
+. order t t_state cea m n w r x l
+
+. sort t m
+
+. sum
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+           t |        109    9.376147    4.423818          1         16
+     t_state |        109    32.75229    13.76668          2         54
+         cea |        109    158.8716    109.8979          5        346
+           m |        109    1.990826    1.417453          1          8
+           n |        109     3.33945    2.431355          0          9
+-------------+---------------------------------------------------------
+           w |        109    .9809402    .1532548   .6327837   1.341128
+           r |        109    .9687573    .2456764   .6665092   1.726865
+           x |        109    2272.881    3270.292         63      13178
+           l |        109    43.11009    87.56028          0        767
+         N_t |        109    8.266055    2.879179          1         11
+-------------+---------------------------------------------------------
+         M_t |        109    3.926606    2.084806          1          8
+
+. save ../output/medium.dta, replace
+(note: file ../output/medium.dta not found)
+file ../output/medium.dta saved
+
+. keep t m n w r x l
+
+. export delimited using ../output/medium.csv, replace novar delim(",")
+(note: file ../output/medium.csv not found)
+file ../output/medium.csv saved
+
+. 
 . log close
       name:  <unnamed>
        log:  /gpfs/loomis/home.grace/jkj32/entry/Data/Sample/code/../output/ana
 > lysis.log
   log type:  text
- closed on:  23 Jan 2021, 23:53:56
+ closed on:  24 Mar 2021, 18:08:29
 -------------------------------------------------------------------------------

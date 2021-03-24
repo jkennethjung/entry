@@ -71,4 +71,32 @@ save ../output/small.dta, replace
 keep t m n w r x l
 export delimited using ../output/small.csv, replace novar delim(",")
 
+* Medium sample
+use ../temp/raw.dta, clear
+keep if N_t <= 11
+save ../temp/medium.dta, replace
+
+collapse (first) n, by(t_state)
+gen t = _n
+keep t t_state
+save ../temp/medium_xw.dta, replace 
+
+use ../temp/medium.dta, clear
+merge m:1 t_state using ../temp/medium_xw.dta, assert(3) keep(3) nogen
+collapse (first) n t_state, by(t cea)
+bysort t: egen n_rank = rank(-n), unique
+sort t n_rank
+rename n_rank m
+save ../temp/medium_mt.dta, replace
+
+use ../temp/medium.dta, clear
+merge m:1 cea t using ../temp/medium_mt.dta, assert(3) nogen
+ds
+order t t_state cea m n w r x l
+sort t m
+sum
+save ../output/medium.dta, replace
+keep t m n w r x l
+export delimited using ../output/medium.csv, replace novar delim(",")
+
 log close

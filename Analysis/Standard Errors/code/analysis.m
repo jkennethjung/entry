@@ -12,23 +12,17 @@ rng(1);
 parpool(12);
 load_as = '../temp/small.csv';
 NS = 100;
-mu = 80;
+mu = 36;
 alpha = 0.4;
-gamma = 39.8594;
-eta = 2.0322;
+gamma = 1;
+eta = 16;
 Nq_max = 9;
 
 mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
 Q = 4;
-STEP = 10;
-Q_cuts = STEP * [1; 2; 3; 4];
-Qv = [Q_cuts(1)];
-for q = 2:(Q-1)
-    Qv = [Qv; (Q_cuts(q-1) + Q_cuts(q))/2];
-end
-Qv = [Qv; Q_cuts(Q) + STEP/2]
+Qv = [20; 40; 60; 80];
 ncol = 9;
 
 data = readmatrix(load_as);
@@ -111,7 +105,7 @@ Zm = [data_mt(:, 4:6) ones(nm_obs, 1)];
 Beta_1 = [mean(y); var(y)];
 Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
 Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
-Beta_0 = [Beta_1; Beta_2; Beta_3];
+Beta_0 = [Beta_1; Beta_2];
 disp(Beta_0);
 
 theta = [gamma; eta; mu];
@@ -137,7 +131,7 @@ for ns = 1:NS
     Beta_1 = [mean(y); var(y)];
     Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
     Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
-    Beta = [Beta_1; Beta_2; Beta_3];
+    Beta = [Beta_1; Beta_2];
     Betas = [Betas Beta];
 end
 Beta = mean(Betas, 2);
@@ -147,11 +141,21 @@ dBeta = (Beta_0 - Beta).'*(Beta_0 - Beta);
 disp('Objective function');
 disp(dBeta);
 
+c = clock;
+fix(c)
 standard_errors(theta, Betas, Beta, Beta_0, NS, n_obs, A_hists, NS, ...
     alpha, M, E, W, R, X, Q, Qv, T, S, States, epsilon, ncol)
+c = clock;
+fix(c)
 
 function se = standard_errors(Theta, Betas, Beta, Beta_0, H, MT, A_hists, NS, ...
     alpha, M, E, W, R, X, Q, Qv, T, S, States, epsilon, ncol)
+    
+    disp('Checking dimensions');
+    disp(Betas);
+    disp(Beta);
+    disp(Beta_0);
+
     J = size(Theta, 1);
     K = size(Beta, 1);
     Ws = [];
@@ -172,7 +176,7 @@ function se = standard_errors(Theta, Betas, Beta, Beta_0, H, MT, A_hists, NS, ..
         % Now calculate second derivative
 
         theta = Theta;
-        theta(j) = Theta(j) + 0.00001;
+        theta(j) = Theta(j) + 1e-1;
         gamma = theta(1);
         eta = theta(2);
         mu = theta(3);
@@ -197,19 +201,40 @@ function se = standard_errors(Theta, Betas, Beta, Beta_0, H, MT, A_hists, NS, ..
         
             Beta_1 = [mean(y); var(y)];
             Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
-            Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
-            Beta_ns = [Beta_1; Beta_2; Beta_3];
+            Beta_ns = [Beta_1; Beta_2];
             Betas = [Betas Beta_ns];
         end
         Beta_j = mean(Betas, 2);
-        dQ = (2*(Beta_j - Beta_0 - (Beta - Beta_0)))/0.00001;
+        disp('Checking Beta_j')
+        disp(Beta_j)
+        dQ = (2*(Beta_j - Beta_0 - (Beta - Beta_0)))/1e-1;
         ddQ = [ddQ dQ];
     end
     disp('Assembling standard error matrix')
     disp(ddQ)
     disp(IK)
-    W_H = (1+1/H)*(ddQ.' * IK^(-1) * ddQ)^(-1);
-    se = W_H;
+    % The asymptotic variance estimate is
+    W_H = (1+1/H)*(ddQ.' * IK^(-1) * ddQ)^(-1)/MT;
+
+    % The standard error is then
+    disp('Avar')
+    disp(W_H)
+
+    se = sqrt(diag(W_H));
+    disp('Standard error:');
+    disp(se)
+
+    % should IK be inverted? check
+
+    W_H = (1+1/H)*(ddQ.' * IK * ddQ)^(-1)/MT;
+    
+    disp('Avar')
+    disp(W_H)
+
+    se = sqrt(diag(W_H));
+    disp('Standard error:');
+    disp(se)
+    
 end
 
 function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...

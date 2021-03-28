@@ -11,24 +11,25 @@ rng(1);
 
 parpool(12);
 load_as = '../temp/small.csv';
-NS = 100;
-mu = 80;
 alpha = 0.4;
-gamma = 39.8594;
-eta = 2.0322;
+
+NS = 100;
+gamma = 35.9995;
+gamma_se = 10;
+eta = 1;
+eta_se = 0.5;
+mu = 16.0002;
+mu_se = 5;
 Nq_max = 9;
+thetas = [gamma + gamma_se*randn(1, NS); ...
+          eta + eta_se*randn(1, NS); ...
+          mu + mu_se*randn(1, NS)];
 
 mu_eps = 0;
 beta_eps = 1;
 mean_eps = mu_eps + beta_eps*0.57721;
 Q = 4;
-STEP = 10;
-Q_cuts = STEP * [1; 2; 3; 4];
-Qv = [Q_cuts(1)];
-for q = 2:(Q-1)
-    Qv = [Qv; (Q_cuts(q-1) + Q_cuts(q))/2];
-end
-Qv = [Qv; Q_cuts(Q) + STEP/2]
+Qv = [20; 40; 60; 80];
 ncol = 9;
 
 data = readmatrix(load_as);
@@ -114,142 +115,122 @@ Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
 Beta_0 = [Beta_1; Beta_2; Beta_3];
 disp(Beta_0);
 
-theta = [gamma; eta; mu];
-
-pr_hist = {};
-for t = 1:T
-    pr_hist{end+1} = pr_firms(A_hists{t}, E(t), mu, Qv, Q);
-end
-data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+data_sim = simulate(thetas, A_hists, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
     States, epsilon, ncol);
-Betas = [];
-for ns = 1:NS
-    data_ns = data_sim{ns};
-    n_obs = size(data_ns, 1);
-    Z = [data_ns(:, 3:6) ones(n_obs, 1)];
-    y = data_ns(:, 7);
-
-    data_mt = collapse_data(data_ns, T, M);
-    nm_obs = size(data_mt, 1);
-    nm = data_mt(:, 3);
-    Zm = [data_mt(:, 4:6) ones(nm_obs, 1)];
-
-    Beta_1 = [mean(y); var(y)];
-    Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
-    Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
-    Beta = [Beta_1; Beta_2; Beta_3];
-    Betas = [Betas Beta];
-end
-Beta = mean(Betas, 2);
-disp('Auxiliary model:');
-disp(Beta);
-dBeta = (Beta_0 - Beta).'*(Beta_0 - Beta);
-disp('Objective function');
-disp(dBeta);
-
 data_combined = [];
 for ns = 1:NS
+    disp('Combining data...')
+    disp(size(data_sim))
+    disp(data_sim(1, :))
     data_combined = [data_combined; data_sim{ns}];
 end
 writematrix(data_combined, '../output/small.csv');
 
-function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
+function data_sim = simulate(thetas, A_hists, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, epsilon, ncol)
-    gamma = theta(1);
-    eta = theta(2);
-    mu = theta(3);
+    for ns = 1:NS
+        disp('Initializing simulation')
+        disp(ns)
+        gamma = thetas(1, ns);
+        eta = thetas(2, ns);
+        mu = thetas(3, ns);
 
-    A_draw = draw_firms(mu, NS, E, Q, Qv, T);
-    Aq_idx = A_draw{2};
-    data_sim = cell(NS, 1);
-    for t = 1:T
-        %%% IV. Calculate Cournot Payoffs in Each State %%%
-        % This may require large amount of memory, so placing in inner loop of t
-        % rather than over all t beforehand
-        
-        M_t = M(t);
-        E_t = E(t);
-        P = zeros(M_t, S);
-        Y = zeros(M_t, S, Q);
-        L = zeros(M_t, S, Q);
-        K = zeros(M_t, S, Q);
-        PiV = zeros(M_t, S, Q);
-        W_t = W{t};
-        R_t = R{t};
-        X_t = X{t};
-        
-        for m = 1:M_t
-            w = W_t(m);
-            r = R_t(m);        
-            x = X_t(m);
-            S_neg = zeros(S, 1);
-            MC = zeros(Q, 1);
-            for q = 1:Q
-                a = Qv(q);
-                MC(q) = marginal_cost(a, w, r, alpha);
-            end
-            for s = 2:S
-                State = States(s, :);
-                C = zeros(Q, 1);
-                Qs = [0];    % Number of firms by quantile (excludes zeros)
-                Cs = [0];    % Constant by quantile (excludes zeros)
+        pr_hist = {};
+        for t = 1:T
+            pr_hist{end+1} = pr_firms(A_hists{t}, E(t), mu, Qv, Q);
+        end
+
+        A_draw = draw_firms(mu, NS, E, Q, Qv, T);
+        Aq_idx = A_draw{2};
+        data_sim = cell(NS, 1);
+        for t = 1:T
+            %%% IV. Calculate Cournot Payoffs in Each State %%%
+            % This may require large amount of memory, so placing in inner loop of t
+            % rather than over all t beforehand
+            
+            M_t = M(t);
+            E_t = E(t);
+            P = zeros(M_t, S);
+            Y = zeros(M_t, S, Q);
+            L = zeros(M_t, S, Q);
+            K = zeros(M_t, S, Q);
+            PiV = zeros(M_t, S, Q);
+            W_t = W{t};
+            R_t = R{t};
+            X_t = X{t};
+            
+            for m = 1:M_t
+                w = W_t(m);
+                r = R_t(m);        
+                x = X_t(m);
+                S_neg = zeros(S, 1);
+                MC = zeros(Q, 1);
                 for q = 1:Q
-                    Qn = State(q);
-                    if Qn > 0
-                        a = Qv(q);
-                        c = (x*gamma - MC(q))/eta;
-                        if c > 0
-                            C(q) = c;
-                            Qs = [Qs; Qn];
-                            Cs = [Cs; c];
-                        end
-                    end
+                    a = Qv(q);
+                    MC(q) = marginal_cost(a, w, r, alpha);
                 end
-        
-                Iq = (C > 0); % Dummies for quantile inclusion
-                Nq = sum(Iq); % Number of quantiles represented in eqm
-                if Nq > 0
-                    Qs = Qs(2:(Nq+1)); 
-                    Cs = Cs(2:(Nq+1)); 
-                    B = zeros(Nq);
-                    for r = 1:Nq
-                        row = Qs;
-                        row(r) = row(r) + 1;
-                        B(r, :) = row;
-                    end
-                    y = inv(B)*Cs;
-                    if sum(y < 0) == 0
-                        S_neg(s) = 1;
-                        p = x*gamma - y' * Qs;
-                        P(m, s) = p;
-                        j = 1;
-                        for q = 1:Q
+                for s = 2:S
+                    State = States(s, :);
+                    C = zeros(Q, 1);
+                    Qs = [0];    % Number of firms by quantile (excludes zeros)
+                    Cs = [0];    % Constant by quantile (excludes zeros)
+                    for q = 1:Q
+                        Qn = State(q);
+                        if Qn > 0
                             a = Qv(q);
-                            if Iq(q) == 1
-                                Y(m, s, q) = y(j);
-                                [lab, cap] =  factor_demand(y(j), a, w, r, alpha);
-                                L(m, s, q) = lab;
-                                K(m, s, q) = cap;
-                                PiV(m, s, q) = (p - MC(q)) * y(j);
-                                j = j + 1;
+                            c = (x*gamma - MC(q))/eta;
+                            if c > 0
+                                C(q) = c;
+                                Qs = [Qs; Qn];
+                                Cs = [Cs; c];
                             end
                         end
                     end
-                end 
+            
+                    Iq = (C > 0); % Dummies for quantile inclusion
+                    Nq = sum(Iq); % Number of quantiles represented in eqm
+                    if Nq > 0
+                        Qs = Qs(2:(Nq+1)); 
+                        Cs = Cs(2:(Nq+1)); 
+                        B = zeros(Nq);
+                        for r = 1:Nq
+                            row = Qs;
+                            row(r) = row(r) + 1;
+                            B(r, :) = row;
+                        end
+                        y = inv(B)*Cs;
+                        if sum(y < 0) == 0
+                            S_neg(s) = 1;
+                            p = x*gamma - y' * Qs;
+                            P(m, s) = p;
+                            j = 1;
+                            for q = 1:Q
+                                a = Qv(q);
+                                if Iq(q) == 1
+                                    Y(m, s, q) = y(j);
+                                    [lab, cap] =  factor_demand(y(j), a, w, r, alpha);
+                                    L(m, s, q) = lab;
+                                    K(m, s, q) = cap;
+                                    PiV(m, s, q) = (p - MC(q)) * y(j);
+                                    j = j + 1;
+                                end
+                            end
+                        end
+                    end 
+                end
+                %disp('% of states with negative output');
+                %mean(S_neg)
             end
-            %disp('% of states with negative output');
-            %mean(S_neg)
-        end
-           
-        %%% V. Fixed Point to Solve for Firm Beliefs%%%
-    
-        At_hist = A_hists{t}; 
-        prt_hist = pr_hist{t};
-        [cp, resnorm, residual, exitflag, output] = nfp(t, M_t, Q, States, ...
-            At_hist, prt_hist, PiV, S);
-        cp_mat = reshape(cp, [M_t, Q]);
-        EPi = exp_profit(cp_mat, States, At_hist, prt_hist, PiV, M_t, Q, S);
-        for ns = 1:NS
+               
+            %%% V. Fixed Point to Solve for Firm Beliefs%%%
+        
+            At_hist = A_hists{t}; 
+            prt_hist = pr_hist{t};
+            [cp, resnorm, residual, exitflag, output] = nfp(t, M_t, Q, States, ...
+                At_hist, prt_hist, PiV, S);
+            cp_mat = reshape(cp, [M_t, Q]);
+            EPi = exp_profit(cp_mat, States, At_hist, prt_hist, PiV, M_t, Q, S);
+
             %%% VI. Entry and Ex-Post Outcomes  %%%
             M_J = zeros(E_t, 1);
             S_M = zeros(M_t, Q);

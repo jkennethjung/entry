@@ -10,5 +10,5 @@ mkdir ../temp/
 mkdir ../output/
 ln -s ../../../Data/Sample/output/* ../temp/
 
-matlab -nodisplay -nodesktop -r "run('./analysis.m')"
-stata analysis.do
+matlab -nodisplay -nodesktop -r "run('./analysis.m')" > ../output/analysis_m.log
+stata analysis.do > ../output/analysis.log

@@ -1,6 +1,5 @@
 set more off
 clear
-log using ../output/analysis.log, replace
 
 import delimited using ../output/small.csv, clear
 rename v1 t

@@ -3,8 +3,6 @@ clear;
 close all;
 echo off;
 
-diary ../output/analysis.log
-diary on;
 rng(1);
 
 %%% I. Initialize  %%%
@@ -15,11 +13,11 @@ alpha = 0.4;
 
 NS = 100;
 gamma = 35.9995;
-gamma_se = 10;
+gamma_se = 0.1250;
 eta = 1;
-eta_se = 0.5;
+eta_se = 0.8652;
 mu = 16.0002;
-mu_se = 5;
+mu_se = 0.8170;
 Nq_max = 9;
 thetas = [gamma + gamma_se*randn(1, NS); ...
           eta + eta_se*randn(1, NS); ...
@@ -120,14 +118,14 @@ data_sim = simulate(thetas, A_hists, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
 data_combined = [];
 for ns = 1:NS
     disp('Combining data...')
-    disp(size(data_sim))
-    disp(data_sim(1, :))
+    disp(size(data_sim{ns}))
     data_combined = [data_combined; data_sim{ns}];
 end
 writematrix(data_combined, '../output/small.csv');
 
 function data_sim = simulate(thetas, A_hists, NS, alpha, M, E, W, R, X, Q, Qv, T, S, ...
         States, epsilon, ncol)
+    data_sim = cell(NS, 1);
     for ns = 1:NS
         disp('Initializing simulation')
         disp(ns)
@@ -142,7 +140,6 @@ function data_sim = simulate(thetas, A_hists, NS, alpha, M, E, W, R, X, Q, Qv, T
 
         A_draw = draw_firms(mu, NS, E, Q, Qv, T);
         Aq_idx = A_draw{2};
-        data_sim = cell(NS, 1);
         for t = 1:T
             %%% IV. Calculate Cournot Payoffs in Each State %%%
             % This may require large amount of memory, so placing in inner loop of t
@@ -246,6 +243,8 @@ function data_sim = simulate(thetas, A_hists, NS, alpha, M, E, W, R, X, Q, Qv, T
             State_M = zeros(M_t, 1);
             data_c = [];
             for m = 1:M_t
+                disp('Transcribing data')
+		disp(m)
                 s_m = S_M(m, :);
                 n_m = sum(s_m);
                 [~, s] = ismember(s_m, States, 'rows');

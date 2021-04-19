@@ -12,10 +12,10 @@ rng(1);
 parpool(12);
 load_as = '../temp/small.csv';
 NS = 100;
-mu = 36;
 alpha = 0.4;
-gamma = 1;
-eta = 16;
+gamma = 39.729;
+eta = 0.977;
+mu = 19.91;
 Nq_max = 9;
 
 mu_eps = 0;
@@ -354,6 +354,7 @@ function data_sim = simulate(theta, A_hists, pr_hist, NS, alpha, M, E, W, R, X, 
                 [~, s] = ismember(s_m, States, 'rows');
                 if s == 0
                     disp('Warning: outside state space');
+                    data_c = [data_c; t m 0 W_t(m) R_t(m) X_t(m) 0 0 0];
                 elseif s == 1
                     data_c = [data_c; t m 0 W_t(m) R_t(m) X_t(m) 0 0 0];
                 else
@@ -461,47 +462,66 @@ end
 
 function cp = choice_prob(EPi, M, Q)
     cp = zeros(M, Q);
-    exp_EPi = exp(EPi);
     for q = 1:Q
-        denom = sum(exp_EPi(:, q));
-        cp(:, q) = exp_EPi(:, q)/denom;
+        X = EPi(:, q);
+        log_num = log(X) .* ones(M, 1);
+        log_denom = logsumexp(X);
+        log_cp = log_num - log_denom;
+        cp(:, q) = exp(log_cp);
+        for m = 1:M
+            if isnan(cp(m, q)) | isinf(cp(m, q))
+                cp(m, q) = 1e-50;
+            end
+        end
     end
+end
+
+function lse = logsumexp(x)
+    a = max(0, max(x));
+    n = size(x, 1);
+    lse = a + log(sum(exp(x - ones(n, 1)*a)));
 end
 
 function EPi = exp_profit(p, States, At_hist, prt_hist, PiV, M, Q, S) 
     EPi = zeros(M, Q);
     len = size(At_hist, 1);
-    p_sm = zeros(S, M);
+    p_smk = zeros(S, M, Q);
     parfor s = 1:S
-        for m = 1:M
-            pr_states = zeros(len, 1);
-            for i = 1:len 
-                hist = At_hist(i, :);
-                pr_states(i) = pr_state(p(m, :), s, States, hist, Q);
+        for k = 1:Q
+            for m = 1:M
+                pr_states = zeros(len, 1);
+                for i = 1:len 
+                    hist = At_hist(i, :);
+                    pr_states(i) = pr_state(p(m, :), k, s, States, hist, Q);
+                end
+                p_smk(s, m, k) = prt_hist.' * pr_states;
             end
-            p_s(s, m) = prt_hist.' * pr_states;
         end
     end
     for m = 1:M
-        p_s = p_sm(:, m);
         for q = 1:Q
+            p_s = p_smk(:, m, q);
             EPi(m, q) = PiV(m, :, q)*p_s;
         end
     end
 end
 
-function p_s = pr_state(pr, s, States, At_hist, Q) 
+function p_s = pr_state(pr, k, s, States, At_hist, Q) 
     p_s = 1;
     state = States(s, :);
     impossible = (state > At_hist);
-    if sum(impossible) > 0
+    if (sum(impossible) > 0) | (state(k) == 0)
         p_s = 0;
     else
         for q = 1:Q
             n = At_hist(q);
             k = States(s, q);
             pr_q = pr(q);
-            p_s = p_s*nchoosek(n, k)*pr_q^k*(1-pr_q)^(n-k); 
+            if q ~= k
+                p_s = p_s*nchoosek(n, k)*pr_q^k*(1-pr_q)^(n-k); 
+            else 
+                p_s = p_s*nchoosek(n-1, k-1)*pr_q^(k-1)*(1-pr_q)^(n-k); 
+            end
         end
     end
 end

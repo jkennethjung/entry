@@ -13,10 +13,10 @@ parpool(24);
 load_as = '../temp/small.csv';
 save_as = '../output/estimates.csv';
 NS = 100;
-mu = 20;
 alpha = 0.4;
-gamma = 40;
-eta = 1;
+gamma = 39.73;
+eta = 0.96;
+mu = 19.91;
 Nq_max = 9;
 
 mu_eps = 0;

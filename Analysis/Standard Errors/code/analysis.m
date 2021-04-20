@@ -105,7 +105,7 @@ Zm = [data_mt(:, 4:6) ones(nm_obs, 1)];
 Beta_1 = [mean(y); var(y)];
 Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
 Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
-Beta_0 = [Beta_1; Beta_2];
+Beta_0 = [Beta_1; Beta_2; Beta_3];
 disp(Beta_0);
 
 theta = [gamma; eta; mu];
@@ -131,7 +131,7 @@ for ns = 1:NS
     Beta_1 = [mean(y); var(y)];
     Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
     Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
-    Beta = [Beta_1; Beta_2];
+    Beta = [Beta_1; Beta_2; Beta_3];
     Betas = [Betas Beta];
 end
 Beta = mean(Betas, 2);
@@ -201,7 +201,8 @@ function se = standard_errors(Theta, Betas, Beta, Beta_0, H, MT, A_hists, NS, ..
         
             Beta_1 = [mean(y); var(y)];
             Beta_2 = (Z.'*Z)^(-1)*(Z.'*y);
-            Beta_ns = [Beta_1; Beta_2];
+            Beta_3 = (Zm.'*Zm)^(-1)*(Zm.'*nm);
+            Beta_ns = [Beta_1; Beta_2; Beta_3];
             Betas = [Betas Beta_ns];
         end
         Beta_j = mean(Betas, 2);

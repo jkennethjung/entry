@@ -156,7 +156,7 @@ Objective function
 
 ans =
 
-        2021           4          20          13           0          56
+        2021           4          20          19           3          12
 
 Checking dimensions
    1.0e+03 *
@@ -483,13 +483,13 @@ its initial value is less than the value of the function tolerance.
 Checking Beta_j
    1.0e+03 *
 
-    0.0413
-    2.5807
+    0.0422
+    2.6985
    -0.0041
    -0.0004
     0.0014
     0.0002
-    0.0084
+    0.0086
     0.0002
     0.0002
     0.0000
@@ -577,110 +577,108 @@ lsqnonlin stopped because the final change in the sum of squares relative to
 its initial value is less than the value of the function tolerance.
 
 Checking Beta_j
+   20.3007
+  631.9812
+   -2.0988
+   -0.1474
+    0.6569
+    0.0816
+    4.3329
+    0.2240
+    0.1522
+    0.0102
+   -0.1438
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+Warning: outside state space
+Warning: outside state space
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
+
+Checking Beta_j
    1.0e+03 *
 
-    0.0372
-    2.1291
+    0.0410
+    2.5069
    -0.0038
-   -0.0003
-    0.0012
-    0.0001
-    0.0080
+   -0.0002
+    0.0011
     0.0002
-    0.0002
-    0.0000
-   -0.0001
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Warning: outside state space
-Warning: outside state space
-
-Local minimum possible.
-
-lsqnonlin stopped because the final change in the sum of squares relative to 
-its initial value is less than the value of the function tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-
-Local minimum possible.
-
-lsqnonlin stopped because the final change in the sum of squares relative to 
-its initial value is less than the value of the function tolerance.
-
-Checking Beta_j
-   1.0e+03 *
-
-    0.0407
-    2.4316
-   -0.0037
-   -0.0001
-    0.0010
-    0.0002
-    0.0082
+    0.0085
     0.0002
     0.0002
     0.0000
@@ -689,17 +687,17 @@ Checking Beta_j
 Assembling standard error matrix
    1.0e+03 *
 
-    0.0156   -0.0653    0.0035
-    3.8070   -5.2259    0.8259
-   -0.0084   -0.0039   -0.0011
-   -0.0064   -0.0041   -0.0010
-    0.0091    0.0057    0.0006
-    0.0001   -0.0002    0.0000
-    0.0111    0.0028    0.0083
-   -0.0000   -0.0000    0.0000
-    0.0000    0.0000   -0.0000
-    0.0000    0.0000    0.0000
-   -0.0000   -0.0000   -0.0000
+    0.0034   -0.0404    0.0010
+    0.6162   -3.5167    0.2330
+   -0.0010    0.0031   -0.0004
+   -0.0007   -0.0001   -0.0002
+    0.0010   -0.0005    0.0003
+    0.0000   -0.0002    0.0000
+    0.0015   -0.0070    0.0013
+   -0.0000    0.0000    0.0000
+    0.0000   -0.0000    0.0000
+    0.0000   -0.0000    0.0000
+   -0.0000    0.0000   -0.0000
 
    1.0e+08 *
 
@@ -732,47 +730,43 @@ Assembling standard error matrix
    -0.0000   -0.0000   -0.0000    0.0000
 
 [Warning: Matrix is close to singular or badly scaled. Results may be
-inaccurate. RCOND =  1.235742e-26.] 
+inaccurate. RCOND =  5.059308e-27.] 
 [> In mpower>integerMpower (line 80)
   In ^ (line 49)
   In analysis>standard_errors (line 218)
   In analysis (line 146)
   In run (line 91)] 
 Avar
-    0.0798    0.0020   -0.0452
-    0.0020    0.0045   -0.0018
-   -0.0452   -0.0018    0.0886
+    4.6848    0.1930   -3.2628
+    0.1930    0.0207   -0.1787
+   -3.2629   -0.1787    5.0405
 
 Standard error:
-    0.2825
-    0.0672
-    0.2976
+    2.1645
+    0.1437
+    2.2451
 
 Avar
-   1.0e-06 *
+   1.0e-04 *
 
-    0.0163    0.0041   -0.0491
-    0.0041    0.0021   -0.0053
-   -0.0491   -0.0053    0.1924
+    0.0319    0.0018   -0.0571
+    0.0018    0.0002   -0.0020
+   -0.0571   -0.0020    0.1214
 
 Standard error:
-   1.0e-03 *
-
-    0.1276
-    0.0463
-    0.4387
+    0.0018
+    0.0001
+    0.0035
 
 
 ans =
 
-   1.0e-03 *
-
-    0.1276
-    0.0463
-    0.4387
+    0.0018
+    0.0001
+    0.0035
 
 
 ans =
 
-        2021           4          20          13          40          31
+        2021           4          20          19          55          33
 

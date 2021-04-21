@@ -176,7 +176,7 @@ function se = standard_errors(Theta, Betas, Beta, Beta_0, H, MT, A_hists, NS, ..
         % Now calculate second derivative
 
         theta = Theta;
-        theta(j) = Theta(j) + 1e-1;
+        theta(j) = Theta(j) + 1;
         gamma = theta(1);
         eta = theta(2);
         mu = theta(3);
@@ -208,7 +208,7 @@ function se = standard_errors(Theta, Betas, Beta, Beta_0, H, MT, A_hists, NS, ..
         Beta_j = mean(Betas, 2);
         disp('Checking Beta_j')
         disp(Beta_j)
-        dQ = (2*(Beta_j - Beta_0 - (Beta - Beta_0)))/1e-1;
+        dQ = (2*(Beta_j - Beta_0 - (Beta - Beta_0)));
         ddQ = [ddQ dQ];
     end
     disp('Assembling standard error matrix')

@@ -9,7 +9,7 @@ To get started, type doc.
 For product information, visit www.mathworks.com.
  
 Starting parallel pool (parpool) using the 'local' profile ...
-Connected to the parallel pool (number of workers: 12).
+Connected to the parallel pool (number of workers: 24).
 Number of entrants
      3
 
@@ -173,31 +173,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -205,11 +184,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -238,11 +220,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -356,31 +356,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -388,11 +367,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -421,11 +403,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -539,31 +539,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -571,11 +550,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -604,11 +586,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -722,31 +722,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -754,11 +733,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -787,11 +769,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -905,31 +905,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -937,11 +916,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -970,11 +952,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1088,31 +1088,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1120,11 +1099,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -1153,11 +1135,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1271,31 +1271,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1303,11 +1282,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -1336,11 +1318,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1454,31 +1454,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1486,11 +1465,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -1519,11 +1501,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1637,31 +1637,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1669,11 +1648,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -1702,11 +1684,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1820,31 +1820,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -1852,11 +1831,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -1885,11 +1867,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2003,31 +2003,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2035,11 +2014,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -2068,11 +2050,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2186,31 +2186,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2218,11 +2197,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -2251,11 +2233,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2369,31 +2369,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2401,11 +2380,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -2434,11 +2416,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2552,31 +2552,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2584,11 +2563,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -2617,11 +2599,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2735,31 +2735,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2767,11 +2746,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -2800,11 +2782,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2918,31 +2918,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -2950,11 +2929,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -2983,11 +2965,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -3167,10 +3167,10 @@ Transcribing data
      1
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -3284,31 +3284,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -3316,11 +3295,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -3349,11 +3331,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -3467,31 +3467,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -3499,11 +3478,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -3532,11 +3514,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -3650,10 +3650,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -3833,31 +3833,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -3865,11 +3844,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -3898,11 +3880,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4016,31 +4016,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4048,11 +4027,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -4081,11 +4063,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4199,31 +4199,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4231,11 +4210,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -4264,11 +4246,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4382,31 +4382,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4414,11 +4393,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -4447,11 +4429,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4565,31 +4565,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4597,11 +4576,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -4630,11 +4612,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4748,31 +4748,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4780,11 +4759,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -4813,11 +4795,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4931,31 +4931,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -4963,11 +4942,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -4996,11 +4978,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5180,10 +5180,10 @@ Transcribing data
      1
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5297,31 +5297,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5329,11 +5308,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -5362,11 +5344,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5480,31 +5480,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5512,11 +5491,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -5545,11 +5527,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5663,31 +5663,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5695,11 +5674,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -5728,11 +5710,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5846,31 +5846,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -5878,11 +5857,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -5911,11 +5893,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6029,31 +6029,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6061,11 +6040,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -6094,11 +6076,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6212,31 +6212,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6244,11 +6223,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -6277,11 +6259,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6395,31 +6395,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6427,11 +6406,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -6460,11 +6442,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6578,31 +6578,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6610,11 +6589,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -6643,11 +6625,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6761,31 +6761,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -6793,11 +6772,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -6826,11 +6808,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7010,10 +7010,10 @@ Transcribing data
      1
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7127,31 +7127,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7159,11 +7138,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -7192,11 +7174,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7310,31 +7310,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7342,11 +7321,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -7375,11 +7357,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7493,31 +7493,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7525,11 +7504,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -7558,11 +7540,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7676,31 +7676,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7708,11 +7687,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -7741,11 +7723,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7859,31 +7859,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -7891,11 +7870,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -7924,11 +7906,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8042,31 +8042,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8074,11 +8053,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -8107,11 +8089,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8225,31 +8225,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8257,11 +8236,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -8290,11 +8272,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8408,31 +8408,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8440,11 +8419,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -8473,11 +8455,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8591,31 +8591,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8623,11 +8602,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -8656,11 +8638,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8774,31 +8774,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8806,11 +8785,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -8839,11 +8821,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8957,31 +8957,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -8989,11 +8968,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -9022,11 +9004,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9140,31 +9140,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9172,11 +9151,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -9205,11 +9187,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9322,6 +9322,7 @@ Transcribing data
 Transcribing data
      6
 
+Warning: outside state space
 
 Local minimum found.
 
@@ -9389,10 +9390,10 @@ Transcribing data
      1
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9506,31 +9507,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9538,11 +9518,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -9571,11 +9554,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9689,31 +9690,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9721,11 +9701,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -9754,11 +9737,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9872,31 +9873,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -9904,11 +9884,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -9937,11 +9920,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10055,31 +10056,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10087,11 +10067,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -10120,11 +10103,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10238,31 +10239,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10270,11 +10250,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -10303,11 +10286,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10421,31 +10422,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10453,11 +10433,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -10486,11 +10469,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10604,31 +10605,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10636,11 +10616,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -10669,11 +10652,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10787,31 +10788,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10819,11 +10799,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -10852,11 +10835,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -10970,31 +10971,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11002,11 +10982,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -11035,11 +11018,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11153,31 +11154,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11185,11 +11165,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -11218,11 +11201,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11336,31 +11337,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11368,11 +11348,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -11401,11 +11384,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11519,31 +11520,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11551,11 +11531,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -11584,11 +11567,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11702,31 +11703,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11734,11 +11714,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -11767,11 +11750,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11885,31 +11886,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -11917,11 +11897,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -11950,11 +11933,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12068,31 +12069,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12100,11 +12080,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -12133,11 +12116,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12251,31 +12252,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12283,11 +12263,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -12316,11 +12299,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12434,31 +12435,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12466,11 +12446,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -12499,11 +12482,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12617,31 +12618,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12649,11 +12629,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -12682,11 +12665,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12800,31 +12801,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12832,11 +12812,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -12865,11 +12848,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -12983,31 +12984,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13015,11 +12995,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -13048,11 +13031,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13166,31 +13167,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13198,11 +13178,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -13231,11 +13214,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13349,31 +13350,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13381,11 +13361,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -13414,11 +13397,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13532,31 +13533,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13564,11 +13544,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -13597,11 +13580,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13715,31 +13716,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13747,11 +13727,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -13780,11 +13763,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13898,31 +13899,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -13930,11 +13910,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -13963,11 +13946,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14081,31 +14082,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14113,11 +14093,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -14146,11 +14129,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14264,31 +14265,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14296,11 +14276,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -14329,11 +14312,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14447,31 +14448,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14479,11 +14459,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -14512,11 +14495,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14630,31 +14631,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14662,11 +14642,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -14695,11 +14678,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14813,31 +14814,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14845,11 +14825,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -14878,11 +14861,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -14996,31 +14997,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15028,11 +15008,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -15061,11 +15044,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15179,10 +15180,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15362,31 +15363,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15394,11 +15374,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -15427,11 +15410,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15545,31 +15546,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15577,11 +15557,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -15610,11 +15593,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15728,10 +15729,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15911,31 +15912,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -15943,11 +15923,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -15976,11 +15959,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16094,10 +16095,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16277,31 +16278,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16309,11 +16289,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -16342,11 +16325,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16460,31 +16461,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16492,11 +16472,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -16525,11 +16508,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16643,31 +16644,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16675,11 +16655,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -16708,11 +16691,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16826,31 +16827,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -16858,11 +16838,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -16891,11 +16874,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17009,31 +17010,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17041,11 +17021,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -17074,11 +17057,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17192,31 +17193,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17224,11 +17204,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -17257,11 +17240,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17375,31 +17376,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17407,11 +17387,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -17440,11 +17423,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17558,31 +17559,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17590,11 +17570,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -17623,11 +17606,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17741,31 +17742,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17773,11 +17753,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -17806,11 +17789,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17924,31 +17925,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -17956,11 +17936,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -17989,11 +17972,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -18107,31 +18108,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -18139,11 +18119,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -18172,11 +18155,29 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
 Optimization completed because the size of the gradient is less than
 the value of the optimality tolerance.
+
+Transcribing data
+     1
+
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -18290,31 +18291,10 @@ Transcribing data
      6
 
 
-Local minimum found.
+Local minimum possible.
 
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-Transcribing data
-     2
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
-
-Transcribing data
-     1
-
-
-Local minimum found.
-
-Optimization completed because the size of the gradient is less than
-the value of the optimality tolerance.
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
 
 Transcribing data
      1
@@ -18322,11 +18302,14 @@ Transcribing data
 Transcribing data
      2
 
-Transcribing data
-     3
+
+Local minimum found.
+
+Optimization completed because the size of the gradient is less than
+the value of the optimality tolerance.
 
 Transcribing data
-     4
+     1
 
 
 Local minimum found.
@@ -18355,6 +18338,15 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+Transcribing data
+     2
+
+Transcribing data
+     3
+
+Transcribing data
+     4
+
 
 Local minimum found.
 
@@ -18364,303 +18356,312 @@ the value of the optimality tolerance.
 Transcribing data
      1
 
+
+Local minimum possible.
+
+lsqnonlin stopped because the final change in the sum of squares relative to 
+its initial value is less than the value of the function tolerance.
+
+Transcribing data
+     1
+
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    75    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    72    11
+    89    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    75    11
+    89    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    76    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    77    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    71    11
+    89    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    73    11
+    89    11
 
 Combining data...
-    76    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    72    11
+    89    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    76    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    76    11
+    90    11
 
 Combining data...
-    71    11
+    89    11
 
 Combining data...
-    75    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    73    11
+    89    11
 
 Combining data...
-    74    11
+    89    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    73    11
+    89    11
 
 Combining data...
-    76    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    73    11
+    81    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    75    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    76    11
+    89    11
 
 Combining data...
-    70    11
+    90    11
 
 Combining data...
-    74    11
+    89    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    73    11
+    89    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    76    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    75    11
+    90    11
 
 Combining data...
-    72    11
+    89    11
 
 Combining data...
-    71    11
+    89    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    75    11
+    90    11
 
 Combining data...
-    75    11
+    90    11
 
 Combining data...
-    75    11
+    90    11
 
 Combining data...
-    71    11
+    89    11
 
 Combining data...
-    74    11
+    89    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    73    11
+    89    11
 
 Combining data...
-    72    11
+    90    11
 
 Combining data...
-    71    11
+    90    11
 
 Combining data...
-    73    11
+    90    11
 
 Combining data...
-    74    11
+    90    11
 
 Combining data...
-    74    11
+    89    11
 
 Combining data...
-    74    11
+    89    11
 
 Combining data...
-    75    11
+    90    11
 
 Combining data...
-    73    11
+    89    11
 
